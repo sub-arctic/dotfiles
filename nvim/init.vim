@@ -11,6 +11,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'onsails/lspkind-nvim'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'lervag/vimtex'
@@ -18,9 +19,9 @@ call plug#end()
 
 lua require('sub-arctic')
 
-if has('termguicolors')
-    set termguicolors
-endif
+set termguicolors
+
+lua require'colorizer'.setup()
 
 set background=dark
 
