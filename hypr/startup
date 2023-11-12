@@ -1,0 +1,13 @@
+#!/bin/bash
+
+brightnessctl s 0% &
+swaybg -i ~/.config/hypr/car2.png &
+gsettings set org.gnome.desktop.interface gtk-theme "everforest-gtk" &
+gsettings set org.gnome.desktop.interface font-name "Mononoki Nerd Font 12" &
+
+swayidle -w timeout 300 'swaylock -f -i ~/.config/hypr/car2.png'  timeout 600 'swaymsg "output eDP-1 dpms off"' resume 'swaymsg "output eDP-1 dpms on"' timeout 660 'systemctl suspend' after-resume 'swaymsg "output * dpms on"' &
+sway-audio-idle-inhibit &
+
+for i in {1..100}; do brightnessctl s 1%+; sleep 0.01; done
+dunstify "Welcome back $USER"
+
