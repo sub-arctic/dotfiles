@@ -26,7 +26,7 @@ show-failed-attempts
 
 # Display the given image
 # image [[<output>]:]<path>
-image ~/.config/hypr/car2.png
+#image ~/.config/hypr/car2.png
 
 # Display the current xkb layout while typing
 show-keyboard-layout
