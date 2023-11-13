@@ -3,102 +3,105 @@
 ## Packages
 All packages are relevent to archlinux
 ```
-acpi 1.7-3
-alacritty 0.12.3-1
-base 3-2
-base-devel 1-1
-brightnessctl 0.5.1-2
-cava 0.9.1-1
-cifs-utils 7.0-3
-cmake 3.27.7-2
-cpio 2.14-1
-dmenu 5.2-1
-dunst 1.9.2-1
-efibootmgr 18-2
-fd 8.7.1-1
-firefox 119.0.1-1
-fish 3.6.1-1
-foot 1.16.2-2
-fwupd 1.9.7-1
-gdb 13.2-1
-git 2.42.1-1
-github-cli 2.38.0-1
-grim 1.4.1-1
-grub 2:2.12rc1-5
-gst-plugin-pipewire 1:0.3.84-1
-htop 3.2.2-1
-hyprland 0.30.0-1
-inkscape 1.3-4
-intel-ucode 20230808-1
-iwd 2.8-1
-jq 1.7-1
-libnotify 0.8.3-1
-libpulse 16.1-6
-libreoffice-fresh 7.6.2-3
-light 1.2.2-3
-linux 6.6.1.arch1-1
-linux-firmware 20231030.2b304bfe-1
-man-db 2.12.0-1
-marksman 20230725-1
-meson 1.2.3-1
-mpc 0.34-3
-mpd 0.23.14-1
-mpd-mpris-bin 0.4.1-1
-mpv 1:0.36.0-1
-nano 7.2-1
-ncmpcpp 0.9.2-12
-neofetch 7.1.0-2
-neovim 0.9.4-2
-network-manager-applet 1.34.0-1
-networkmanager 1.44.2-3
-networkmanager-openvpn 1.10.2-3
-ninja 1.11.1-3
-obsidian 1.4.16-1
-openssh 9.5p1-1
-optipng 0.7.7-2
-pacman-contrib 1.9.1-1
-pandoc-cli 0.1.1-67
-pavucontrol 1:5.0+r64+geba9ca6-1
-pipewire 1:0.3.84-1
-pipewire-alsa 1:0.3.84-1
-pipewire-jack 1:0.3.84-1
-pipewire-pulse 1:0.3.84-1
-polkit-gnome 0.105-10
-polkit-qt5 0.175.0-1
-powertop 2.15-1
-pulsemixer 1.5.1-4
-python-lsp-server 1.8.0-1
-python-pynvim 0.4.3-3
-ripgrep-all 0.9.6-4
-rofi 1.7.5-2
-rsync 3.2.7-6
-screen 4.9.1-1
-slurp 1.4.0-1
-smartmontools 7.4-1
-smbclient 4.19.2-1
-stow 2.3.1-3
-sway 1:1.8.1-3
-sway-audio-idle-inhibit-git 0.1.1.r41.c850bc4-1
-swaybg 1.2.0-1
-swayidle 1.8.0-1
-swaylock 1.7.2-1
-tesseract 5.3.3-1
-texlive-binextra 2023.66594-19
-ttf-mononoki-nerd 3.0.2-1
-unzip 6.0-20
-vim 9.0.2070-1
-waybar 0.9.24-1
-wev 1.0.0-13
-wget 1.21.4-1
-wireless_tools 30.pre9-3
-wireplumber 0.4.15-1
-wl-clipboard 1:2.2.1-1
-xdg-desktop-portal-hyprland 1.2.4-1
-xdg-utils 1.1.3+45+g301a1a4-1
-xorg-xhost 1.0.9-1
-xorg-xwayland 23.2.2-1
-yay 12.1.3-1
-zathura 0.5.2-2
-zathura-pdf-mupdf 0.4.1-8
-zram-generator 1.1.2-1
+acpi
+alacritty
+base
+base-devel
+brightnessctl
+cava
+cifs-utils
+cmake
+cpio
+dmenu
+dunst
+efibootmgr
+fd
+firefox
+fish
+foot
+fwupd
+fzf
+gdb
+git
+github-cli
+grim
+grub
+gst-plugin-pipewire
+htop
+hyprland
+inkscape
+intel-ucode
+iwd
+jq
+libnotify
+libpulse
+libreoffice-fresh
+light
+linux
+linux-firmware
+man-db
+marksman
+meson
+mpc
+mpd
+mpd-mpris-bin
+mpv
+nano
+ncmpcpp
+neofetch
+neovim
+network-manager-applet
+networkmanager
+networkmanager-openvpn
+ninja
+obsidian
+openssh
+optipng
+pacman-contrib
+pandoc-cli
+pavucontrol
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+polkit-gnome
+polkit-qt5
+powertop
+pulsemixer
+python-lsp-server
+python-pynvim
+ripgrep-all
+rofi
+rsync
+screen
+sl
+slurp
+smartmontools
+smbclient
+stow
+sway
+sway-audio-idle-inhibit-git
+swaybg
+swayidle
+swaylock
+tesseract
+texlive-binextra
+ttf-mononoki-nerd
+unzip
+vim
+waybar
+wev
+wget
+wireless_tools
+wireplumber
+wl-clipboard
+xdg-desktop-portal-hyprland
+xdg-utils
+xorg-xhost
+xorg-xwayland
+yay
+zathura
+zathura-pdf-mupdf
+zram-generator
 ```
+
