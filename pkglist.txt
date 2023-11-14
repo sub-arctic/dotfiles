@@ -35,6 +35,7 @@ light
 linux
 linux-firmware
 man-db
+marksman
 meson
 mpc
 mpd
