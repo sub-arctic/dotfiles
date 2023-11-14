@@ -65,6 +65,7 @@ powertop
 pulsemixer
 python-lsp-server
 python-pynvim
+qbittorrent-nox
 ripgrep-all
 rofi
 rsync
