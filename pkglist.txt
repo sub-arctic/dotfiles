@@ -81,6 +81,8 @@ swayidle
 swaylock
 tesseract
 ttf-mononoki-nerd
+udiskie
+udisks2
 unzip
 vim
 vulscan
