@@ -9,7 +9,7 @@ font-size=12
 # config=<config_file>
 
 # Turn the screen into the given color instead of white
-color=#2d353b
+color=#272e33
 
 # Enable debugging output
 # debug
@@ -84,7 +84,7 @@ indicator-thickness=10
 # indicator-y-position
 
 # Sets the color of the inside of the indicator
-inside-color=#2d353b
+inside-color=#272e33
 
 # Sets the color of the inside of the indicator when cleared
 inside-clear-color=#a7c080
@@ -102,7 +102,7 @@ inside-wrong-color=#e67e80
 key-hl-color=#a7c080
 
 # Sets the background color of the box containing the layout text
-layout-bg-color=#2d353b
+layout-bg-color=#272e33
 
 # Sets the color of the border of the box containing the layout text
 # layout-border-color=#<rrggbb[aa]>
@@ -132,7 +132,7 @@ layout-bg-color=#2d353b
 line-uses-ring
 
 # Sets the color of the outside of the indicator when typing or idle
-ring-color=#343f44
+ring-color=#2e383c
 
 # Sets the color of the outside of the indicator when cleared
 ring-clear-color=#7fbbb3
@@ -147,19 +147,19 @@ ring-ver-color=#a7c080
 ring-wrong-color=#e67e80
 
 # Sets the color of the lines that separate highlight segments
-separator-color=:#343f44
+separator-color=:#2e383c
 
 # Sets the color of the text
 text-color=#ece4
 
 # Sets the color of the text when cleared
-text-clear-color=#343f44
+text-clear-color=#2e383c
 
 # Sets the color of the text when Caps Lock is active
 # text-caps-lock-color=#<rrggbb[aa]>
 
 # Sets the color of the text when verifying
-text-ver-color=#343f44
+text-ver-color=#2e383c
 
 # Sets the color of the text when invalid
-text-wrong-color=#343f44
+text-wrong-color=#2e383c
