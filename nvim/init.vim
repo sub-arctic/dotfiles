@@ -25,7 +25,7 @@ lua require'colorizer'.setup()
 
 set background=dark
 
-let g:everforest_background = 'hard'
+let g:everforest_background = 'medium'
 colorscheme everforest 
 
 filetype plugin indent on

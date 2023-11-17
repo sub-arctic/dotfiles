@@ -1,7 +1,22 @@
 * {
     font:   "Mononoki Nerd Font 12";
+    
+    /* Everforest Medium */
+    bg0: #2d353b;
+    bg1: #232a2e;
+
+    /* Everforest Hard */
+    /*
     bg0:              #272e33;
     bg1:              #2e383c;
+    */
+
+    /* Everforest Soft */
+    /*
+    bg0: #333c43;
+    bg1: #293136;
+    */
+
     fg0:              #d3c6aa;
     accent-color:     #a7c080;
     urgent-color:     #e67e80;

@@ -3,10 +3,24 @@
     font-size: 13px;
 }
 
-@define-color background #272e33;
-@define-color foreground #d3c6aa;
 @define-color primary #a7c080;
+@define-color foreground #d3c6aa;
+
+/* Everforest Medium */
+@define-color background #2d353b;
+@define-color background-alt #232a2e;
+/* Everforest Hard */
+/*
+@define-color background #272e33;
 @define-color background-alt #2e383c;
+*/
+
+/* Everforest Soft */
+/*
+@define-color background #333c43;
+@define-color background-alt #293136;
+*/
+
 
 window#waybar {
     background-color: @background;

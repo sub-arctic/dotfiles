@@ -1,0 +1,10 @@
+#!/bin/fish
+
+swaybg -i ~/.config/hypr/car2.png &
+gsettings set org.gnome.desktop.interface gtk-theme "everforest-gtk" &
+gsettings set org.gnome.desktop.interface font-name "Mononoki Nerd Font 12" &
+waybar -l off&
+swayidle -w timeout 300 'swaylock -f -i ~/.config/hypr/car2.png'  timeout 600 'swaymsg "output eDP-1 dpms off"' resume 'swaymsg "output eDP-1 dpms on"' timeout 660 'systemctl suspend' after-resume 'swaymsg "output * dpms on"' &
+sway-audio-idle-inhibit &
+dunstify "Welcome back $USER"
+

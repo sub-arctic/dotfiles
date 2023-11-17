@@ -9,11 +9,13 @@ cmake
 cpio
 dmenu
 dunst
+dwarfs
 efibootmgr
 fd
 firefox
 fish
 foot
+fuse-overlayfs
 fwupd
 fzf
 gdb
@@ -28,6 +30,9 @@ inkscape
 intel-ucode
 iwd
 jq
+lib32-vulkan-icd-loader
+lib32-vulkan-intel
+lib32-vulkan-radeon
 libnotify
 libpulse
 libreoffice-fresh
@@ -69,6 +74,7 @@ qbittorrent-nox
 ripgrep-all
 rofi
 rsync
+ruby
 screen
 sl
 slurp
@@ -83,12 +89,16 @@ tesseract
 ttf-mononoki-nerd
 udiskie
 udisks2
+unrar
 unzip
 vim
+vulkan-intel
+vulkan-radeon
 vulscan
 waybar
 wev
 wget
+wine
 wireless_tools
 wireplumber
 wl-clipboard
@@ -97,6 +107,8 @@ xdg-utils
 xorg-xhost
 xorg-xwayland
 yay
+yt-dlp
+ytfzf
 zathura
 zathura-pdf-mupdf
 zram-generator
