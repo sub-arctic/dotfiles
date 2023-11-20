@@ -1,5 +1,8 @@
 acpi
 alacritty
+alsa-utils
+android-tools
+android-udev
 base
 base-devel
 brightnessctl
@@ -8,6 +11,7 @@ cifs-utils
 cmake
 cpio
 dmenu
+dump1090-fa-git
 dunst
 dwarfs
 efibootmgr
@@ -21,6 +25,8 @@ fzf
 gdb
 git
 github-cli
+gnuradio
+gnuradio-osmosdr
 grim
 grub
 gst-plugin-pipewire
@@ -55,6 +61,7 @@ networkmanager
 networkmanager-openvpn
 ninja
 nmap
+nss-mdns
 obsidian
 openssh
 optipng
@@ -74,6 +81,7 @@ qbittorrent-nox
 ripgrep-all
 rofi
 rsync
+rtl-sdr
 ruby
 screen
 sl
@@ -84,8 +92,10 @@ sway
 sway-audio-idle-inhibit-git
 swaybg
 swayidle
+swayimg
 swaylock
 tesseract
+ttf-firacode-nerd
 ttf-mononoki-nerd
 udiskie
 udisks2
@@ -98,7 +108,6 @@ vulscan
 waybar
 wev
 wget
-wine
 wireless_tools
 wireplumber
 wl-clipboard
