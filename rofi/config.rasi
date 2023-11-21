@@ -1,6 +1,6 @@
 configuration {
   modi: "drun,ssh,filebrowser";
-  font: "Mononoki Nerd Font 12";
+  font: "FiraCode Nerd Font 12";
   terminal: "alacritty";
   sidebar-mode: true;
 }

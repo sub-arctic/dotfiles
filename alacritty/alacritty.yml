@@ -1,6 +1,6 @@
 font:
   normal:
-    family: Mononoki Nerd Font
+    family: FiraCode Nerd Font
   size: 12
 schemes:
   everforest_dark_hard: &everforest_dark_hard
