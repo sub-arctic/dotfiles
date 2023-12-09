@@ -6,20 +6,8 @@
 @define-color primary #a7c080;
 @define-color foreground #d3c6aa;
 
-/* Everforest Medium */
 @define-color background #2d353b;
 @define-color background-alt #343f44;
-/* Everforest Hard */
-/*
-@define-color background #272e33;
-@define-color background-alt #2e383c;
-*/
-
-/* Everforest Soft */
-/*
-@define-color background #333c43;
-@define-color background-alt #293136;
-*/
 
 
 window#waybar {
@@ -43,18 +31,15 @@ button {
     padding: 0 5px;
     background-color: transparent;
     color: @foreground;
-    color: @background-alt;
-    border: 3px solid @background-alt;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
     color: @background;
     background: @primary;
-    border: 3px solid @background-alt; 
 }
 
-#workspaces button.special{
-    color: @color4;
+#workspaces button.urgent{
+    color: #e67e80;
 }
 
 #mode {
@@ -70,7 +55,6 @@ button {
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#custom-pacman,
 #mpd {
     padding: 0 10px;
     color: @primary;

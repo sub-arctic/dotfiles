@@ -4,10 +4,9 @@ visualizer_in_stereo = "yes"
 visualizer_type = "spectrum"
 visualizer_look = "▋▋"
 visualizer_spectrum_smooth_look = yes
-progressbar_look = "▃▃▃"
+progressbar_look = ""
 progressbar_color = "black"
 progressbar_elapsed_color = "green"
 statusbar_color = "5"
 
 startup_screen = playlist
-execute_on_song_change = songinfo

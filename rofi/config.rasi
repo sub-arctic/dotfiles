@@ -1,7 +1,0 @@
-configuration {
-  modi: "drun,ssh,filebrowser";
-  font: "FiraCode Nerd Font 12";
-  terminal: "alacritty";
-  sidebar-mode: true;
-}
-@theme "~/.config/rofi/everforest.rasi"

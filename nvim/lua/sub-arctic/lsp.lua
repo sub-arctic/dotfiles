@@ -1,5 +1,4 @@
 require'lspconfig'.marksman.setup{}
-require'lspconfig'.anakin_language_server.setup{}
 
 local nvim_lsp = require('lspconfig')
 local servers = { 'tsserver' }
