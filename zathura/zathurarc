@@ -30,6 +30,6 @@ set recolor-darkcolor           "#d3c6aa"
 
 set recolor                     "true"
 set recolor-keephue             "false"
-set font                        "FiraCode Nerd Font"
+set font                        "Mononoki Nerd Font"
 set guioptions                  none
 

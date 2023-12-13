@@ -8,9 +8,9 @@
     "modules-right": ["idle_inhibitor", "pulseaudio", "backlight", "battery", "clock", "network", "tray"],
 
     "mpd": {
-        "format": "{stateIcon} {artist} - {title} 󰎈",
-        "format-disconnected": "Disconnected 󰎈",
-        "format-stopped": "Stopped 󰎈",
+        "format": "MPD: {stateIcon} {artist} - {title}",
+        "format-disconnected": "MPD: Disconnected",
+        "format-stopped": "MPD: Stopped",
         "unknown-tag": "N/A",
         "on-click": "mpc toggle",
 	"on-click-right": "mpc next",
@@ -25,62 +25,52 @@
             "playing": "󰏤",
             "paused": "󰐊"
         },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+        "tooltip-format": "MPD: Connected",
+        "tooltip-format-disconnected": "MPD: Disconnected"
     },
 
 
     "idle_inhibitor": {
-        "format": "{icon}",
+        "format": "IDLE: {icon}",
         "format-icons": {
-            "activated": "󰅶",
-            "deactivated": "󰾪"
+            "activated": "Enabled",
+            "deactivated": "Disabled"
         }
     },
     "tray": {
         "spacing": 10
     },
     "clock": {
-        "format": "󰥔 {:%H:%M}", 
-	"format-alt": "󰃭 {:%Y-%m-%d}"
+        "format": "TIME: {:%H:%M}", 
+	"format-alt": "DATE: {:%Y-%m-%d}"
     },
     "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
+        "format": "BRT: {percent}%",
     },
     "battery": {
-	"states": {
+	    "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
-	"format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰁹"],
+        "format": "BAT: {capacity}%",
         
-	"format-charging": "󰂄 {capacity}%",
-        "format-plugged": "󰂏 {capacity}%",
-        "format-alt": "{time} {icon}",
+	    "format-charging": "BAT: Charging {capacity}%",
+        "format-plugged": "BAT: Plugged {capacity}%",
+        "format-alt": "BAT: {time}",
     },
     "network": {
-        "format-wifi": "{icon} {essid} ({signalStrength}%)",
+        "format-wifi": "NET: {essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} 󰛳",
         "tooltip-format": "{ipaddr} via {gwaddr}",
         "format-linked": "{ifname} (No IP) 󰲛",
-        "format-disconnected": "󰤭 Disconnected",
+        "format-disconnected": "NET: Disconnected",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-	"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphone": "󰋋",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "󰖀", "󰕾"]
-        },
-        "on-right-click": "alacritty -e alsamixer",
-	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        "format": "VOL: {volume}%",
+        "format-muted": "VOL: Muted",
+        "on-right-click": "foot pulsemixer",
+	    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
 	
 }
