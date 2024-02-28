@@ -1,5 +1,0 @@
-require('sub-arctic/telescope')
-require('sub-arctic/lightline')
-require('sub-arctic/gitsigns')
-require('sub-arctic/lsp')
-require('sub-arctic/treesitter')
