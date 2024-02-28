@@ -1,0 +1,12 @@
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "▉▉"
+visualizer_spectrum_smooth_look = yes
+progressbar_look = "▃▃"
+progressbar_color = "black"
+progressbar_elapsed_color = "green"
+statusbar_color = "5"
+
+startup_screen = playlist

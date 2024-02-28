@@ -1,0 +1,8 @@
+# pack-refs with: peeled fully-peeled sorted 
+cf7310dbe6529baaed1ca48345ba96e9c266dabc refs/remotes/origin/color-editor
+a6a1a236aa3d3b00294a5642409c84a75c2c4e79 refs/remotes/origin/cursor-highlight
+21d42b905aee4b949d6d37f1900cdd40f4cba882 refs/remotes/origin/fine-grained-control
+36c610a9717cc9ec426a07c8e6bf3b3abcb139d6 refs/remotes/origin/master
+c7a75bf26974c446e72c8318e2f7d1043d500082 refs/remotes/origin/on-enter
+60a456a48bb4ea1d84ca2823f22e3d65b27dab0b refs/remotes/origin/refactor-add-lowercase
+f4f91d1e05995d9cb80a2b55475af9b0f8a37797 refs/remotes/origin/sass-variable-matcher

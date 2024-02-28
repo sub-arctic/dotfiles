@@ -1,0 +1,18 @@
+# pack-refs with: peeled fully-peeled sorted 
+f6c691f60b9941e4b37610a4a1190866ba02d023 refs/remotes/origin/3-17
+18626477a6112db79eb500a7b3c316713842c582 refs/remotes/origin/LSP-3.17
+630f3633b820359296cb7d03d7356666356aa422 refs/remotes/origin/border-window
+ffba3d8388079d52d1860a66690142fbcc444c5c refs/remotes/origin/buffer
+61b1beca1b097ee4fd3b0c487f429688ec8afeb7 refs/remotes/origin/cmd-terminal
+de5352706348d96110f04e481db78fc5d5837723 refs/remotes/origin/dev
+0b751f6beef40fd47375eaf53d3057e0bfa317e4 refs/remotes/origin/main
+2743dd989e9b932e1b4813a4927d7b84272a14e2 refs/remotes/origin/markdown-preset
+86467b2012c57e0bc7aa5b0dc3f1ffd28db2e40f refs/remotes/origin/separate-view
+5fdd71261fc853e7252a27844e83a92cd6559f2a refs/remotes/origin/separate-views
+f38680a248e008fe9f4950a3a3abc8061767707a refs/remotes/origin/source-override
+6baa402649cf7e8ec85952963087d97ebb037ab5 refs/remotes/origin/strict-entry
+825a45f6f5e29f540d6bb3ddb9a127afea3f529b refs/remotes/origin/suggest-mapping-alternative
+704889c5425978a668bcfe43b4f1474ebc72c818 refs/remotes/origin/terminal
+c5545a5e86781c3d50fef5f76cd556e82070c5d4 refs/remotes/origin/toggle-doc
+6e81cce2cf9b9487e92c15cdfb145647de7c2db5 refs/remotes/origin/try-to-fix-csi
+983453e32cb35533a119725883c04436d16c0120 refs/tags/v0.0.1
