@@ -1,0 +1,30 @@
+#!/usr/bin/fish
+
+set updates (xbps-install --memory-sync --dry-run --update | grep -Fe update -e install | awk '{print $1}')
+
+set updateCount (count $updates)
+
+for package in $updates
+    set newPkg (xbps-uhelper getpkgname $package)
+    set oldPkg (xbps-query -l | awk '{print $2}' | grep $newPkg)
+    set pkgDiff $pkgDiff (xbps-uhelper getpkgname $package) (xbps-uhelper getpkgversion $oldPkg) '>' (xbps-uhelper getpkgversion $package)\n
+end
+
+
+
+switch $argv
+case list -l l
+    echo $updateCount
+case diff -d d
+    echo $pkgDiff
+case name -n n
+    echo $updates | xargs -n1 xbps-uhelper getpkgname
+case '*'
+    echo 'updates: '$argv': invalid option'
+    echo 'usage: updates [-l] [-d] [-n] '
+    echo 'note: these flags are mutually exclusive and are as follows: '
+    echo '  -l (list): return the number of package updates'
+    echo '  -d (diff): return the package with previous and new versions compared'
+    echo '  -n (name): return updateable packages without versions'
+end
+pkill -SIGRTMIN+8 waybar
