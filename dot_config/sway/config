@@ -78,6 +78,22 @@ bindswitch --reload --locked lid:off output $laptop enable
     bindsym --locked XF86MonBrightnessDown exec light -U 5%
 
 #
+# Screenshots
+#
+
+mode "screenshot" {
+    bindsym 1 exec grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
+    bindsym 2 exec grim -g "$(slurp)" ~/pictures/screenshots/(date +'%s_grim.png') dunstify "Screenshot Captured!"
+    bindsym 3 exec grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" ~/pictures/screenshots/$(date +'%s_grim_window.png') dunstify "Screenshot Captured!"
+    
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+bindsym $mod+p mode "screenshot"
+
+bindsym Print exec grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
+
+#
 # Moving around:
 #
     # Move your focus around
