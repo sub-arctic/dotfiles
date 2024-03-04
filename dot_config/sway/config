@@ -93,6 +93,9 @@ bindsym $mod+p mode "screenshot"
 
 bindsym Print exec grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
 
+# Tesseract
+bindsym $mod+o exec ~/.local/bin/ocr
+
 #
 # Moving around:
 #
@@ -228,4 +231,3 @@ bar {
 
 ### Swayfx configurations
 shadows enable
-layer_effects "waybar" shadows enable
