@@ -210,5 +210,6 @@ bar {
     modifier Mod4
 }
 
-
-include /etc/sway/config.d/*
+### Swayfx configurations
+shadows enable
+layer_effects "wayland" shadows enable
