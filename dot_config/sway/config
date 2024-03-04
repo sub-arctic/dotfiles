@@ -212,4 +212,4 @@ bar {
 
 ### Swayfx configurations
 shadows enable
-layer_effects "wayland" shadows enable
+layer_effects "waybar" shadows enable
