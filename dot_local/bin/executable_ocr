@@ -1,0 +1,8 @@
+#!/bin/fish
+
+cd (mktemp -d)
+grim -g (slurp) in_img
+tesseract-ocr in_img out
+wl-copy < out.txt
+rm out.txt in_img 
+dunstify "Copied selection text to clipboard!"
