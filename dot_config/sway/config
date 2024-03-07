@@ -20,7 +20,7 @@ set $down j
 set $up k
 set $right l
 set $term alacritty 
-set $drun tofi-drun | xargs swaymsg exec --
+set $drun rofi -show drun | xargs swaymsg exec --
 
 ### Output configuration
 output * bg ~/.config/wallpaper.png fill
@@ -31,7 +31,6 @@ output DP-3 resolution 1920x1080 position 1920,0
 set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
-
 
 ### Key bindings
 #
@@ -45,6 +44,9 @@ bindswitch --reload --locked lid:off output $laptop enable
 
     # Start your launcher
     bindsym $mod+d exec $drun
+    
+    # launch calculator
+    bindsym $mod+c exec rofi -show calc
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
