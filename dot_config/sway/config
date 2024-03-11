@@ -20,7 +20,7 @@ set $down j
 set $up k
 set $right l
 set $term alacritty 
-set $drun rofi -show drun | xargs swaymsg exec --
+set $drun tofi-drun | xargs swaymsg exec --
 
 ### Output configuration
 output * bg ~/.config/wallpaper.png fill
