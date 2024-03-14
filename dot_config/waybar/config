@@ -42,7 +42,7 @@
     },
     "clock": {
         "format": "󰥔 {:%H:%M}", 
-	"format-alt": "󰃭 {:%Y-%m-%d}"
+	"format-alt": "󰃭 {:%d/%m/%y}"
     },
     "backlight": {
         "format": "{icon} {percent}%",
