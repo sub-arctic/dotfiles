@@ -1,4 +1,5 @@
 call plug#begin('~/.config/nvim/plugged')
+Plug 'Yggdroot/indentLine'
 Plug 'sainnhe/everforest'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
@@ -34,7 +35,7 @@ let g:vimtex_view_method = 'zathura'
 let g:lightline = {'colorscheme' : 'everforest'}
 
 nnoremap <C-p> :Telescope find_files<Cr>
-
+set clipboard=unnamedplus
 syntax on
 
 set termguicolors
