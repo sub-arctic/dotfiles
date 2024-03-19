@@ -11,8 +11,6 @@ exec gsettings set org.gnome.desktop.interface font-name "Mononoki Nerd Font 12"
 exec wlsunset -l -33.9 -L 151.2
 exec swayidle -w timeout 300 'swaylock -f -i ~/.config/wallpaper.png' timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' before-sleep 'swaylock -f -i ~/.config/wallpaper.png'
 
-
-
 ### Variables
 set $mod Mod4
 # Home row direction keys, like vim
@@ -48,9 +46,6 @@ bindsym $mod+m exec ~/dev/misc/monkeytype/monkey.sh
     # Start your launcher
     bindsym $mod+d exec $drun
     
-    # launch calculator
-    bindsym $mod+c exec rofi -show calc
-
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
