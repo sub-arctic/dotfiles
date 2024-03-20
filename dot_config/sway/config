@@ -23,8 +23,8 @@ set $drun tofi-drun | xargs swaymsg exec --
 
 ### Output configuration
 output * bg ~/.config/wallpaper.png fill
-output DP-4 resolution 1920x1080 position 0,0  
-output DP-3 resolution 1920x1080 position 1920,0
+output DP-1 resolution 1920x1080 position 0,365   
+output HDMI-A-1 resolution 1920x1080 position 1920,0 transform 90 bg ~/pictures/wallpapers/skyline_r.jpeg fill
 
 ### Clamshell mode
 set $laptop eDP-1
@@ -223,11 +223,11 @@ font pango:Mononoki Nerd Font 12
 
 ### Bar
 bar {
-    swaybar_command waybar
+    swaybar_command waybar -c ~/.config/waybar/config.json
     position top
     mode hide
     modifier Mod4
+    output *
 }
-
 ### Swayfx configurations
 shadows enable

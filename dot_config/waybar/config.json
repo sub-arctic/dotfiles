@@ -1,0 +1,31 @@
+[{
+    "layer": "top",
+    "ipc": true,
+    "position": "top",
+    "height": 38,
+    "spacing": 4, 
+
+    "include": [
+        "~/.config/waybar/modules.json",
+    ],
+
+    "modules-left": [
+        "sway/workspaces",
+        "sway/scratchpad",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "mpd"
+    ],
+    "modules-right": [
+        "custom/xbps-updates",
+        "idle_inhibitor", 
+        "pulseaudio", 
+        "backlight", 
+        "battery", 
+        "clock", 
+        "network", 
+        "tray"
+    ],
+},
+]
