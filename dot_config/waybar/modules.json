@@ -1,0 +1,85 @@
+{
+    "mpd": {
+        "format": "{stateIcon} {artist} - {title} 󰎈",
+        "format-disconnected": "Disconnected 󰎈",
+        "format-stopped": "Stopped 󰎈",
+        "unknown-tag": "N/A",
+        "on-click": "mpc toggle",
+	"on-click-right": "mpc next",
+	"interval": 2,
+        "repeat-icons": {
+            "on": "󰑖 "
+        },
+        "single-icons": {
+            "on": "󰑘 "
+        },
+        "state-icons": {
+            "playing": "󰏤",
+            "paused": "󰐊"
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰾪"
+        }
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "format": "󰥔 {:%H:%M}", 
+	"format-alt": "󰃭 {:%d/%m/%y}"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
+    },
+    "battery": {
+	"states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+	"format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰁹"],
+        
+	"format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂏 {capacity}%",
+        "format-alt": "{time} {icon}",
+    },
+    "network": {
+        "format-wifi": "{icon} {essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr} 󰛳",
+        "tooltip-format": "{ipaddr} via {gwaddr}",
+        "format-linked": "{ifname} (No IP) 󰲛",
+        "format-disconnected": "󰤭 Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+	"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "󰋋",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "󰖀", "󰕾"]
+        },
+        "on-right-click": "alacritty -e alsamixer",
+	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "custom/xbps-updates": {
+        "exec": "~/.local/bin/update -l",
+        "on-click": "alacritty -e fish -c 'pkill -SIGRTMIN+8 waybar && updates -d && sudo xbps-install -Suv'",
+        "interval": "100",
+        "format": "󱧕 {}",
+        "signal": 8,
+        "on-click": "alacritty -e fish -c 'sudo xbps-install -Suv && pkill -SIGRTMIN+8 waybar'",
+    },
+}
