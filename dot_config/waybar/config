@@ -12,7 +12,8 @@
     "modules-left": [
         "sway/workspaces",
         "sway/scratchpad",
-        "sway/mode"
+        "sway/mode",
+        "power-profiles-daemon"
     ],
     "modules-center": [
         "mpd"
