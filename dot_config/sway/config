@@ -223,7 +223,7 @@ font pango:Mononoki Nerd Font 12
 
 ### Bar
 bar {
-    swaybar_command waybar -c ~/.config/waybar/config.json
+    swaybar_command waybar
     position top
     mode hide
     modifier Mod4
