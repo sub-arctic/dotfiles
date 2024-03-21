@@ -56,6 +56,7 @@ button {
 #idle_inhibitor,
 #scratchpad,
 #custom-xbps-updates,
+#power-profiles-daemon,
 #mpd {
     padding: 0 10px;
     color: @primary;

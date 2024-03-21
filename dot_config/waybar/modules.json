@@ -83,14 +83,14 @@
         "on-click": "alacritty -e fish -c 'sudo xbps-install -Suv && pkill -SIGRTMIN+8 waybar'",
     },
     "power-profiles-daemon": {
-        "format": "{icon}",
+        "format": "{icon}  {profile}",
         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
         "tooltip": true,
         "format-icons": {
-            "default": "",
-            "performance": "",
-            "balanced": "",
-            "power-saver": ""
+            "default": "󰾅",
+            "performance": "󰓅",
+            "balanced": "󰾅",
+            "power-saver": "󰾆"
         }     
     },
 }
