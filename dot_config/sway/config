@@ -24,7 +24,7 @@ set $drun tofi-drun | xargs swaymsg exec --
 ### Output configuration
 output * bg ~/.config/wallpaper.png fill
 output DP-1 resolution 1920x1080 position 0,365   
-output HDMI-A-1 resolution 1920x1080 position 1920,0 transform 90 bg ~/.config/wallpaper_r.png fill
+output HDMI-A-1 resolution 1920x1080 position 1920,0 transform 90
 
 ### Clamshell mode
 set $laptop eDP-1
@@ -210,7 +210,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 ### Window Gaps
-gaps inner 10
+gaps inner 5
 
 ### Window colors
 client.focused #A7C080 #A7C080 #232A2E #7fBBB3 #A7C080
