@@ -3,7 +3,7 @@ exec_always autotiling
 exec udiskie
 exec /usr/libexec/xfce-polkit
 exec waybar
-exec mpd
+exec pgrep mpd || mpd
 exec sway-audio-idle-inhibit
 exec dunst
 exec gsettings set org.gnome.desktop.interface gtk-theme "everforest-gtk"
