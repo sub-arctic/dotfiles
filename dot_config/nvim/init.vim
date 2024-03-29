@@ -17,7 +17,6 @@ Plug 'lervag/vimtex'
 call plug#end()
 
 lua require('sub-arctic')
-
 set termguicolors
 
 lua require'colorizer'.setup()
