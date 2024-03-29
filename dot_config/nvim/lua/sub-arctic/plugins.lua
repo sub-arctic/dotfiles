@@ -33,7 +33,7 @@ end
 packer.init({
 	display = {
 		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
+			return require("packer.util").float()
 		end,
 	},
 })
@@ -41,9 +41,7 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	use ("wbthomason/packer.nvim") -- Have packer manage itself	
-    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
-
-
+    use {"kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async"}
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
