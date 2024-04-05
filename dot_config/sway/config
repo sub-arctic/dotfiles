@@ -8,6 +8,8 @@ exec sway-audio-idle-inhibit
 exec dunst
 exec gsettings set org.gnome.desktop.interface gtk-theme "everforest-gtk"
 exec gsettings set org.gnome.desktop.interface font-name "Mononoki Nerd Font 12"
+exec gsettings set org.gnome.desktop.interface cursor-theme "everforest-cursors"
+exec gsettings set org.gnome.desktop.interface cursor-size '32'
 exec wlsunset -l -33.9 -L 151.2
 exec swayidle -w timeout 300 'swaylock -f -i ~/.config/wallpaper.png' timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' before-sleep 'swaylock -f -i ~/.config/wallpaper.png'
 
@@ -31,8 +33,6 @@ set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
-# TEMP VARIABLE
-bindsym $mod+m exec ~/dev/misc/monkeytype/monkey.sh
 ### Key bindings
 #
 # Basics:
@@ -229,5 +229,3 @@ bar {
     modifier Mod4
     output *
 }
-### Swayfx configurations
-shadows enable
