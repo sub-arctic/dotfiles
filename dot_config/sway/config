@@ -36,6 +36,8 @@ for_window {
     [con_mark="swapmark"] opacity set 50
     [con_mark="swapmark"] title_format "<b>󰄳</b> Marked"
 }
+smart_borders on
+smart_gaps on
 show_marks yes
 gaps inner 5
 font pango:Mononoki Nerd Font 12
