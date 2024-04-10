@@ -1,0 +1,17 @@
+[normal]
+font=Mononoki Nerd Font 12
+edge=bottom
+background=2d353b
+border-bottom=2d353b
+button-background=232a2e
+text=d3c6aa
+border-bottom-size=2px
+
+
+[urgent]
+font=Mononoki Nerd Font 12
+edge=top
+background=e67e80
+border=543a48
+text=232a2e
+
