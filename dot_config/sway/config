@@ -1,5 +1,5 @@
 ### Startup
-exec_always autotiling
+exec autotiling
 exec udiskie
 exec /usr/libexec/xfce-polkit
 exec waybar
