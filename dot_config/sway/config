@@ -1,274 +1,298 @@
 ### Startup
-exec autotiling
-exec udiskie
-exec /usr/libexec/xfce-polkit
-exec waybar
-exec pgrep mpd || mpd
-exec sway-audio-idle-inhibit
-exec dunst
-exec gsettings set org.gnome.desktop.interface gtk-theme "everforest-gtk"
-exec gsettings set org.gnome.desktop.interface font-name "Mononoki Nerd Font 12"
-exec gsettings set org.gnome.desktop.interface cursor-theme "everforest-cursors"
-exec gsettings set org.gnome.desktop.interface cursor-size '32'
-exec wlsunset -l -33.9 -L 151.2
-exec swayidle -w timeout 300 'swaylock -f -i ~/.config/wallpaper.png' timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' before-sleep 'swaylock -f -i ~/.config/wallpaper.png'
+exec {
+    autotiling
+    udiskie
+    /usr/libexec/xfce-polkit
+    waybar
+    pgrep mpd || mpd
+    sway-audio-idle-inhibit
+    dunst
+    gsettings set org.gnome.desktop.interface {
+        gtk-theme "everforest-gtk"
+        font-name "Mononoki Nerd Font 12"
+        cursor-theme "everforest-cursors"
+        cursor-size '32'
+    }
+    wlsunset -l -33.9 -L 151.2
+    swayidle -w timeout 300 'swaylock -f -i ~/.config/wallpaper.png' timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' before-sleep 'swaylock -f -i ~/.config/wallpaper.png'
+}
 
 ### Variables
-set $mod Mod4
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
-set $term foot 
-set $drun tofi-drun | xargs swaymsg exec --
+set {
+    $mod Mod4
+    $left h
+    $down j
+    $up k
+    $right l
+    $term foot 
+    $drun tofi-drun | xargs swaymsg exec --
+    $ss_path "~/pictures/screenshots"
+    $laptop eDP-1
+}
+
+### General configuration
+# Window rules
+for_window {
+    [con_mark="swapmark"] opacity set 50
+    [con_mark="swapmark"] title_format "<b>󰄳</b> Marked"
+}
+show_marks yes
+gaps inner 5
+font pango:Mononoki Nerd Font 12
 
 ### Output configuration
-output * bg ~/.config/wallpaper.png fill
-output DP-1 resolution 1920x1080 position 0,365   
-output HDMI-A-1 resolution 1920x1080 position 1920,0 transform 90
+output {
+    * bg ~/.config/wallpaper.png fill
+    DP-1 resolution 1920x1080 position 0,365
+    HDMI-A-1 resolution 1920x1080 position 1920,0 transform 90
+}
 
 ### Clamshell mode
-set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
 ### Gestures
+# Workspace Swiping
 bindgesture swipe:3:right workspace prev
 bindgesture swipe:3:left workspace next
 
-### Key bindings
-#
-# Basics:
-#
-    # Start a terminal
-    bindsym $mod+Return exec $term
+### General bindings
+floating_modifier $mod normal
 
-    # Kill focused window
-    bindsym $mod+Shift+q kill
+bindsym {
+    #
+    # General 
+    #
+        # Start a terminal
+        $mod+Return exec $term
 
-    # Start your launcher
-    bindsym $mod+d exec $drun
-    
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
+        # Kill focused window
+        $mod+Shift+q kill
 
-    # Lock the screen
-    bindsym $mod+x exec swaylock -i ~/.config/wallpaper.png
+        # Start your launcher
+        $mod+d exec $drun
 
-    # Reload the configuration file
-    bindsym $mod+Shift+c reload
+        # Lock the screen
+        $mod+x exec swaylock -i ~/.config/wallpaper.png
 
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+        # Reload the configuration file
+        $mod+Shift+c reload
 
-#
-# Audio keys:
-#
-    bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+        # Exit sway (logs you out of your Wayland session)
+        $mod+Shift+e exec swaynag -t urgent -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
-#
-# Brightness keys:
-#
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl s 5%+
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
+    #
+    # Misc. scripts
+    #
+        # Tesseract
+        $mod+o exec ~/.local/bin/ocr
 
-#
-# Screenshots
-#
+        # Screenshot
+        Print exec grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
 
-mode "screenshot" {
-    bindsym 1 exec grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
-    bindsym 2 exec grim -g "$(slurp)" ~/pictures/screenshots/(date +'%s_grim.png') dunstify "Screenshot Captured!"
-    bindsym 3 exec grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" ~/pictures/screenshots/$(date +'%s_grim_window.png') dunstify "Screenshot Captured!"
-    
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
-bindsym $mod+p mode "screenshot"
+    #
+    # Layout
+    #   
+        # You can "split" the current object of your focus with
+        # $mod+b or $mod+v, for horizontal and vertical splits
+        # respectively.
+        $mod+b splith
+        $mod+v splitv
 
-bindsym Print exec grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
+        # Switch the current container between different layout styles
+        $mod+s layout stacking
+        $mod+w layout tabbed
+        $mod+e layout toggle split
 
-# Tesseract
-bindsym $mod+o exec ~/.local/bin/ocr
+        # Make the current focus fullscreen
+        $mod+f fullscreen
 
-#
-# Moving around:
-#
-    # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+        # Toggle the current focus between tiling and floating mode
+        $mod+Shift+space floating toggle
 
-    # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
-#
-# Workspaces:
-#
-    # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
-    # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
+        # Swap focus between the tiling area and the floating area
+        $mod+space focus mode_toggle
 
-#
-# Marks
-#
-for_window [con_mark="swapmark"] opacity set 50
-show_marks yes
-for_window [con_mark="swapmark"] title_format "<b>󰄳</b> Marked"
+        # Move focus to the parent container
+        $mod+a focus parent
+    #
+    # Scratchpad
+    #
+        # The scratchpad is like a holding place for windows
+        # Move the currently focused window to the scratchpad
+        $mod+Shift+minus move scratchpad
 
-mode "togglemarks" {
-    bindsym 0 mark --toggle 0
-    bindsym 1 mark --toggle 1
-    bindsym 2 mark --toggle 2
-    bindsym 3 mark --toggle 3
-    bindsym 4 mark --toggle 4
-    bindsym 5 mark --toggle 5
-    bindsym 6 mark --toggle 6
-    bindsym 7 mark --toggle 7
-    bindsym 8 mark --toggle 8
-    bindsym 9 mark --toggle 9
-    
-    bindsym Return mode "marks"
-    bindsym Escape mode "default"; unmark
-    bindsym s mode "swapmarks"
+        # Show the next scratchpad window or hide the focused scratchpad window.
+        # If there are multiple scratchpad windows, this command cycles through them.
+        $mod+minus scratchpad show
+
+    #
+    # Modes
+    #
+        $mod+p mode "screenshot"
+        $mod+m mode "marks"
+        $mod+r mode "resize"
+
+    #
+    # Movement
+    #
+        # Windows
+        # Move your focus around
+        $mod+$left focus left
+        $mod+$down focus down
+        $mod+$up focus up
+        $mod+$right focus right
+        # Or use $mod+[up|down|left|right]
+        $mod+Left focus left
+        $mod+Down focus down
+        $mod+Up focus up
+        $mod+Right focus right
+        # Move the focused window with the same, but add Shift
+        $mod+Shift+$left move left
+        $mod+Shift+$down move down
+        $mod+Shift+$up move up
+        $mod+Shift+$right move right
+        # Ditto, with arrow keys
+        $mod+Shift+Left move left
+        $mod+Shift+Down move down
+        $mod+Shift+Up move up
+        $mod+Shift+Right move right
+
+        # Workspaces
+        # Switch to workspace
+        $mod+1 workspace number 1
+        $mod+2 workspace number 2
+        $mod+3 workspace number 3
+        $mod+4 workspace number 4
+        $mod+5 workspace number 5
+        $mod+6 workspace number 6
+        $mod+7 workspace number 7
+        $mod+8 workspace number 8
+        $mod+9 workspace number 9
+        $mod+0 workspace number 10
+        # Move focused container to workspace
+        $mod+Shift+1 move container to workspace number 1
+        $mod+Shift+2 move container to workspace number 2
+        $mod+Shift+3 move container to workspace number 3
+        $mod+Shift+4 move container to workspace number 4
+        $mod+Shift+5 move container to workspace number 5
+        $mod+Shift+6 move container to workspace number 6
+        $mod+Shift+7 move container to workspace number 7
+        $mod+Shift+8 move container to workspace number 8
+        $mod+Shift+9 move container to workspace number 9
+        $mod+Shift+0 move container to workspace number 10
 }
 
-mode "swapmarks" {
-    bindsym 0 swap container with mark 0
-    bindsym 1 swap container with mark 1 
-    bindsym 2 swap container with mark 2
-    bindsym 3 swap container with mark 3
-    bindsym 4 swap container with mark 4
-    bindsym 5 swap container with mark 5
-    bindsym 6 swap container with mark 6
-    bindsym 7 swap container with mark 7
-    bindsym 8 swap container with mark 8
-    bindsym 9 swap container with mark 9
 
-    bindsym Return mode "marks"
-    bindsym Escape mode "marks"
-    bindsym t mode "togglemarks"
+# Locked (repeated when held)
+bindsym --locked {
+    # Volume
+    XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+    # Brightness
+    XF86MonBrightnessUp exec brightnessctl s 5%+
+    XF86MonBrightnessDown exec brightnessctl s 5%-
 }
-mode "marks" {
-    bindsym t mode "togglemarks"
-    bindsym s mode "swapmarks"
-    bindsym Return mode "default"; unmark
-    bindsym Escape mode "default"; unmark
+
+
+### Modes
+mode {
+    "screenshot" {
+        bindsym {
+            # Capture all outputs
+            1 exec grim $ss_dir/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
+            # Capture selected region
+            2 exec grim -g "$(slurp)" $ss_dir/(date +'%s_grim.png') dunstify "Screenshot Captured!"
+            # Capture focused window
+            3 exec grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" $ss_dir/$(date +'%s_grim_window.png') dunstify "Screenshot Captured!"
+        
+            # Return to default mode
+            Escape mode "default"
+            Return mode "default"
+        }
+    }
+    "togglemarks" {
+        bindsym {
+            # Assign marks
+            0 mark --toggle 0
+            1 mark --toggle 1
+            2 mark --toggle 2
+            3 mark --toggle 3
+            4 mark --toggle 4
+            5 mark --toggle 5
+            6 mark --toggle 6
+            7 mark --toggle 7
+            8 mark --toggle 8
+            9 mark --toggle 9
+            
+            # Return to default
+            Return mode "marks"
+            Escape mode "default"; unmark
+            s mode "swapmarks"
+        }
+    }
+
+    "swapmarks" {
+        bindsym {
+            # Swap marks
+            0 swap container with mark 0
+            1 swap container with mark 1 
+            2 swap container with mark 2
+            3 swap container with mark 3
+            4 swap container with mark 4
+            5 swap container with mark 5
+            6 swap container with mark 6
+            7 swap container with mark 7
+            8 swap container with mark 8
+            9 swap container with mark 9
+
+            # Return to default
+            Return mode "marks"
+            Escape mode "marks"
+            t mode "togglemarks"
+        }
+    }
+    "marks" {
+        bindsym {
+            t mode "togglemarks"
+            s mode "swapmarks"
+            Return mode "default"; unmark
+            Escape mode "default"; unmark
+        }
+    }
+
+    "resize" {
+        # left will shrink the containers width
+        # right will grow the containers width
+        # up will shrink the containers height
+        # down will grow the containers height
+        bindsym {
+            $left resize shrink width 10px
+            $down resize grow height 10px
+            $up resize shrink height 10px
+            $right resize grow width 10px
+
+            # Ditto, with arrow keys
+            Left resize shrink width 10px
+            Down resize grow height 10px
+            Up resize shrink height 10px
+            Right resize grow width 10px
+
+            # Return to default mode
+            Return mode "default"
+            Escape mode "default"
+        }
+    }
 }
-bindsym $mod+m mode "marks"
-#
-# Layout stuff:
-#
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
-
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
-
-    # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
-
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
-
-    # Move focus to the parent container
-    bindsym $mod+a focus parent
-#
-# Scratchpad:
-#
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
-#
-# Resizing containers:
-#
-mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
-
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
-
-    # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
-
-### Window Gaps
-gaps inner 5
 
 ### Window colors
 client.focused #A7C080 #A7C080 #232A2E #7fBBB3 #A7C080
 client.focused_inactive #425047 #425047 #D3C6AA #3A515D
 client.unfocused #232a2e #232a2e #d3c6aa #2d353b #232a2e
 client.urgent #E67E80 #E67E80 #232A2E #E67E80 #E67E80
-
-### Fonts
-font pango:Mononoki Nerd Font 12
 
 ### Bar
 bar {
