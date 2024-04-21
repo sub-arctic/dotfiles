@@ -42,7 +42,44 @@ packer.init({
 return packer.startup(function(use)
 	use ("wbthomason/packer.nvim") -- Have packer manage itself	
     use {"kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async"}
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+    use {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        requires = { 
+          "nvim-lua/plenary.nvim",
+          "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+          "MunifTanjim/nui.nvim",
+          "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+        }
+    }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    use {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',  
+        config = function()
+            require('dashboard').setup {
+                theme = 'hyper'
+            }
+        end,
+        requires = {'nvim-tree/nvim-web-devicons'}
+    }
+    use({
+        "epwalsh/obsidian.nvim",
+        tag = "*",  -- recommended, use latest release instead of latest commit
+        requires = {
+        -- Required.
+        "nvim-lua/plenary.nvim",
 
+        -- see below for full list of optional dependencies 👇
+        },
+    })
+    use {
+        'gbprod/yanky.nvim'
+    }
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
