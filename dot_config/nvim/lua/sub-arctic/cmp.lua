@@ -8,12 +8,27 @@ cmp.setup ({
         -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
         -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-        -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+        vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
       end,
     },
     window = {
-        completion = cmp.config.window.bordered(),
+        completion = {
+            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+            col_offset = -3,
+            side_padding = 0,
+        }
       -- documentation = cmp.config.window.bordered(),
+    },
+    formatting = {
+        fields = { "kind", "abbr", "menu" },
+        format = function(entry, vim_item)
+            local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+            local strings = vim.split(kind.kind, "%s", { trimempty = true })
+            kind.kind = " " .. (strings[1] or "") .. " "
+            kind.menu = "    (" .. (strings[2] or "") .. ")"
+
+            return kind
+        end, 
     },
     mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),

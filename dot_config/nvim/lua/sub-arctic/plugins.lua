@@ -1,86 +1,40 @@
-local fn = vim.fn
-
--- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
-	print("Installing packer close and reopen Neovim...")
-	vim.cmd([[packadd packer.nvim]])
-end
-
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
-
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	return
-end
-
--- Have packer use a popup window
-packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float()
-		end,
-	},
-})
-
--- Install your plugins here
-return packer.startup(function(use)
-	use ("wbthomason/packer.nvim") -- Have packer manage itself	
-    use {"kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async"}
-    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
-    use {
+return { 
+    "rafamadriz/friendly-snippets",
+    "folke/which-key.nvim",
+    "gbprod/yanky.nvim",
+    "ahmedkhalf/project.nvim",
+    { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
+    { "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
+    {
+        'numToStr/Comment.nvim',
+    },
+    {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
-        requires = { 
-          "nvim-lua/plenary.nvim",
-          "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-          "MunifTanjim/nui.nvim",
-          "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+        dependencies = { 
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+            "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         }
-    }
-    use {
+    },
+    {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
-    use {
+        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
+    },
+    {
         'nvimdev/dashboard-nvim',
         event = 'VimEnter',  
-        config = function()
-            require('dashboard').setup {
-                theme = 'hyper'
-            }
-        end,
-        requires = {'nvim-tree/nvim-web-devicons'}
-    }
-    use({
+        dependencies = {'nvim-tree/nvim-web-devicons'}
+    },
+    {
         "epwalsh/obsidian.nvim",
-        tag = "*",  -- recommended, use latest release instead of latest commit
-        requires = {
+        version = "*",  -- recommended, use latest release instead of latest commit
+        dependencies = {
         -- Required.
         "nvim-lua/plenary.nvim",
 
         -- see below for full list of optional dependencies 👇
         },
-    })
-    use {
-        'gbprod/yanky.nvim'
-    }
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
-end)
+    },
+}
