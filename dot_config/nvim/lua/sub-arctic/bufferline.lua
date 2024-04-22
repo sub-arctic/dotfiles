@@ -7,5 +7,14 @@ bufferline.setup {
         numbers = "ordinal",
         diagnostics = "nvim_lsp",
         separator_style = "slant",
-    },
+        offsets = {
+            {
+                filetype = "neo-tree",
+                highlight = "Directory",
+                align = "left",
+                text = "tree",
+                separator = true,
+            }
+        }
+    }
 }

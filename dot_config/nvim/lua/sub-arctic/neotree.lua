@@ -96,6 +96,9 @@ neotree.setup {
     -- that will be available in all sources (if not overridden in `opts[source_name].commands`)
     -- see `:h neo-tree-custom-commands-global`
     commands = {},
+    source_selector = {
+        winbar = true,
+    },
     window = {
       position = "left",
       width = 30,
@@ -246,9 +249,6 @@ neotree.setup {
           ["oc"] = { "order_by_created", nowait = false },
           ["od"] = { "order_by_diagnostics", nowait = false },
           ["om"] = { "order_by_modified", nowait = false },
-          ["on"] = { "order_by_name", nowait = false },
-          ["os"] = { "order_by_size", nowait = false },
-          ["ot"] = { "order_by_type", nowait = false },
           ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
         }
       },
