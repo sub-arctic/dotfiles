@@ -23,6 +23,12 @@ require("lazy").setup({
     { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons", lazy=false},
     "echasnovski/mini.nvim",
     {
+        "goolord/alpha-nvim",
+        event = "VimEnter",
+        enabled = true,
+        init = false,
+    },
+    {
         "nvim-telescope/telescope.nvim", branch = '0.1.x',
         lazy = true,
         dependencies = { "nvim-lua/plenary.nvim"}
