@@ -6,6 +6,6 @@ bufferline.setup {
         themable = true,
         numbers = "ordinal",
         diagnostics = "nvim_lsp",
-        separator_style = "slope",
+        separator_style = "slant",
     },
 }
