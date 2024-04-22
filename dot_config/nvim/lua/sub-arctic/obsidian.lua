@@ -26,7 +26,6 @@ obsidian.setup {
   -- dir = "~/vaults/work",
 
   -- Optional, if you keep notes in a specific subdirectory of your vault.
-  notes_subdir = "notes",
 
   -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
   -- levels defined by "vim.log.levels.*".
@@ -35,7 +34,7 @@ obsidian.setup {
   -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
   completion = {
     -- Set to false to disable completion.
-    nvim_cmp = false,
+    nvim_cmp = true,
     -- Trigger completion at 2 chars.
     min_chars = 2,
   },
@@ -151,13 +150,6 @@ obsidian.setup {
   end,
 
   -- Optional, for templates (see below).
-  templates = {
-    subdir = "templates",
-    date_format = "%Y-%m-%d",
-    time_format = "%H:%M",
-    -- A map for custom variables, the key should be the variable and the value a function
-    substitutions = {},
-  },
 
   -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
   -- URL it will be ignored but you can customize this behavior here.
