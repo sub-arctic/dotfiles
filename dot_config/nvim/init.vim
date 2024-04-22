@@ -1,43 +1,13 @@
-call plug#begin('~/.config/nvim/plugged')
-Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'sainnhe/everforest'
-Plug 'Yggdroot/indentLine'
-Plug 'neanias/everforest-nvim', { 'branch': 'main' }
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make' }
-Plug 'tpope/vim-fugitive'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'norcalli/nvim-colorizer.lua'
-Plug 'onsails/lspkind-nvim'
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-Plug 'lervag/vimtex'
-Plug 'echasnovski/mini.nvim', { 'branch': 'stable' }
-Plug 'michaelb/sniprun', {'do': 'sh install.sh'}
-call plug#end()
-
 set termguicolors
 lua require('sub-arctic')
 
 set background=dark
 
-
 lua require'colorizer'.setup()
-""let g:everforest_background = 'medium'
 colorscheme everforest 
 
 filetype plugin indent on
 filetype plugin on
-let g:vimtex_compiler_method = 'arara'
-let g:vimtex_view_method = 'zathura'
-""let g:lightline = {'colorscheme' : 'everforest'}
 nnoremap <C-y> :Telescope yank_history<Cr>
 nnoremap <C-o> :Telescope projects<Cr>
 nnoremap <C-t> :Neotree toggle<Cr>
@@ -96,4 +66,3 @@ set smartcase
 set noshowmode
 
 set signcolumn=number
-
