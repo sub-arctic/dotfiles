@@ -11,7 +11,7 @@ exec {
         gtk-theme "everforest-gtk"
         font-name "Mononoki Nerd Font 12"
         cursor-theme "everforest-cursors"
-        cursor-size '32'
+        cursor-size '24'
     }
     wlsunset -l -33.9 -L 151.2
     swayidle -w timeout 300 'swaylock -f -i ~/.config/wallpaper.png' timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' before-sleep 'swaylock -f -i ~/.config/wallpaper.png'
