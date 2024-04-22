@@ -12,6 +12,8 @@ nnoremap <C-y> :Telescope yank_history<Cr>
 nnoremap <C-o> :Telescope projects<Cr>
 nnoremap <C-t> :Neotree toggle<Cr>
 nnoremap <C-p> :Telescope find_files<Cr>
+nnoremap <C-j> :tabnext<CR>
+nnoremap <C-k> :tabprevious<CR>
 imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
 smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
 
