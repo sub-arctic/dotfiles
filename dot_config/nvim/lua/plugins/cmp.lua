@@ -1,4 +1,5 @@
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 cmp.setup {
     snippet = {
         expand = function(args)
@@ -57,4 +58,18 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['pyright'].setup { capabilities = capabilities }
 require('lspconfig')['bashls'].setup { capabilities = capabilities }
+cmp.setup {
+    formatting = {
+	format = lspkind.cmp_format({
+	    mode = 'symbol',
+	    maxwidth = 50,
+	    ellipsis_char = '...',
+	    show_labelDetails = true,
+	    before = function (entry, vim_item)
+		return vim_item
+	    end
+	})
+    }
+}
+
 
