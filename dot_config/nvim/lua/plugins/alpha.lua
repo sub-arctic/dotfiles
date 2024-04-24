@@ -1,2 +1,2 @@
 local alpha = require("alpha")
-alpha.setup(require'alpha.themes.startify'.config)
+alpha.setup(require'alpha.themes.dashboard'.config)

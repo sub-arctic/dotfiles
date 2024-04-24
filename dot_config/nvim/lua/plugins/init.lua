@@ -1,4 +1,5 @@
 require('plugins/colorizer')
+require('plugins/indent')
 require('plugins/alpha')
 require('plugins/project')
 require('plugins/mason')
