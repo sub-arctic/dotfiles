@@ -9,7 +9,7 @@ vim.cmd([[
 
 telescope.setup({
     defaults = {
-        border = true,
+        border = false,
         prompt_title = true,
         results_title = true,
         color_devicons = false,

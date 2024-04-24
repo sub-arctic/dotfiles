@@ -5,6 +5,7 @@
 
 vim.opt.termguicolors = true
 -- Make line numbers default
+vim.opt.conceallevel = 2
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
