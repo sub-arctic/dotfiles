@@ -71,16 +71,16 @@
             "car": "",
             "default": ["", "󰖀", "󰕾"]
         },
-        "on-right-click": "alacritty -e alsamixer",
+        "on-right-click": "foot -e alsamixer",
 	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
     "custom/xbps-updates": {
         "exec": "~/.local/bin/update -l",
-        "on-click": "alacritty -e fish -c 'pkill -SIGRTMIN+8 waybar && updates -d && sudo xbps-install -Suv'",
+        "on-click": "foot -e fish -c 'pkill -SIGRTMIN+8 waybar && updates -d && sudo xbps-install -Suv'",
         "interval": "100",
         "format": "󱧕 {}",
         "signal": 8,
-        "on-click": "alacritty -e fish -c 'sudo xbps-install -Suv && pkill -SIGRTMIN+8 waybar'",
+        "on-click": "foot -e fish -c 'sudo xbps-install -Suv && pkill -SIGRTMIN+8 waybar'",
     },
     "power-profiles-daemon": {
         "format": "{icon}  {profile}",
