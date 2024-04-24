@@ -1,9 +1,9 @@
 ### Startup
 exec {
     autotiling
+    pipewire
     udiskie
     /usr/libexec/xfce-polkit
-    waybar
     pgrep mpd || mpd
     sway-audio-idle-inhibit
     dunst
@@ -91,6 +91,9 @@ bindsym {
 
         # Screenshot
         Print exec grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
+        
+        # Launch neovim in notetaking mode
+        $mod+n exec ~/dev/scripts/notes
 
     #
     # Layout
