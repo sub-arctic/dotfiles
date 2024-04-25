@@ -90,7 +90,7 @@ bindsym {
         $mod+o exec ~/.local/bin/ocr
 
         # Screenshot
-        Print exec grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
+        # Print exec grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
         
         # Launch neovim in notetaking mode
         $mod+n exec ~/dev/scripts/notes
@@ -193,13 +193,13 @@ bindsym {
 bindsym --locked {
     # Volume
     XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && ~/.local/bin/volbright volume
+    XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && ~/.local/bin/volbright volume
     XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
     # Brightness
-    XF86MonBrightnessUp exec brightnessctl s 5%+
-    XF86MonBrightnessDown exec brightnessctl s 5%-
+    XF86MonBrightnessUp exec brightnessctl s 5%+ && ~/.local/bin/volbright brightness 
+    XF86MonBrightnessDown exec brightnessctl s 5%- && ~/.local/bin/volbright brightness
 }
 
 
