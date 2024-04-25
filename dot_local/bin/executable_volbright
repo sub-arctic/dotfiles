@@ -2,16 +2,23 @@
 declare -A appids
 appids["volume"]="200"
 appids["brightness"]="201"
-appids["mute"]="202"
+appids["mute"]="200"
 maxbrightness=6818
 # Function to get the percentage for volume or brightness
 get_percentage() {
     if [ "$1" == "volume" ]; then
-        wpctl get-volume @DEFAULT_SINK@ | awk '{print $2 * 100}'
+	percentage=$(wpctl get-volume @DEFAULT_SINK@ | awk '{print $2 * 100}')
+	title="Volume"
     elif [ "$1" == "brightness" ]; then
-        echo "$(brightnessctl g) $maxbrightness" | awk '{printf "%.0f\n", $1/$2*100}'
+	percentage=$("$(brightnessctl g) $maxbrightness" | awk '{printf "%.0f\n", $1/$2*100}')
+	title="Brightness"
     elif [ "$1" == "mute" ]; then
-	dunstify --replace=${appids["$1"]} "Volume: Muted"
+	if [ "$mute_status" == "yes" ]; then
+	    dunstify --timeout 1000 --replace=${appids["$1"]} "Volume: Muted"	
+	else
+	    dunstify --timeout 1000 --replace=${appids["$1"]} "Volume: Unmuted"
+	fi
+	exit 0
     else
         echo "Invalid argument. Usage: $0 [volume|brightness]"
         exit 1
@@ -23,8 +30,13 @@ if [ -z "$1" ]; then
     echo "Usage: $0 [volume|brightness|mute]"
     exit 1
 fi
+# Check if sink is muted
+mute_status=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
+if [ "$mute_status" == "yes" ]; then
+    mute="(Muted)"
+fi
 # Get the percentage based on the argument
-percentage=$(get_percentage "$1")
+get_percentage "$1"
 # Display the notification using dunstify
-dunstify -t 1000 --replace=${appids["$1"]} "$1: $percentage%" -h int:value:"$percentage"
+dunstify -t 1000 --replace=${appids["$1"]} "$title: $percentage% $mute" -h int:value:"$percentage"
 
