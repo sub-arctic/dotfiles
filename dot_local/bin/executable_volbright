@@ -10,7 +10,7 @@ get_percentage() {
 	percentage=$(wpctl get-volume @DEFAULT_SINK@ | awk '{print $2 * 100}')
 	title="Volume"
     elif [ "$1" == "brightness" ]; then
-	percentage=$("$(brightnessctl g) $maxbrightness" | awk '{printf "%.0f\n", $1/$2*100}')
+	percentage=$(echo $(brightnessctl g) $maxbrightness | awk '{printf "%.0f\n", $1/$2*100}')
 	title="Brightness"
     elif [ "$1" == "mute" ]; then
 	if [ "$mute_status" == "yes" ]; then
