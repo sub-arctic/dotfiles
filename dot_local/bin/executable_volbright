@@ -1,0 +1,31 @@
+#!/bin/bash
+maxbrightness=6818
+# Function to get the percentage for volume or brightness
+get_percentage() {
+    if [ "$1" == "volume" ]; then
+        wpctl get-volume @DEFAULT_SINK@ | awk '{print $2 * 100}'
+	appid=201
+    elif [ "$1" == "brightness" ]; then
+        echo "$(brightnessctl g) $maxbrightness" | awk '{printf "%.0f\n", $1/$2*100}'
+	appid=200
+    elif [ "$1" == "mute" ]; then
+	dunstify -r 203 "Volume: Muted"
+
+    else
+        echo "Invalid argument. Usage: $0 [volume|brightness]"
+        exit 1
+    fi
+}
+
+# Check if an argument is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 [volume|brightness]"
+    exit 1
+fi
+
+# Get the percentage based on the argument
+percentage=$(get_percentage "$1")
+
+# Display the notification using dunstify
+dunstify -t 1000 -r $appid "$1: $percentage%" -h int:value:"$percentage"
+
