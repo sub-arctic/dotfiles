@@ -74,6 +74,9 @@ bindsym {
         # Start your launcher
         $mod+d exec $drun
 
+	# Start launcher (hold profile)
+	$mod+Shift+d exec ~/.local/bin/powerprofiles_switcher drun 
+
         # Lock the screen
         $mod+x exec swaylock -i ~/.config/wallpaper.png
 
@@ -90,10 +93,13 @@ bindsym {
         $mod+o exec ~/.local/bin/ocr
 
         # Screenshot
-        # Print exec grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
+        Print exec grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
         
         # Launch neovim in notetaking mode
         $mod+n exec ~/dev/scripts/notes
+
+	# Switch power-profile
+	XF86Display exec ~/.local/bin/powerprofiles_switcher
 
     #
     # Layout
