@@ -1,8 +1,16 @@
 #!/bin/bash
 if [ -n "$1" ]; then
-    powerprofilesctl set $1 || exit 1
-    dunstify -r 300 "Power-profile: $1"
-    exit 0
+    if [ "$1" == "drun" ]; then
+	program_to_run=$(tofi-drun --drun-launch=false --prompt-text="drun (performance):")
+	dunstify "Launched $program_to_run with performance profile"
+	powerprofilesctl launch $program_to_run 
+	dunstify "Power-profile: $(powerprofilesctl get)"
+	exit 0
+    else
+	powerprofilesctl set $1 || exit 1
+	dunstify -r 300 "Power-profile: $1"
+	exit 0
+    fi
 fi
 current_profile=$(powerprofilesctl get)
 
