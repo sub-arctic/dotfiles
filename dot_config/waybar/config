@@ -27,6 +27,7 @@
         "battery", 
         "clock", 
         "network", 
+	"network#vpn",
         "tray"
     ],
 },
