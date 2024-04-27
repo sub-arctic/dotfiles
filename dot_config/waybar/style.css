@@ -9,6 +9,7 @@
 @define-color background #2d353b;
 @define-color background-alt #343f44;
 
+@define-color urgent #e67e80;
 
 window#waybar {
     background-color: @background;
@@ -26,7 +27,6 @@ button {
     border-radius: 0;
 }
 
-
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
@@ -40,7 +40,7 @@ button {
 }
 
 #workspaces button.urgent{
-    color: #e67e80;
+    color: @urgent;
 }
 
 #mode {
@@ -51,6 +51,7 @@ button {
 #battery,
 #backlight,
 #network,
+#network.vpn,
 #pulseaudio,
 #tray,
 #mode,
