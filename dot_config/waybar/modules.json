@@ -54,7 +54,7 @@
     },
     "network#vpn": {
 	"interval": "10",
-	"interface": "tun0",
+	"interface": "wg0",
         "format-wifi": "󰦝 VPN",
         "format-ethernet": "󰦝 VPN",
 	"format-disconnected": "",
