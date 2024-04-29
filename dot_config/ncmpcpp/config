@@ -8,5 +8,5 @@ progressbar_look = "▃▃"
 progressbar_color = "black"
 progressbar_elapsed_color = "green"
 statusbar_color = "5"
-
+execute_on_song_change = songinfo
 startup_screen = playlist
