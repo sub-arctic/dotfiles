@@ -68,8 +68,9 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
 	"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
     },
-    "pulseaudio": {
+    "wireplumber": {
         "format": "{icon} {volume}%",
+	"max-volume": 100,
         "format-muted": "󰝟",
         "format-icons": {
             "headphone": "󰋋",
