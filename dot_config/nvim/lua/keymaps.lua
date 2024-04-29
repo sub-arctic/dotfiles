@@ -16,7 +16,7 @@ vim.keymap.set('n', '<leader>tf', '<cmd>Telescope find_files<CR>', { noremap = t
 vim.keymap.set('n', '<leader>to', '<cmd>Telescope oldfiles<CR>', { noremap = true, silent = true, desc = 'Telescope: old files' })
 
 -- Neotree
-vim.keymap.set('n', '<leader>f', '<cmd>Neotree<CR>', { noremap = true, silent = true, desc= "Launch tree with Neotree"})
+vim.keymap.set('n', '<leader>f', '<cmd>Neotree toggle<CR>', { noremap = true, silent = true, desc= "Toggle NeoTree"})
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
