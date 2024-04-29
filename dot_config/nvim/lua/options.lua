@@ -10,7 +10,14 @@ vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 -- vim.opt.relativenumber = true
-
+-- Vim-Instant-Markdown settings
+_G.instant_markdown_slow = 0
+_G.instant_markdown_autostart = 1
+_G.instant_markdown_open_to_the_world = 0
+_G.instant_markdown_mathjax = 1
+_G.instant_markdown_logfile = '/tmp/instant_markdown.log'
+_G.instant_markdown_port = 8090
+_G.instant_markdown_theme = 'dark'
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
