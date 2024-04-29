@@ -11,6 +11,12 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Telescope keymaps
+vim.keymap.set('n', '<leader>tf', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true, desc = 'Telescope: find_files' })
+vim.keymap.set('n', '<leader>to', '<cmd>Telescope oldfiles<CR>', { noremap = true, silent = true, desc = 'Telescope: old files' })
+
+-- Neotree
+vim.keymap.set('n', '<leader>f', '<cmd>Neotree<CR>', { noremap = true, silent = true, desc= "Launch tree with Neotree"})
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
