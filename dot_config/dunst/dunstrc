@@ -30,7 +30,7 @@
     show_indicators = no
     icon_position = left
     min_icon_size = 0
-    max_icon_size = 100
+    max_icon_size = 200
     sticky_history = yes
     history_length = 20
     browser = /usr/bin/xdg-open
