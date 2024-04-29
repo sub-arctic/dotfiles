@@ -22,7 +22,7 @@
     "modules-right": [
         "custom/xbps-updates",
         "idle_inhibitor", 
-        "pulseaudio", 
+        "wireplumber", 
         "backlight", 
         "battery", 
         "clock", 
