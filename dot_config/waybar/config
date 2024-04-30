@@ -3,7 +3,7 @@
     "ipc": true,
     "position": "top",
     "height": 38,
-    "spacing": 4, 
+    "spacing": 0, 
 
     "include": [
         "~/.config/waybar/modules.json",
@@ -20,10 +20,13 @@
         "mpd"
     ],
     "modules-right": [
+	"custom/seperator#one",
         "custom/xbps-updates",
         "idle_inhibitor", 
+	"custom/seperator#two",
         "wireplumber", 
         "backlight", 
+	"custom/seperator#three",
         "battery", 
         "clock", 
         "network", 
