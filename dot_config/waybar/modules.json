@@ -88,7 +88,7 @@
         "interval": "100",
         "format": "󱧕 {}",
         "signal": 8,
-        "on-click": "foot -e fish -c 'sudo xbps-install -Suv && pkill -SIGRTMIN+8 waybar'",
+        "on-click": "foot -e fish -c 'sudo xbps-install -Suv && pkill -SIGRTMIN+8 waybar'"
     },
     "power-profiles-daemon": {
         "format": "{icon}  {profile}",
@@ -101,4 +101,13 @@
             "power-saver": "󰾆"
         }     
     },
+    "custom/seperator#one": {
+	"format": "<span foreground='#343f44'></span>"
+    },
+    "custom/seperator#two": {
+	"format": "<span foreground='#3d484d' background='#343f44'></span>"
+    },
+    "custom/seperator#three": {
+	"format": "<span foreground='#475258' background='#3d484d'></span>"
+    }
 }
