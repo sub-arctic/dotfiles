@@ -75,4 +75,22 @@ button {
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
 }
+#custom-xbps-updates, #idle_inhibitor {
+    background-color: #343f44;
+}
+#custom-xbps-updates {
+    margin-left: 0;
+}
+#wireplumber {
+    background-color: #3d484d;
+    margin-left: 0;
+    margin-right: 0;
+}
+#custom-seperator.one, 
+#custom-seperator.two,
+#custom-seperator.three {
+    font-size: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
 
