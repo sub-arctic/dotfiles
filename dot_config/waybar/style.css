@@ -3,51 +3,54 @@
     font-size: 13px;
 }
 
-@define-color primary #a7c080;
-@define-color foreground #d3c6aa;
+/* Colors */
+@define-color bg_dim #232a2e;
+@define-color bg0 #2d353b;
+@define-color bg1 #343f44;
+@define-color bg2 #3d484d;
+@define-color bg3 #475258;
+@define-color bg4 #4f585e;
+@define-color bg5 #56635f;
+@define-color gray0 #7a8478;
+@define-color gray1 #859289;
+@define-color gray2 #9da9a0;
+@define-color fg #d3c6aa;
 
-@define-color background #2d353b;
-@define-color background-alt #343f44;
+@define-color red #e67e80;
+@define-color orange #e69875;
+@define-color yellow #dbbc7f;
+@define-color green #a7c080;
+@define-color blue #7fbbb3;
+@define-color aqua #83c092;
+@define-color purple #d699b6;
 
-@define-color urgent #e67e80;
+@define-color bg_red #543a48;
+@define-color bg_orange #514045;
+@define-color bg_yellow #4d4c43;
+@define-color bg_green #425047;
+@define-color bg_blue #3a515d;
 
+/* Bar Settings */
 window#waybar {
-    background-color: @background;
-    color: @foreground;
-    border: 3px solid @background-alt;
+    background-color: @bg0;
+    color: @fg;
+}
+
+button {
+    box-shadow: inset 0 -0.25rem transparent;
+    border: none;
+    border-radius: 0;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
-button {
-    box-shadow: inset 0 -3px transparent;
-    border: none;
-    border-radius: 0;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: @foreground;
-}
-
-#workspaces button.focused, 
-#workspaces button.active {
-    color: @background;
-    background: @primary;
-}
-
-#workspaces button.urgent{
-    color: @urgent;
-}
-
-#mode {
-    color: @primary;
-}
-
+/* Module Defaults */
 #clock,
+#memory,
+#temperature,
+#cpu,
 #battery,
 #backlight,
 #network,
@@ -60,37 +63,161 @@ button {
 #custom-xbps-updates,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
-    color: @primary;
+    padding: 0 0.8rem;
+    color: @gray2;
 }
 
-#window,
+/* Left Modules */
 #workspaces {
-    margin: 0 4px;
-}
-.modules-left > widget:first-child > #workspaces {
     margin-left: 0;
+    margin-right: 0;
+    background-color: @bg0;
 }
 
-.modules-right > widget:last-child > #workspaces {
+#workspaces button {
+    padding: 0 0.05rem;
+    background-color: @red;
+    color: @bg0;
+}
+
+#workspaces button.focused, 
+#workspaces button.active {
+    color: @bg0;
+    background:  @red;
+    border-bottom: 0.25rem solid @bg_red;
+    padding-top: 0.25rem;
+    font-weight: bold;
+}
+
+#workspaces button.urgent{
+    color: @red;
+}
+
+#scratchpad, #mode {
+    color: #232a2e;
+    background-color: @red;
+    border-bottom: 3px solid transparent;
+    margin: 0;
+}
+
+#clock {
+    margin: 0; 
+    background-color: @bg3;
+}
+
+#cpu, #memory, #temperature {
+    background-color: @bg2;
+}
+
+#temperature {
     margin-right: 0;
 }
-#custom-xbps-updates, #idle_inhibitor {
-    background-color: #343f44;
+
+#memory {
+    margin: 0;
 }
+
+#power-profiles-daemon {
+    background-color: @bg1;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* Center Modules */
+#mpd {
+    color: @bg0;
+    background-color: @blue;
+    margin: 0;
+}
+
+/* Right Modules */
+#custom-xbps-updates, #idle_inhibitor {
+    background-color: @bg1;
+}
+
 #custom-xbps-updates {
     margin-left: 0;
 }
-#wireplumber {
-    background-color: #3d484d;
-    margin-left: 0;
-    margin-right: 0;
-}
-#custom-seperator.one, 
-#custom-seperator.two,
-#custom-seperator.three {
-    font-size: 30px;
-    margin-left: 0px;
-    margin-right: 0px;
+
+#wireplumber, #backlight {
+    background-color: @bg2;
 }
 
+#wireplumber {
+    margin-left: 0;
+}
+
+#battery {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: @bg3;
+}
+
+#network, #network.vpn, #tray {
+    background-color: @green;
+    color: @bg0;
+}
+
+#network {
+    margin-left: 0;
+}
+
+
+/* All Seperators */
+#custom-seperator {
+    font-size: 2rem;
+    margin-left: 0;
+    margin-bottom: -0.25rem;
+    margin-right: 0;
+}
+
+/* Left Seperators */
+#custom-seperator.l0 {
+    color: @red;
+    background-color: @bg0;
+}
+#custom-seperator.l1 {
+    color: @bg3;
+    background-color: @red;
+}
+#custom-seperator.l2 {
+    color: @bg2;
+    background-color: @bg3;
+}
+#custom-seperator.l3 {
+    color: @bg1;
+    background-color: @bg2;
+}
+#custom-seperator.l4 {
+    color: @bg0;
+    background-color: @bg1;
+}
+
+/* Center Seperators*/
+#custom-seperator.c0 {
+    color: @blue;
+    background-color: @bg0;
+}
+#custom-seperator.c1 {
+    color: @bg0;
+    background-color: @blue;
+}
+
+/* Right Seperators */
+#custom-seperator.r0 {
+    color: @bg1;
+    background-color: @bg0;
+}
+#custom-seperator.r1 {
+    color: @bg2;
+    background-color: @bg1;
+}
+#custom-seperator.r2 {
+    color: @bg3;
+    background-color: @bg2;
+}
+#custom-seperator.r3 {
+    color: @green;
+    background-color: @bg3;
+}
