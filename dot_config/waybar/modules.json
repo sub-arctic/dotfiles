@@ -1,4 +1,36 @@
 {
+    "sway/scratchpad": {
+	"format": " {count}",
+	"max-length": 50
+    },
+    "clock": {
+        "format": "󰥔 {:%H:%M}", 
+	"format-alt": "󰃭 {:%d/%m/%y}"
+    },
+    "cpu": {
+	"interval": 10,
+	"format": "  {usage}%"
+    },
+    "memory": {
+	"interval": 10,
+	"format": "   {used}GiB "
+    },
+    "temperature": {
+	"thermal-zone": "thermal_zone0",
+	"format": "{icon} {temperatureC}°C ",
+	"format-icons": ["", "", "", ""]
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}  {profile}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "󰾅",
+            "performance": "󰓅",
+            "balanced": "󰾅",
+            "power-saver": "󰾆"
+        }     
+    },
     "mpd": {
         "format": "{stateIcon} {artist} - {title} 󰎈",
         "format-disconnected": "Disconnected 󰎈",
@@ -20,53 +52,20 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
-
-
+    "custom/xbps-updates": {
+        "exec": "~/.local/bin/update -l",
+        "on-click": "foot -e fish -c 'pkill -SIGRTMIN+8 waybar && updates -d && sudo xbps-install -Suv'",
+        "interval": "100",
+        "format": "󱧕 {}",
+        "signal": 8,
+        "on-click": "foot -e fish -c 'sudo xbps-install -Suv && pkill -SIGRTMIN+8 waybar'"
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "󰅶",
             "deactivated": "󰾪"
         }
-    },
-    "tray": {
-        "spacing": 10
-    },
-    "clock": {
-        "format": "󰥔 {:%H:%M}", 
-	"format-alt": "󰃭 {:%d/%m/%y}"
-    },
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
-    },
-    "battery": {
-	"states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-	"format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰁹"],
-        
-	"format-charging": "󰂄 {capacity}%",
-        "format-plugged": "󰂏 {capacity}%",
-        "format-alt": "{time} {icon}",
-    },
-    "network#vpn": {
-	"interval": "10",
-	"interface": "wg0",
-        "format-wifi": "󰦝 VPN",
-        "format-ethernet": "󰦝 VPN",
-	"format-disconnected": "",
-    },
-    "network": {
-	"interval": "10",
-        "format-wifi": "{icon} {essid} ({signalStrength}%)",
-        "format-ethernet": "󰈀 {ipaddr}",
-        "tooltip-format": "{ipaddr} via {gwaddr}",
-        "format-disconnected": "󰤭 Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-	"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
     },
     "wireplumber": {
         "format": "{icon} {volume}%",
@@ -82,32 +81,82 @@
         "on-right-click": "foot -e alsamixer",
 	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
-    "custom/xbps-updates": {
-        "exec": "~/.local/bin/update -l",
-        "on-click": "foot -e fish -c 'pkill -SIGRTMIN+8 waybar && updates -d && sudo xbps-install -Suv'",
-        "interval": "100",
-        "format": "󱧕 {}",
-        "signal": 8,
-        "on-click": "foot -e fish -c 'sudo xbps-install -Suv && pkill -SIGRTMIN+8 waybar'"
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
     },
-    "power-profiles-daemon": {
-        "format": "{icon}  {profile}",
-        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-        "tooltip": true,
-        "format-icons": {
-            "default": "󰾅",
-            "performance": "󰓅",
-            "balanced": "󰾅",
-            "power-saver": "󰾆"
-        }     
+    "battery": {
+	"states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+	"format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰁹"],
+	"format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂏 {capacity}%",
+        "format-alt": "{time} {icon}"
     },
-    "custom/seperator#one": {
-	"format": "<span foreground='#343f44'></span>"
+    "network": {
+	"interval": "10",
+        "format-wifi": "{icon} {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈀 {ipaddr}",
+        "tooltip-format": "{ipaddr} via {gwaddr}",
+        "format-disconnected": "󰤭 Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+	"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
     },
-    "custom/seperator#two": {
-	"format": "<span foreground='#3d484d' background='#343f44'></span>"
+    "network#vpn": {
+	"interval": "10",
+	"interface": "tun0",
+        "format-wifi": "󰦝 VPN",
+        "format-ethernet": "󰦝 VPN",
+	"format-disconnected": ""
     },
-    "custom/seperator#three": {
-	"format": "<span foreground='#475258' background='#3d484d'></span>"
+    "tray": {
+        "spacing": 10
+    },
+    "custom/seperator#c0": {
+	"format": "",
+        "tooltip": false
+    },
+    "custom/seperator#c1": {
+	"format": "",
+        "tooltip": false
+    },
+    "custom/seperator#l0": {
+	"format": "",
+        "tooltip": false
+    },
+    "custom/seperator#l1": {
+	"format": "",
+        "tooltip": false
+    },
+    "custom/seperator#l2": {
+	"format": "",
+        "tooltip": false
+    },
+    "custom/seperator#l3": {
+	"format": "",
+        "tooltip": false
+    },
+    "custom/seperator#l4": {
+	"format": "",
+        "tooltip": false
+    },
+    "custom/seperator#r0": {
+	"format": "",
+        "tooltip": false
+    },
+    "custom/seperator#r1": {
+	"format": "",
+        "tooltip": false
+    },
+    "custom/seperator#r2": {
+	"format": "",
+        "tooltip": false
+    },
+    "custom/seperator#r3": {
+	"format": "",
+        "tooltip": false
     }
 }

@@ -1,37 +1,95 @@
-[{
-    "layer": "top",
-    "ipc": true,
-    "position": "top",
-    "height": 38,
-    "spacing": 0, 
+[
+    {
+	"layer": "top",
+	"position": "top",
+	"ipc": true,
+	"output": "eDP-1",
 
-    "include": [
-        "~/.config/waybar/modules.json",
-    ],
+	"include": [
+	    "~/.config/waybar/modules.json"
+	],
 
-    "modules-left": [
-        "sway/workspaces",
-	"hyprland/workspaces",
-        "sway/scratchpad",
-        "sway/mode",
-        "power-profiles-daemon"
-    ],
-    "modules-center": [
-        "mpd"
-    ],
-    "modules-right": [
-	"custom/seperator#one",
-        "custom/xbps-updates",
-        "idle_inhibitor", 
-	"custom/seperator#two",
-        "wireplumber", 
-        "backlight", 
-	"custom/seperator#three",
-        "battery", 
-        "clock", 
-        "network", 
-	"network#vpn",
-        "tray"
-    ],
-},
+	"modules-left": [
+	    "custom/seperator#l0",
+	    "sway/workspaces",
+	    "hyprland/workspaces",
+	    "sway/scratchpad",
+	    "sway/mode",
+	    "custom/seperator#l1",
+	    "clock",
+	    "custom/seperator#l2",
+	    "cpu",
+	    "memory",
+	    "temperature",
+	    "custom/seperator#l3",
+	    "power-profiles-daemon",
+	    "custom/seperator#l4"
+	],
+	"modules-center": [
+	    "custom/seperator#c0",
+	    "mpd",
+	    "custom/seperator#c1"
+	],
+	"modules-right": [
+	    "custom/seperator#r0",
+	    "custom/xbps-updates",
+	    "idle_inhibitor", 
+	    "custom/seperator#r1",
+	    "wireplumber", 
+	    "backlight", 
+	    "custom/seperator#r2",
+	    "battery", 
+	    "custom/seperator#r3",
+	    "network", 
+	    "network#vpn",
+	    "tray"
+	]
+    },
+    {
+	"layer": "top",
+	"position": "top",
+	"ipc": true,
+	"output": ["DP-1", "HDMI-A-1"],
+
+	"include": [
+	    "~/.config/waybar/modules.json"
+	],
+
+	"modules-left": [
+	    "custom/seperator#l0",
+	    "sway/workspaces",
+	    "hyprland/workspaces",
+	    "sway/scratchpad",
+	    "sway/mode",
+	    "custom/seperator#l1",
+	    "clock",
+	    "custom/seperator#l2",
+	    "cpu",
+	    "memory",
+	    "temperature",
+	    "custom/seperator#l3",
+	    "power-profiles-daemon",
+	    "custom/seperator#l4"
+	],
+	"modules-center": [
+	    "custom/seperator#c0",
+	    "mpd",
+	    "custom/seperator#c1"
+	],
+	"modules-right": [
+	    "custom/seperator#r0",
+	    "custom/xbps-updates",
+	    "idle_inhibitor", 
+	    "custom/seperator#r1",
+	    "wireplumber", 
+	    "backlight", 
+	    "custom/seperator#r2",
+	    "battery", 
+	    "custom/seperator#r3",
+	    "network", 
+	    "network#vpn",
+	    "tray"
+	]
+    }
 ]
+// vim: set ft=jsonc :
