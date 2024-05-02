@@ -52,6 +52,10 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
+    "custom/theme-switcher": {
+	"format": "󰔎",
+	"on-click": "~/.local/bin/theme_switcher toggle"
+    },
     "custom/xbps-updates": {
         "exec": "~/.local/bin/update -l",
         "on-click": "foot -e fish -c 'pkill -SIGRTMIN+8 waybar && updates -d && sudo xbps-install -Suv'",

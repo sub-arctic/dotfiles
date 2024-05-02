@@ -1,41 +1,14 @@
 * {
-    font-family: Mononoki Nerd Font;
+   font-family: Mononoki Nerd Font;
     font-size: 13px;
 }
-
-/* Colors */
-@define-color bg_dim #232a2e;
-@define-color bg0 #2d353b;
-@define-color bg1 #343f44;
-@define-color bg2 #3d484d;
-@define-color bg3 #475258;
-@define-color bg4 #4f585e;
-@define-color bg5 #56635f;
-@define-color gray0 #7a8478;
-@define-color gray1 #859289;
-@define-color gray2 #9da9a0;
-@define-color fg #d3c6aa;
-
-@define-color red #e67e80;
-@define-color orange #e69875;
-@define-color yellow #dbbc7f;
-@define-color green #a7c080;
-@define-color blue #7fbbb3;
-@define-color aqua #83c092;
-@define-color purple #d699b6;
-
-@define-color bg_red #543a48;
-@define-color bg_orange #514045;
-@define-color bg_yellow #4d4c43;
-@define-color bg_green #425047;
-@define-color bg_blue #3a515d;
+@import url('colors/everforest-light.css');
 
 /* Bar Settings */
 window#waybar {
     background-color: @bg0;
     color: @fg;
 }
-
 button {
     box-shadow: inset 0 -0.25rem transparent;
     border: none;
@@ -61,6 +34,7 @@ window#waybar.hidden {
 #idle_inhibitor,
 #scratchpad,
 #custom-xbps-updates,
+#custom-theme-switcher,
 #power-profiles-daemon,
 #mpd {
     padding: 0 0.8rem;
@@ -69,13 +43,13 @@ window#waybar.hidden {
 
 /* Left Modules */
 #workspaces {
-    margin-left: 0;
+    padding-left: 0.8rem;
     margin-right: 0;
-    background-color: @bg0;
+    background-color: @red;
 }
 
 #workspaces button {
-    padding: 0 0.05rem;
+    padding: 0 0.2rem;
     background-color: @red;
     color: @bg0;
 }
@@ -92,7 +66,13 @@ window#waybar.hidden {
 #workspaces button.urgent{
     color: @red;
 }
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
 
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
 #scratchpad, #mode {
     color: #232a2e;
     background-color: @red;
@@ -132,11 +112,11 @@ window#waybar.hidden {
 }
 
 /* Right Modules */
-#custom-xbps-updates, #idle_inhibitor {
+#custom-theme-switcher, #custom-xbps-updates, #idle_inhibitor{
     background-color: @bg1;
 }
 
-#custom-xbps-updates {
+#custom-theme-switcher {
     margin-left: 0;
 }
 
