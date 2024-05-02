@@ -6,7 +6,7 @@ bufferline.setup {
         themable = true,
         numbers = "ordinal",
         diagnostics = "nvim_lsp",
-        separator_style = "slant",
+        separator_style = "slope",
         offsets = {
             {
                 filetype = "neo-tree",

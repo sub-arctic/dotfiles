@@ -50,65 +50,25 @@
 	# Default text color
 	#
 	# All text defaults to this color if not otherwise specified.
-	text-color = #d3c6aa
-
-	# All pieces of text have the same theming attributes available:
-	#
-	# *-color
-	#     Foreground color
-	#
-	# *-background
-	#     Background color
-	#
-	# *-background-padding
-	#     Background padding in pixels (comma-delimited, CSS-style list).
-	#     See "DIRECTIONAL VALUES" under `man 5 tofi` for more info.
-	#
-	# *-background-corner-radius
-	#     Radius of background box corners in pixels
-
-	# Prompt text theme
-	# prompt-color = #FFFFFF
-	prompt-background = #2d353b
-	prompt-background-padding = 0
-	prompt-background-corner-radius = 0
-
-	# Placeholder text theme
-	placeholder-color = #343f44
-	placeholder-background = #2d353b
-	placeholder-background-padding = 0
-	placeholder-background-corner-radius = 0
-
-	# Input text theme
-	# input-color = #FFFFFF
-	input-background = #343f44
-	input-background-padding = 0
-	input-background-corner-radius = 0
-
-	# Default result text theme
-	# default-result-color = #FFFFFF
-	default-result-background = #2d343b
-	default-result-background-padding = 0
-	default-result-background-corner-radius = 0
-
-	# Alternate (even-numbered) result text theme
-	#
-	# If unspecified, these all default to the corresponding
-	# default-result-* attribute.
-	#
-	# alternate-result-color = #FFFFFF
-	# alternate-result-background = #00000000
-	# alternate-result-background-padding = 0
-	# alternate-result-background-corner-radius = 0
-
-	# Selection text
-	selection-color = #2d353b
-	selection-background = #a7c080
-	selection-background-padding = 0
-	selection-background-corner-radius = 0
-
-	# Matching portion of selection text
-	selection-match-color = #425047
+	# text-color = #d3c6aa
+	# prompt-background = #2d353b
+	# prompt-background-padding = 0
+	# prompt-background-corner-radius = 0
+	# placeholder-color = #343f44
+	# placeholder-background = #2d353b
+	# placeholder-background-padding = 0
+	# placeholder-background-corner-radius = 0
+	# input-background = #343f44
+	# input-background-padding = 0
+	# input-background-corner-radius = 0
+	# default-result-background = #2d343b
+	# default-result-background-padding = 0
+	# default-result-background-corner-radius = 0
+	# selection-color = #2d353b
+	# selection-background = #a7c080
+	# selection-background-padding = 0
+	# selection-background-corner-radius = 0
+	# selection-match-color = #425047
 
 
 #
@@ -171,19 +131,19 @@
 	height = 200
 
 	# Window background color
-	background-color = #2d353b
+	# background-color = #2d353b
 
 	# Width of the border outlines in pixels.
 	outline-width = 0
 
 	# Border outline color
-	outline-color = #a7c080
+	# outline-color = #a7c080
 
 	# Width of the border in pixels.
 	border-width = 2
 
 	# Border color
-	border-color = #a7c080
+	# border-color = #a7c080
 
 	# Radius of window corners in pixels.
 	corner-radius = 0
@@ -301,4 +261,4 @@
 #
 	# Configs can be split between multiple files, and then included
 	# within each other.
-	# include = /path/to/config
+	include = colors/everforest-light

@@ -25,7 +25,7 @@ set {
     $down j
     $up k
     $right l
-    $term foot 
+    $term alacritty 
     $drun tofi-drun | xargs swaymsg exec --
     $ss_path "~/pictures/screenshots"
     $laptop eDP-1
@@ -310,7 +310,7 @@ client.urgent #E67E80 #E67E80 #232A2E #E67E80 #E67E80
 bar {
     swaybar_command waybar
     position top 
-    mode hide
+    mode dock
     modifier Mod4
     output *
     icon_theme "everforest-icons"
