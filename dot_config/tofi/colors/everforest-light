@@ -1,0 +1,23 @@
+text-color = #5c6a72
+prompt-background = #f4f0c9
+prompt-background-padding = 0
+prompt-background-corner-radius = 0
+placeholder-color = #5c6a72
+placeholder-background = #e0dcc7
+placeholder-background-padding = 0
+placeholder-background-corner-radius = 0
+input-background = #f4f0d9
+input-background-padding = 0
+input-background-corner-radius = 0
+default-result-background = #f4f0d9
+default-result-background-padding = 0
+default-result-background-corner-radius = 0
+selection-color = #f4f0d9
+selection-background = #8da101
+selection-background-padding = 0
+selection-background-corner-radius = 0
+selection-match-color = #f4f0d9
+background-color = #f4f0d9
+outline-color = #8da101
+border-color = #8da101
+
