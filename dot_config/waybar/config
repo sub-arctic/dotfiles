@@ -17,9 +17,7 @@
 	    "custom/seperator#l1",
 	    "clock",
 	    "custom/seperator#l2",
-	    "cpu",
-	    "memory",
-	    "temperature",
+	    "group/hardware",
 	    "custom/seperator#l3",
 	    "power-profiles-daemon",
 	    "custom/seperator#l4"
