@@ -7,6 +7,19 @@
         "format": "󰥔 {:%H:%M}", 
 	"format-alt": "󰃭 {:%d/%m/%y}"
     },
+    "group/hardware": {
+	"drawer": {
+	    "children-class": "hardware-child",
+	    "transition-duration": 300,
+	    "transition-left-to-right": true
+	},
+	"orientation": "horizontal",
+	"modules": [
+	    "temperature",
+	    "memory",
+	    "cpu"
+	]
+    },
     "cpu": {
 	"interval": 10,
 	"format": "  {usage}%"
@@ -17,7 +30,7 @@
     },
     "temperature": {
 	"thermal-zone": "thermal_zone0",
-	"format": "{icon} {temperatureC}°C ",
+	"format": "{icon} {temperatureC}°C",
 	"format-icons": ["", "", "", ""]
     },
     "power-profiles-daemon": {
@@ -80,7 +93,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "󰖀", "󰕾"]
+            "default": ["󰕿", "󰖀", "󰕾"]
         },
         "on-right-click": "foot -e alsamixer",
 	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
