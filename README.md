@@ -3,6 +3,10 @@ This repository contains my personal configurations and scripts for NeoVim, Sway
 
 All scripts and configurations provided are tested and work (to the best of my knowledge) on `Void Linux x86_64-musl` and `glibc`. 
 
+![A picture of a dark window manager](https://github.com/sub-arctic/dotfiles/blob/8b597d76b3ce959c3a8fb34af7a1067521c1e9d2/pictures/screenshots/ss3.png)
+
+![A picture of a light window manager](https://github.com/sub-arctic/dotfiles/blob/8b597d76b3ce959c3a8fb34af7a1067521c1e9d2/pictures/screenshots/ss4.png)
+
 ### Programs used
 - `alacritty` → *terminal emulator of choice*
 - `cava` → *tui audio visualiser*
