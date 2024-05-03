@@ -2,14 +2,7 @@
 pkgname=swww
 version=0.9.5
 revision=1
-#archs="i686 x86_64"
-#build_wrksrc=
 build_style=cargo
-#configure_args=""
-#make_build_args=""
-#make_install_args=""
-#conf_files=""
-#make_dirs="/var/log/dir 0755 root root"
 hostmakedepends="pkg-config"
 makedepends="scdoc liblz4-devel"
 depends="liblz4"
@@ -17,7 +10,6 @@ short_desc="Solution to your Wayland Wallpaper Woes"
 maintainer="sub-arctic <mail@subarctic.tech>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/LGFae/swww"
-#changelog=""
 distfiles="https://github.com/LGFae/swww/archive/refs/tags/v${version}.tar.gz"
 checksum=567e2ac76203ad47df5aaafab7d9d0e4e283a74e34690930a4730ecf0a667428
 
