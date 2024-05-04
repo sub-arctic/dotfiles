@@ -1,0 +1,5 @@
+client.focused #A7C080 #A7C080 #232A2E #7fBBB3 #A7C080
+client.focused_inactive #425047 #425047 #D3C6AA #3A515D
+client.unfocused #232a2e #232a2e #d3c6aa #2d353b #232a2e
+client.urgent #E67E80 #E67E80 #232A2E #E67E80 #E67E80
+
