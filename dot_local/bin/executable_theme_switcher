@@ -9,9 +9,12 @@ change_theme() {
     local theme="everforest-$1"
     echo "$theme" > ~/.cache/last_theme
     wallpaper=~/pictures/wallpapers/$theme.png
-
-    swww img $wallpaper --transition-bezier 0.05,0.9,0.1,1.05 --transition-fps 30 --transition-type fade --transition-duration 3
-
+    if [ "$(pgrep swww > /dev/null)" != 0 ]; then
+	pkill swaybg
+	swaybg -i $wallpaper &
+    else
+        swww img $wallpaper --transition-bezier 0.05,0.9,0.1,1.05 --transition-fps 30 --transition-type fade --transition-duration 3
+    fi
     sed -i "s/${themesub["$theme"]}/$theme/g" ~/.config/waybar/style.css ~/.config/foot/foot.ini ~/.config/tofi/config ~/.config/hypr/hyprland.conf ~/.config/alacritty/alacritty.toml ~/.config/zathura/zathurarc ~/.config/sway/config
 
     if [ "$1" == "dark" ]; then
