@@ -1,0 +1,5 @@
+client.focused #8da101 #8da101 #232A2E #5c7a72 #3a94c5
+client.focused_inactive #a6b0a0 #a6b0a0 #5c7a72 #e9f0e9 #a6b0a0
+client.unfocused #829181 #829181 #939f91 #5c7a72 #829181
+client.urgent #f855b2 #f855b2 #5c6a72 #f57d26 #f855b2
+

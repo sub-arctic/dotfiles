@@ -12,7 +12,7 @@ change_theme() {
 
     swww img $wallpaper --transition-bezier 0.05,0.9,0.1,1.05 --transition-fps 30 --transition-type fade --transition-duration 3
 
-    sed -i "s/${themesub["$theme"]}/$theme/g" ~/.config/waybar/style.css ~/.config/foot/foot.ini ~/.config/tofi/config ~/.config/hypr/hyprland.conf ~/.config/alacritty/alacritty.toml ~/.config/zathura/zathurarc
+    sed -i "s/${themesub["$theme"]}/$theme/g" ~/.config/waybar/style.css ~/.config/foot/foot.ini ~/.config/tofi/config ~/.config/hypr/hyprland.conf ~/.config/alacritty/alacritty.toml ~/.config/zathura/zathurarc ~/.config/sway/config
 
     if [ "$1" == "dark" ]; then
 	gtk_theme="$dark_gtk_theme"
@@ -33,6 +33,7 @@ change_theme() {
     cp ~/.config/swaylock/colors/$theme ~/.config/swaylock/config
     cp ~/.config/dunst/colors/$theme ~/.config/dunst/dunstrc
     pgrep waybar > /dev/null 2>&1 && pkill waybar && waybar > /dev/null &
+    swaymsg reload > /dev/null
     pgrep dunst 2>&1 && pkill dunst && dunst &
     disown
     exit 0

@@ -1,21 +1,16 @@
 ### Startup
-exec {
-    autotiling
-    pipewire
-    udiskie
-    /usr/libexec/xfce-polkit
+exec_always {
+    pgrep autotiling || autotiling
+    pgrep pipewire || pipewire
+    pgrep udiskie || udiskie
+    pgrep xfce-polkit || /usr/libexec/xfce-polkit
     pgrep mpd || mpd
-    sway-audio-idle-inhibit
-    dunst
-    gsettings set org.gnome.desktop.interface {
-        gtk-theme "everforest-gtk"
-        font-name "Mononoki Nerd Font 12"
-        cursor-theme "everforest-cursors"
-        cursor-size '24'
-    }
-    wlsunset -l -33.9 -L 151.2
-    swayidle -w timeout 300 'swaylock -f -i ~/.config/wallpaper.png' timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' before-sleep 'swaylock -f -i ~/.config/wallpaper.png'
-    calcurse --daemon
+    pgrep sway-audio-idle-inhibit || sway-audio-idle-inhibit
+    pgrep dunst || dunst
+    pgrep wlsunset || wlsunset -l -33.9 -L 151.2
+    pgrep swayidle || swayidle -w timeout 300 'swaylock -f'
+    pgrep calcurse || calcurse --daemon
+    pgrep waybar || waybar
 }
 
 ### Variables
@@ -37,8 +32,9 @@ for_window {
     [con_mark="swapmark"] opacity set 50
     [con_mark="swapmark"] title_format "<b>󰄳</b> Marked"
 }
-smart_borders on
-smart_gaps on
+default_border pixel 3
+smart_borders off
+smart_gaps off
 show_marks yes
 gaps inner 5
 font pango:Mononoki Nerd Font 12
@@ -79,7 +75,7 @@ bindsym {
 	$mod+Shift+d exec ~/.local/bin/powerprofiles_switcher drun 
 
         # Lock the screen
-        $mod+x exec swaylock -i ~/.config/wallpaper.png
+        $mod+x exec swaylock
 
         # Reload the configuration file
         $mod+Shift+c reload
@@ -301,17 +297,18 @@ mode {
 }
 
 ### Window colors
-client.focused #A7C080 #A7C080 #232A2E #7fBBB3 #A7C080
-client.focused_inactive #425047 #425047 #D3C6AA #3A515D
-client.unfocused #232a2e #232a2e #d3c6aa #2d353b #232a2e
-client.urgent #E67E80 #E67E80 #232A2E #E67E80 #E67E80
+include ~/.config/sway/colors/everforest-dark
+# client.focused #A7C080 #A7C080 #232A2E #7fBBB3 #A7C080
+# client.focused_inactive #425047 #425047 #D3C6AA #3A515D
+# client.unfocused #232a2e #232a2e #d3c6aa #2d353b #232a2e
+# client.urgent #E67E80 #E67E80 #232A2E #E67E80 #E67E80
 
 ### Bar
-bar {
-    swaybar_command waybar
-    position top 
-    mode dock
-    modifier Mod4
-    output *
-    icon_theme "everforest-icons"
-}
+# bar {
+#     swaybar_command waybar
+#     position top 
+#     mode dock
+#     modifier Mod4
+#     output *
+#     icon_theme "everforest-icons"
+# }
