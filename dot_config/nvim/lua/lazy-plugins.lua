@@ -78,9 +78,6 @@ lazy.setup({
         build = 'sh install.sh',
 
     },
-    {
-        'instant-markdown/vim-instant-markdown',
-    }
 }, {
 	defaults = {
 	    lazy = false,
