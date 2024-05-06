@@ -2,7 +2,7 @@
    font-family: Mononoki Nerd Font;
     font-size: 13px;
 }
-@import url('colors/everforest-light.css');
+@import url('colors/everforest-dark.css');
 
 /* Bar Settings */
 window#waybar {

@@ -261,4 +261,4 @@
 #
 	# Configs can be split between multiple files, and then included
 	# within each other.
-	include = colors/everforest-light
+	include = colors/everforest-dark
