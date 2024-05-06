@@ -2,7 +2,7 @@
    font-family: Mononoki Nerd Font;
     font-size: 13px;
 }
-@import url('colors/everforest-dark.css');
+@import url('colors/everforest-light.css');
 
 /* Bar Settings */
 window#waybar {
@@ -74,9 +74,9 @@ window#waybar.hidden {
     margin-right: 0;
 }
 #scratchpad, #mode {
-    color: #232a2e;
+    color: @bg1;
     background-color: @red;
-    border-bottom: 3px solid transparent;
+    border-bottom: 3px solid @red;
     margin: 0;
 }
 
