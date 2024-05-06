@@ -10,11 +10,11 @@
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
     progress_bar_max_width = 300
-    highlight = "#8da101"
+    highlight = "#a7c080"
     indicate_hidden = yes
     frame_width = 2 
-    frame_color = "#8da101"
-    separator_color = "#efebd4"
+    frame_color = "#a7c080"
+    separator_color = "#272e33"
     sort = yes
     font = Mononoki Nerd Font 10
     line_height = 0
@@ -42,19 +42,19 @@
     mouse_right_click = close_current
 
 [urgency_low]
-    background = "#efebd4"
-    foreground = "#5c6a72"
+    background = "#272e33"
+    foreground = "#d3c6aa"
     timeout = 5
 
 [urgency_normal]
-    background = "#efebd4"
-    foreground = "#5c6a72"
+    background = "#272e33"
+    foreground = "#d3c6aa"
     timeout = 5
 
 [urgency_critical]
-    background = "#efebd4"
-    foreground = "#f85552"
-    frame_color = "#f85552"
+    background = "#272e33"
+    foreground = "#e67e80"
+    frame_color = "#e67e80"
     timeout = 0
 
 # vim: ft=cfg
