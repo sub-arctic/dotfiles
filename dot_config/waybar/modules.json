@@ -71,7 +71,7 @@
     },
     "custom/xbps-updates": {
         "exec": "~/.local/bin/update -l",
-        "on-click": "alacritty -e fish -c 'pkill -SIGRTMIN+8 waybar && updates -d && sudo xbps-install -Suv'",
+        "on-click": "alacritty -e fish -c 'updates -d && sudo xbps-install -Suv'",
         "interval": "100",
         "format": "󱧕 {}",
         "signal": 8

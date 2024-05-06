@@ -35,7 +35,7 @@ change_theme() {
 
     cp ~/.config/swaylock/colors/$theme ~/.config/swaylock/config
     cp ~/.config/dunst/colors/$theme ~/.config/dunst/dunstrc
-    pgrep waybar > /dev/null 2>&1 && pkill waybar && waybar > /dev/null &
+    pgrep waybar > /dev/null 2>&1 && pkill -SIGUSR2 waybar && waybar > /dev/null &
     swaymsg reload > /dev/null
     pgrep dunst 2>&1 && pkill dunst && dunst &
     disown
