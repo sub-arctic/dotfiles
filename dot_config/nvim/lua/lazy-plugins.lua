@@ -16,13 +16,7 @@ lazy.setup({
     'williamboman/mason-lspconfig.nvim',
     'echasnovski/mini.nvim',
     'tpope/vim-fugitive',
-    {
-	"tadmccorkle/markdown.nvim",
-	ft = "markdown", -- or 'event = "VeryLazy"'
-	opts = {
-	  -- configuration here or empty for defaults
-	},
-    },
+    'instant-markdown/vim-instant-markdown',
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     { 'norcalli/nvim-colorizer.lua', lazy=false },
     { 'williamboman/mason.nvim', lazy=false },
