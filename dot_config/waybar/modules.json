@@ -10,7 +10,7 @@
     "group/hardware": {
 	"drawer": {
 	    "children-class": "hardware-child",
-	    "transition-duration": 300,
+	    "transition-duration": 0,
 	    "transition-left-to-right": true
 	},
 	"orientation": "horizontal",
