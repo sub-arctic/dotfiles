@@ -8,7 +8,7 @@ font-size=12
 # Path to the config file
 
 # Turn the screen into the given color instead of white
-color=#efebd4
+color=#2d353b
 
 # Enable debugging output
 # debug
@@ -25,7 +25,7 @@ show-failed-attempts
 
 # Display the given image
 # image [[<output>]:]<path>
-image=~/pictures/wallpapers/everforest-light.png
+image=~/pictures/wallpapers/everforest-dark.png
 
 # Display the current xkb layout while typing
 show-keyboard-layout
@@ -50,13 +50,13 @@ show-keyboard-layout
 # no-unlock-indicator
 
 # Sets the color of backspace highlight segments
-bs-hl-color=#df69ba
+bs-hl-color=#d699b6
 
 # Sets the color of backspace highlight segments when Caps Lock is active
-caps-lock-bs-hl-color=#f57d26
+caps-lock-bs-hl-color=#e69875
 
 # Sets the color of the key press highlight segments when Caps Lock is active
-caps-lock-key-hl-color=#dfa000
+caps-lock-key-hl-color=#dbbc7f
 
 # Sets the font of the text
 
@@ -83,31 +83,31 @@ indicator-thickness=10
 # indicator-y-position
 
 # Sets the color of the inside of the indicator
-inside-color=#efebd4
+inside-color=#2d353b
 
 # Sets the color of the inside of the indicator when cleared
-inside-clear-color=#8da101
+inside-clear-color=#a7c080
 
 # Sets the color of the inside of the indicator when Caps Lock is active
 # inside-caps-lock-color=#<rrggbb[aa]>
 
 # Sets the color of the inside of the indicator when verifying
-inside-ver-color=#3a94c5
+inside-ver-color=#7fbbb3
 
 # Sets the color of the inside of the indicator when invalid
-inside-wrong-color=#f85552
+inside-wrong-color=#e67e80
 
 # Sets the color of key press highlight segments
-key-hl-color=#8da101
+key-hl-color=#a7c080
 
 # Sets the background color of the box containing the layout text
-layout-bg-color=#efebd4
+layout-bg-color=#2d353b
 
 # Sets the color of the border of the box containing the layout text
 # layout-border-color=#<rrggbb[aa]>
 
 # Sets the color of the layout text
-layout-text-color=#5c6a72
+# layout-text-color=#<rrggbb[aa]>
 
 # Sets the color of the line between the inside and ring
 # line-color=#<rrggbb[aa]>
@@ -131,34 +131,34 @@ layout-text-color=#5c6a72
 line-uses-ring
 
 # Sets the color of the outside of the indicator when typing or idle
-ring-color=#f4f0d9
+ring-color=#343f44
 
 # Sets the color of the outside of the indicator when cleared
-ring-clear-color=#3a94c5
+ring-clear-color=#7fbbb3
 
 # Sets the color of the ring of the indicator when Caps Lock is active
 # ring-caps-lock-color=#<rrggbb[aa]>
 
 # Sets the color of the outside of the indicator when verifying
-ring-ver-color=#8da101
+ring-ver-color=#a7c080
 
 # Sets the color of the outside of the indicator when invalid
-ring-wrong-color=#f85552
+ring-wrong-color=#e67e80
 
 # Sets the color of the lines that separate highlight segments
-separator-color=#f4f0d9
+separator-color=#343f44
 
 # Sets the color of the text
-text-color=#5c6a72
+text-color=#ece4
 
 # Sets the color of the text when cleared
-text-clear-color=#5c6a72
+text-clear-color=#343f44
 
 # Sets the color of the text when Caps Lock is active
 # text-caps-lock-color=#<rrggbb[aa]>
 
 # Sets the color of the text when verifying
-text-ver-color=#5c6a72
+text-ver-color=#343f44
 
 # Sets the color of the text when invalid
-text-wrong-color=#5c6a72
+text-wrong-color=#343f44
