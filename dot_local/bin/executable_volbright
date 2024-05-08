@@ -32,7 +32,7 @@ if [ -z "$1" ]; then
 fi
 # Check if sink is muted
 mute_status=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
-if [ "$mute_status" == "yes" ]; then
+if [ "$mute_status" == "yes" && "$title" == "Volume" ]; then
     mute="(Muted)"
 fi
 # Get the percentage based on the argument
