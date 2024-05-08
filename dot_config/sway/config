@@ -41,7 +41,6 @@ font pango:Mononoki Nerd Font 12
 
 ### Output configuration
 output {
-    * bg ~/.config/wallpaper.png fill
     DP-1 resolution 1920x1080 position 0,365
     HDMI-A-1 resolution 1920x1080 position 1920,0 transform 90
 }
