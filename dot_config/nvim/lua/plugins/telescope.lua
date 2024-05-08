@@ -72,6 +72,8 @@ telescope.setup({
 })
 
 telescope.load_extension('projects', 'yank_history')
+telescope.load_extension('chezmoi')
+vim.keymap.set('n', '<leader>cz', telescope.extensions.chezmoi.find_files, {})
 local function set_highlight(group, options)
     vim.api.nvim_set_hl(0, group, options)
 end

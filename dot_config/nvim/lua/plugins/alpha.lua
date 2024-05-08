@@ -20,6 +20,7 @@ dashboard.section.buttons.val = {
     dashboard.button( "f", "󰈞  > Find file", ":Telescope find_files<CR>"),
     dashboard.button( "r", "󱔗  > Recent"   , ":Telescope oldfiles<CR>"),
     dashboard.button( "s", "󰑴  > Note Taking" , ":cd ~/documents/vault<CR> :Neotree left<CR> :Telescope oldfiles <CR>"),
+    dashboard.button( "c", "  > Edit dotfiles", ":Telescope chezmoi find_files <CR>"),
     dashboard.button( "q", "󰈆  > Quit NVIM", ":qa<CR>"),
 }
 

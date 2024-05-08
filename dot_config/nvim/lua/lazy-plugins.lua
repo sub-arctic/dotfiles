@@ -24,6 +24,10 @@ lazy.setup({
     { 'neovim/nvim-lspconfig', lazy=false },
     { 'akinsho/bufferline.nvim', version = '*', dependencies = 'nvim-tree/nvim-web-devicons', lazy=false},
     {
+      'xvzc/chezmoi.nvim',
+      dependencies = { 'nvim-lua/plenary.nvim' },
+    },
+    {
         'goolord/alpha-nvim',
         event = 'VimEnter',
         enabled = true,
