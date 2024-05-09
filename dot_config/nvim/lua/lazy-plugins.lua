@@ -10,7 +10,6 @@ lazy.setup({
 	'hrsh7th/nvim-cmp',
 	dependencies = {
 		'onsails/lspkind.nvim',
-		'kdheepak/cmp-latex-symbols',
 		'hrsh7th/cmp-nvim-lsp',
 		'hrsh7th/cmp-path',
 		'hrsh7th/cmp-buffer',
@@ -18,13 +17,13 @@ lazy.setup({
 		'hrsh7th/cmp-vsnip',
 		'hrsh7th/vim-vsnip',
 		'hrsh7th/vim-vsnip-integ',
-	    }
+	},
     },
     'williamboman/mason-lspconfig.nvim',
     'echasnovski/mini.nvim',
     'tpope/vim-fugitive',
     'instant-markdown/vim-instant-markdown',
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
     { 'norcalli/nvim-colorizer.lua', lazy=false },
     { 'williamboman/mason.nvim', lazy=false },
     { 'sainnhe/everforest', lazy=false },
