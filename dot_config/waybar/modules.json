@@ -40,6 +40,7 @@
         }     
     },
     "mpd": {
+	"max-len": "30",
         "format": "{stateIcon} {artist} - {title} 󰎈",
         "format-disconnected": "Disconnected 󰎈",
         "format-stopped": "Stopped 󰎈",
