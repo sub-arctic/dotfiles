@@ -1,9 +1,3 @@
-# Default config for tofi
-#
-# Copy this file to ~/.config/tofi/config and get customising!
-#
-# A complete reference of available options can be found in `man 5 tofi`.
-
 #
 ### Fonts
 #
@@ -140,7 +134,7 @@
 	# outline-color = #a7c080
 
 	# Width of the border in pixels.
-	border-width = 2
+	border-width = 3
 
 	# Border color
 	# border-color = #a7c080
@@ -187,7 +181,7 @@
 
 	# Window offset from edge of screen. Only has an effect when anchored
 	# to the relevant edge. Can be pixels or a percentage.
-	margin-top = 0
+	margin-top = 0 
 	margin-bottom = 0
 	margin-left = 0
 	margin-right = 0
