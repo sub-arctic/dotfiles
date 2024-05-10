@@ -14,7 +14,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Telescope keymaps
 vim.keymap.set('n', '<leader>tf', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true, desc = 'Telescope: find_files' })
 vim.keymap.set('n', '<leader>to', '<cmd>Telescope oldfiles<CR>', { noremap = true, silent = true, desc = 'Telescope: old files' })
-
+vim.keymap.set('n', '<leader>ts', '<cmd>Telescope spell_suggest<CR>', { noremap = true, silent = true, desc = 'Telescope: spell suggest'})
 -- Neotree
 vim.keymap.set('n', '<leader>f', '<cmd>Neotree toggle<CR>', { noremap = true, silent = true, desc= "Toggle NeoTree"})
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
