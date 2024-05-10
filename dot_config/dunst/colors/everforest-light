@@ -12,7 +12,7 @@
     progress_bar_max_width = 300
     highlight = "#8da101"
     indicate_hidden = yes
-    frame_width = 2 
+    frame_width = 3 
     frame_color = "#8da101"
     separator_color = "#efebd4"
     sort = yes
