@@ -8,7 +8,7 @@ exec_always {
     pgrep sway-audio-idle-inhibit || sway-audio-idle-inhibit
     pgrep dunst || dunst
     pgrep wlsunset || wlsunset -l -33.9 -L 151.2
-    pgrep swayidle || swayidle -w  timeout 300 'pgrep swaylock || dunstify -r 400 -t 10000 -u critical "Going to sleep in 10 seconds!"' timeout 310 'pgrep swaylock || swaylock -f' timeout 330 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on & dunstify -C 400' before-sleep 'swaylock -f'
+    pgrep swayidle || swayidle -w  timeout 300 'pgrep swaylock || dunstify -r 400 -t 10000 -u critical "Going to sleep in 10 seconds!"' timeout 310 'pgrep swaylock || swaylock -f' timeout 330 'swaymsg output * dpms off' resume 'swaymsg output * dpms on & dunstify -C 400' before-sleep 'swaylock -f'
     pgrep calcurse || calcurse --daemon
     pgrep waybar || waybar
 }
