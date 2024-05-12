@@ -1,9 +1,6 @@
 #!/bin/sh
-{{ $tide := promptString "Do you want to install the tide fish prompt?" -}}
-{{ if eq $tide "Y" "yes" "YES" "y" }}
 which fish || echo "fish is not installed" && exit 1
 echo "installing fisher"
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 fisher install IlanCosman/tide@v6
 echo "tide installed successfully"
-{{ end }}
