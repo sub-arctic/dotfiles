@@ -3,7 +3,7 @@ This repository contains my personal configurations and scripts for NeoVim, Sway
 
 All scripts and configurations provided are tested and work (to the best of my knowledge) on `Void Linux x86_64-musl` and `glibc`. 
 
-![A picture of a dark window manager](https://github.com/sub-arctic/dotfiles/blob/9bd26fa3c369b9162e6f344263dfb058a3c0f5a9/pictures/screenshots/1715472458_grim_alloutputs.png)
+![A picture of a dark window manager](https://github.com/sub-arctic/dotfiles/blob/02c7acdd2835d96e3af781983493efba98402b1d/pictures/screenshots/1715472454_grim_alloutputs.png)
 
 ![A picture of a light window manager](https://github.com/sub-arctic/dotfiles/blob/main/pictures/screenshots/1715472458_grim_alloutputs.png)
 
