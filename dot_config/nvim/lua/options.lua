@@ -14,17 +14,15 @@ _G.instant_markdown_theme = 'dark'
 
 vim.opt.spell = true
 vim.opt.spelllang = { "en_au" }
-vim.cmd [[
-  autocmd FileType markdown setlocal spell
-]]
 
--- Disable spellcheck for code files
+-- Disable spellcheck for all files
 vim.cmd [[
-  autocmd BufNewFile,BufRead *.cpp,*.py,*.js setlocal nospell
+  autocmd FileType * setlocal nospell
 ]]
 -- Disable spellcheck for manpages
+-- Whitelisted spellcheck
 vim.cmd [[
-  autocmd FileType man setlocal nospell
+  autocmd FileType markdown, text, gitcommit setlocal spell
 ]]
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
