@@ -24,7 +24,11 @@
 	"format": "   {used}GiB "
     },
     "temperature": {
+	{{ if eq .chezmoi.hostname "VoidTop" }}
+	"hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+	{{ else }}
 	"thermal-zone": "thermal_zone0",
+	{{ end }}
 	"format": "{icon} {temperatureC}°C",
 	"format-icons": ["", "", "", ""]
     },

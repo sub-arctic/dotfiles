@@ -63,11 +63,13 @@ lazy.setup({
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true, lazy=false }
     },
+    {{ if eq .chezmoi.hostname "thinkvoid" "VoidTop" }}
     {
         'epwalsh/obsidian.nvim',
         version = '*',
         dependencies = { 'nvim-lua/plenary.nvim' },
     },
+    {{ end }}
     {
         'neanias/everforest-nvim',
         version = false,
