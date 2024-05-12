@@ -30,16 +30,17 @@ Run `chezmoi init github.com/sub-arctic/dotfiles` to initialise the repository.
 From there, you can apply what you want, apply the dotfiles to a specific repository, or apply them directly to your home directory.
 
 Apply only the NeoVim configuration:
-
-```chezmoi apply -v ~/.config/nvim```
-
+```
+chezmoi apply -v ~/.config/nvim
+```
 Apply everything to a temporary folder:
-
-```chezmoi apply -v -d ~/foobar```
-
+```
+chezmoi apply -v -d ~/foobar
+```
 Apply everything to your home directory:
-
-```chezmoi apply -v```
+```
+chezmoi apply -v
+```
 
 For more info on how to apply what where using chezmoi, read the [docs](https://www.chezmoi.io/).
 
