@@ -1,4 +1,46 @@
 [
+    {{ if eq .chezmoi.hostname "VoidTop" }}
+    {
+	"layer": "top",
+	"position": "top",
+	"ipc": true,
+	"output": ["DP-1", "HDMI-A-1"],
+
+	"include": [
+	    "~/.config/waybar/modules.json"
+	],
+
+	"modules-left": [
+	    "sway/workspaces",
+	    "hyprland/workspaces",
+	    "sway/scratchpad",
+	    "sway/mode",
+	    "custom/seperator#l1",
+	    "clock",
+	    "custom/seperator#l2",
+	    "cpu",
+	    "memory",
+	    "temperature",
+	    "custom/seperator#l3"
+	],
+	"modules-center": [
+	    "custom/seperator#c0",
+	    "mpd",
+	    "custom/seperator#c1"
+	],
+	"modules-right": [
+	    "custom/seperator#r0",
+	    "custom/xbps-updates",
+	    "idle_inhibitor", 
+	    "custom/seperator#r1",
+	    "wireplumber", 
+	    "custom/seperator#r2",
+	    "network", 
+	    "network#vpn",
+	    "tray"
+	]
+    }
+    {{ else }}
     {
 	"layer": "top",
 	"position": "top",
@@ -43,50 +85,6 @@
 	    "tray"
 	]
     },
-    {
-	"layer": "top",
-	"position": "top",
-	"ipc": true,
-	"output": ["DP-1", "HDMI-A-1"],
-
-	"include": [
-	    "~/.config/waybar/modules.json"
-	],
-
-	"modules-left": [
-	    "sway/workspaces",
-	    "hyprland/workspaces",
-	    "sway/scratchpad",
-	    "sway/mode",
-	    "custom/seperator#l1",
-	    "clock",
-	    "custom/seperator#l2",
-	    "cpu",
-	    "memory",
-	    "temperature",
-	    "custom/seperator#l3",
-	    "power-profiles-daemon",
-	    "custom/seperator#l4"
-	],
-	"modules-center": [
-	    "custom/seperator#c0",
-	    "mpd",
-	    "custom/seperator#c1"
-	],
-	"modules-right": [
-	    "custom/seperator#r0",
-	    "custom/xbps-updates",
-	    "idle_inhibitor", 
-	    "custom/seperator#r1",
-	    "wireplumber", 
-	    "backlight", 
-	    "custom/seperator#r2",
-	    "battery", 
-	    "custom/seperator#r3",
-	    "network", 
-	    "network#vpn",
-	    "tray"
-	]
-    }
+    {{ end }}
 ]
 // vim: set ft=jsonc :

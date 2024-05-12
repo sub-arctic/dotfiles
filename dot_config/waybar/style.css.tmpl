@@ -165,7 +165,11 @@ window#waybar.hidden {
     background-color: @bg3;
 }
 #custom-seperator.l3 {
+    {{ if eq .chezmoi.hostname "VoidTop" }}
+    color: @bg0;
+    {{ else }}
     color: @bg1;
+    {{ end }}
     background-color: @bg2;
 }
 #custom-seperator.l4 {
@@ -193,7 +197,11 @@ window#waybar.hidden {
     background-color: @bg1;
 }
 #custom-seperator.r2 {
+    {{ if eq .chezmoi.hostname "VoidTop" }}
+    color: @green;
+    {{ else }}
     color: @bg3;
+    {{ end }}
     background-color: @bg2;
 }
 #custom-seperator.r3 {
