@@ -1,0 +1,5 @@
+[".themes/everforest-gtk"]
+    type = "git-repo"
+    url = "https://github.com/Theory-of-Everything/everforest-gtk"
+    refreshPeriod = 0
+    exclude = ["README.md", "LICENSE"]

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+{{ if eq .chezmoi.hostname "VoidTop" "thinkvoid"}}
+which instant-markdown-d && exit 0
+npm -v || echo "npm is not installed. Exiting" && exit 1
+echo "installing instant-markdown-server as root with npm"
+sudo npm -g install instant-markdown-d
+echo "installed instant-markdown-server successfully"
+{{ end }}
