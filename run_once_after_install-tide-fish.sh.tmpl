@@ -1,5 +1,5 @@
 #!/bin/sh
-which fish || echo "fish is not installed" && exit 1
+which fish > /dev/null || echo "fish is not installed" && exit 1
 echo "installing fisher"
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 fisher install IlanCosman/tide@v6
