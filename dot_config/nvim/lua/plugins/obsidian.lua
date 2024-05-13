@@ -7,7 +7,7 @@ obsidian.setup {
         },
         {
             name = "school",
-            path = "~/documents/vault/School",
+            path = "~/documents/vault/school",
         }
     },
     log_level = vim.log.levels.INFO,
