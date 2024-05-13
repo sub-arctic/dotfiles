@@ -16,10 +16,7 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en_au" }
 
 -- Disable spellcheck for all files
-vim.cmd [[
-  autocmd FileType * setlocal nospell
-]]
--- Disable spellcheck for manpages
+vim.cmd('autocmd BufNewFile,BufRead * setlocal nospell')-- Disable spellcheck for manpages
 -- Whitelisted spellcheck
 vim.cmd [[
   autocmd FileType markdown, text, gitcommit setlocal spell
