@@ -4,7 +4,7 @@
 	"layer": "top",
 	"position": "top",
 	"ipc": true,
-	"output": ["DP-1", "HDMI-A-1"],
+	"output": ["DP-1"],
 
 	"include": [
 	    "~/.config/waybar/modules.json"
@@ -39,6 +39,36 @@
 	    "network", 
 	    "network#vpn",
 	    "tray"
+	]
+    },
+    {
+	"layer": "top",
+	"position": "top",
+	"ipc": true,
+	"output": ["HDMI-A-1"],
+
+	"include": [
+	    "~/.config/waybar/modules.json"
+	],
+
+	"modules-left": [
+	    "sway/workspaces",
+	    "hyprland/workspaces",
+	    "sway/scratchpad",
+	    "sway/mode",
+	    "custom/seperator#l1",
+	    "clock",
+	    "custom/seperator#l2",
+	    "cpu",
+	    "memory",
+	    "temperature",
+	    "custom/seperator#l3"
+	],
+	"modules-center": [
+	],
+	"modules-right": [
+	    "custom/seperator#c0",
+	    "mpd"
 	]
     }
     {{ else }}
