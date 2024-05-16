@@ -2,10 +2,6 @@ local obsidian = require('obsidian')
 obsidian.setup {
     workspaces = {
         {
-            name = "personal",
-            path = "~/documents/vault/personal",
-        },
-        {
             name = "school",
             path = "~/documents/vault/school",
         }

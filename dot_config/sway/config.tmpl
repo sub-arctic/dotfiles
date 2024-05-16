@@ -71,8 +71,10 @@ bindsym {
         # Start your launcher
         $mod+d exec $drun
 
+	{{if eq .chezmoi.hostname "thinkvoid"}}
 	# Start launcher (hold profile)
 	$mod+Shift+d exec ~/.local/bin/powerprofiles_switcher drun 
+	{{end}}
 
         # Lock the screen
         $mod+x exec swaylock
