@@ -4,13 +4,14 @@ vim.opt.conceallevel = 2
 vim.opt.number = true
 -- vim.opt.relativenumber = true
 -- Vim-Instant-Markdown settings
-_G.instant_markdown_slow = 0
-_G.instant_markdown_autostart = 1
-_G.instant_markdown_open_to_the_world = 0
-_G.instant_markdown_mathjax = 1
-_G.instant_markdown_logfile = '/tmp/instant_markdown.log'
-_G.instant_markdown_port = 8090
-_G.instant_markdown_theme = 'dark'
+vim.g.instant_markdown_slow = 0
+vim.g.instant_markdown_autostart = 1
+vim.g.instant_markdown_open_to_the_world = 0
+vim.g.instant_markdown_mathjax = 1
+vim.g.instant_markdown_mermaid = 1
+vim.g.instant_markdown_logfile = '/tmp/instant_markdown.log'
+vim.g.instant_markdown_port = 8090
+vim.g.instant_markdown_theme = 'dark'
 
 vim.opt.spell = true
 vim.opt.spelllang = { "en_au" }
