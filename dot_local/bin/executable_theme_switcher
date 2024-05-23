@@ -15,7 +15,7 @@ change_theme() {
     else
         swww img $wallpaper --transition-bezier 0.05,0.9,0.1,1.05 --transition-fps 30 --transition-type fade --transition-duration 3
     fi
-    sed -i "s/${themesub["$theme"]}/$theme/g" ~/.config/waybar/style.css ~/.config/foot/foot.ini ~/.config/tofi/config ~/.config/hypr/hyprland.conf ~/.config/alacritty/alacritty.toml ~/.config/zathura/zathurarc ~/.config/sway/config
+    sed -i "s/${themesub["$theme"]}/$theme/g" ~/.config/waybar/style.css ~/.config/foot/foot.ini ~/.config/tofi/config ~/.config/hypr/hyprland.conf ~/.config/alacritty/alacritty.toml ~/.config/zathura/zathurarc ~/.config/sway/config ~/.config/foot/foot.ini
 
     if [ "$1" == "dark" ]; then
 	gtk_theme="$dark_gtk_theme"
