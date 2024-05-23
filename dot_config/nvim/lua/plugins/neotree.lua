@@ -30,7 +30,7 @@ neotree.setup {
         },
         icon = {
             folder_closed = "",
-            folder_open = "󰝰",
+            folder_open = "",
             folder_empty = "󰉘",
             default = "*",
             highlight = "NeoTreeFileIcon"
