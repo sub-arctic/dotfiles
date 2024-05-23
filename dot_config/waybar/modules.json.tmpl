@@ -70,10 +70,10 @@
 	"on-click": "~/.local/bin/theme_switcher toggle"
     },
     "custom/xbps-updates": {
-        "exec": "~/.local/bin/update -l",
-        "on-click": "alacritty -e fish -c 'xbps-updates -d && sudo xbps-install -Suv'",
+        "exec": "~/.local/bin/xbps-updates",
+        "on-click": "alacritty -e fish -c 'sudo xbps-install -Suv'",
         "interval": "100",
-        "format": "󱧕 {}",
+        "format": "{}",
         "signal": 8
     },
     "idle_inhibitor": {
