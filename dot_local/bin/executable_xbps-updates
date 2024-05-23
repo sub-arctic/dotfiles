@@ -1,0 +1,8 @@
+#!/bin/bash
+
+updates=$(xbps-install -Sun | wc -l)
+
+if [ "$updates" -gt 0 ]; then
+  echo 󱧕 $updates
+fi
+
