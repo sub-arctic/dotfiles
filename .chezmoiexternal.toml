@@ -3,3 +3,7 @@
     url = "https://github.com/Theory-of-Everything/everforest-gtk"
     refreshPeriod = 0
     exclude = ["README.md", "LICENSE"]
+[".icons/everforest-cursors"]
+    type = "archive"
+    url = "https://github.com/talwat/everforest-cursors/releases/download/3212590527/everforest-cursors-variants.tar.bz2"
+    format = "tar"
