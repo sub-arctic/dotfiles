@@ -1,5 +1,6 @@
 ### Startup
 exec_always {
+    foot --server
     pgrep autotiling || autotiling
     pgrep pipewire || pipewire
     pgrep udiskie || udiskie
@@ -20,7 +21,7 @@ set {
     $down j
     $up k
     $right l
-    $term foot 
+    $term footclient
     $drun tofi-drun | xargs swaymsg exec --
     $ss_path "~/pictures/screenshots"
     $laptop eDP-1
@@ -65,6 +66,9 @@ bindsym {
         # Start a terminal
         $mod+Return exec $term
 
+	# Start a fallback terminal, if all else fails
+	$mod+Shift+Return exec foot || alacritty
+	
         # Kill focused window
         $mod+Shift+q kill
 
