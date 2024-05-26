@@ -6,6 +6,7 @@ exec_always {
     pgrep udiskie || udiskie
     pgrep xfce-polkit || /usr/libexec/xfce-polkit
     pgrep mpd || mpd
+    pgrep mpDris2 || mpDris2
     pgrep sway-audio-idle || sway-audio-idle-inhibit
     pgrep dunst || dunst
     pgrep wlsunset || wlsunset -l -33.9 -L 151.2
@@ -209,6 +210,12 @@ bindsym --locked {
     # Brightness
     XF86MonBrightnessUp exec brightnessctl s 5%+ && ~/.local/bin/volbright brightness 
     XF86MonBrightnessDown exec brightnessctl s 5%- && ~/.local/bin/volbright brightness
+
+    # Media
+    XF86AudioPause exec playerctl pause
+    XF86AudioPlay  exec playerctl play
+    XF86AudioPrev exec playerctl prev
+    XF86AudioNext exec playerctl next
 }
 
 
