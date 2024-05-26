@@ -29,7 +29,7 @@
     hide_duplicate_count = false
     show_indicators = no
     icon_position = left
-    min_icon_size = 0
+    min_icon_size = 64
     max_icon_size = 200
     sticky_history = yes
     history_length = 20
