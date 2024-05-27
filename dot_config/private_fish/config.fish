@@ -16,3 +16,7 @@ function ssh
     add-ssh-key
     command ssh $argv
 end
+function scp
+    add-ssh-key
+    command scp $argv
+end

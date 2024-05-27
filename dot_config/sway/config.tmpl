@@ -76,11 +76,6 @@ bindsym {
         # Start your launcher
         $mod+d exec $drun
 
-	{{if eq .chezmoi.hostname "thinkvoid"}}
-	# Start launcher (hold profile)
-	$mod+Shift+d exec ~/.local/bin/powerprofiles_switcher drun 
-	{{end}}
-
         # Lock the screen
         $mod+x exec swaylock
 
@@ -101,9 +96,6 @@ bindsym {
         
         # Launch neovim in notetaking mode
         $mod+n exec ~/dev/scripts/notes
-
-	# Switch power-profile
-	XF86Display exec ~/.local/bin/powerprofiles_switcher
 
 	# Pick a color
 	$mod+c exec ~/.local/bin/colorpick
