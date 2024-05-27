@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cache_dir="$HOME/.cache/colors"
+resolution=64
+color=$(grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | \
+    sed -n '2p' | awk '{print $3}')
+
+filename=$(echo $color | sed 's/#//g')
+if [ ! -f "$cache_dir/$filename.png" ]; then 
+    magick -size "$resolution\x$resolution" xc:$color "$cache_dir/$filename.png"
+fi
+dunstify "Copied $color to clipboard!" --replace=3001 --raw_icon="$cache_dir/$filename.png"
+wl-copy $color
