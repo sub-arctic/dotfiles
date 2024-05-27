@@ -25,6 +25,7 @@ window#waybar.hidden {
 #temperature,
 #cpu,
 #battery,
+#bluetooth,
 #backlight,
 #network,
 #network.vpn,
@@ -127,10 +128,14 @@ window#waybar.hidden {
     margin-left: 0;
 }
 
+#battery, #bluetooth {
+    background-color: @bg3;
+}
 #battery {
     margin-left: 0;
+}
+#bluetooth {
     margin-right: 0;
-    background-color: @bg3;
 }
 
 #network, #network.vpn, #tray {
