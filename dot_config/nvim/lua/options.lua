@@ -17,7 +17,15 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en_au" }
 vim.cmd('autocmd FileType * setlocal nospell')
 vim.cmd('autocmd FileType markdown,text,gitcommit setlocal spell')
--- Whitelisted spellcheck
+vim.cmd [[
+augroup CppSpellComments
+    autocmd!
+    autocmd FileType cpp syntax match CommentSpell +/\*\_.\{-}\*/+ contains=@Spell
+    autocmd FileType cpp syntax match CommentSpell +//\_.*+ contains=@Spell
+augroup END
+]]
+
+
 vim.opt.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
