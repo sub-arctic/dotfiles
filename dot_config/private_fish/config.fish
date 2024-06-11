@@ -20,4 +20,3 @@ function scp
     add-ssh-key
     command scp $argv
 end
-set fish_greeting
