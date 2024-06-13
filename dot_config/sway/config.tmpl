@@ -40,6 +40,8 @@ set {
 for_window {
     [con_mark="swapmark"] opacity set 50
     [con_mark="swapmark"] title_format "<b>󰄳</b> Marked"
+    [app_id="udiskie"] floating enable
+    [title="^Picture-in-Picture$"] floating enable, sticky enable
 }
 
 default_border pixel 3
@@ -131,6 +133,9 @@ bindsym {
         # Swap focus between the tiling area and the floating area
         $mod+space focus mode_toggle
 
+	# Toggle sticky (pin) mode
+	$mod+p sticky toggle
+
         # Move focus to the parent container
         $mod+a focus parent
     #
@@ -147,7 +152,7 @@ bindsym {
     #
     # Modes
     #
-        $mod+p mode "screenshot"
+        $mod+Shift+p mode "screenshot"
         $mod+m mode "marks"
         $mod+r mode "resize"
 
