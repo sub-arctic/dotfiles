@@ -20,3 +20,5 @@ function scp
     add-ssh-key
     command scp $argv
 end
+
+fish_vi_key_bindings
