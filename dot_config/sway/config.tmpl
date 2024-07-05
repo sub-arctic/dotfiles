@@ -59,7 +59,7 @@ output {
 }
 
 ### Clamshell mode
-bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:on output $laptop disable exec swaylock -f
 bindswitch --reload --locked lid:off output $laptop enable
 
 ### Gestures
