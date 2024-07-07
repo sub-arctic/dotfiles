@@ -4,10 +4,10 @@ music_dir="$HOME/music"
 previewdir="$XDG_CONFIG_HOME/ncmpcpp/previews"
 while true; do
     
-    filename="$(mpc --wait --format "$music_dir"/%file% current)"
-    previewname="$previewdir/$(mpc --format %album% current | base64).png"
+    filename="$(mpc --wait --format "$music_dir"/%file% current || exit)"
+    previewname="$previewdir/$(mpc --format %album% current | base64 || exit).png"
 
-    [ -e "$previewname" ] || ffmpeg -y -i "$filename" -an -vf scale=128:128 "$previewname" > /dev/null 2>&1
+    [ -e "$previewname" ] || ffmpeg -y -i "$filename" -an -vf scale=128:128 "$previewname" > /dev/null 2>&1 || exit
 
-    dunstify -r 27072 "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)" -i "$previewname"
+    dunstify -r 27072 "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)" -i "$previewname" || exit
 done
