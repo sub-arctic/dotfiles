@@ -16,11 +16,12 @@ exec_always {
 }
 exec gsettings set org.gnome.desktop.interface {
 	gtk-theme "everforest-gtk"
-	cursor-theme "everforest-icons"
+	cursor-theme "everforest-cursors"
 	cursor-size 24
     }
 }
 
+seat * xcursor_theme everforst-cursors 24
 
 ### Variables
 set {
