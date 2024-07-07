@@ -2,7 +2,7 @@
 exec_always {
     foot --server
     pgrep autotiling || autotiling
-    pgrep pipewire || pipewire
+    pipewire
     pgrep udiskie || udiskie
     pgrep xfce-polkit || /usr/libexec/xfce-polkit
     pgrep mpd || mpd
@@ -31,7 +31,7 @@ set {
     $up k
     $right l
     $term foot
-    $drun tofi-drun | xargs swaymsg exec --
+    $drun wofi --show drun | xargs swaymsg exec --
     $ss_path "~/pictures/screenshots"
     $laptop eDP-1
 }
@@ -50,6 +50,7 @@ smart_borders off
 smart_gaps off
 show_marks yes
 gaps inner 5
+xwayland enable
 font pango:Mononoki Nerd Font 12
 
 ### Output configuration
