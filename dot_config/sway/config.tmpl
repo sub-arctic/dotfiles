@@ -13,6 +13,8 @@ exec_always {
     pgrep swayidle || swayidle -w  timeout 300 'pgrep swaylock || dunstify -r 400 -t 10000 -u critical "Going to sleep in 10 seconds!"' timeout 310  'swaylock -f & swaymsg "output * power off"' resume 'swaymsg "output * power on" & dunstify -C 400' before-sleep 'swaylock -f'
     pgrep songchange || ~/.local/bin/songchange
     pgrep waybar || waybar
+    # wierd fix, but it works?
+    swaymsg seat '*' xcursor_theme everforest-cursors 24 
 }
 exec gsettings set org.gnome.desktop.interface {
 	gtk-theme "everforest-gtk"
@@ -21,7 +23,6 @@ exec gsettings set org.gnome.desktop.interface {
     }
 }
 
-seat * xcursor_theme everforst-cursors 24
 
 ### Variables
 set {
@@ -31,7 +32,7 @@ set {
     $up k
     $right l
     $term foot
-    $drun wofi --show drun | xargs swaymsg exec --
+    $drun tofi-drun | xargs swaymsg exec --
     $ss_path "~/pictures/screenshots"
     $laptop eDP-1
 }
