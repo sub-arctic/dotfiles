@@ -82,7 +82,7 @@ neotree.setup {
         winbar = true,
     },
     window = {
-        position = "left",
+        position = "right",
         width = 25,
         mapping_options = {
         noremap = true,
