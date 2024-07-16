@@ -9,7 +9,6 @@ set {
     $drun tofi-drun | xargs swaymsg exec --
     $ss_path "~/pictures/screenshots"
     $laptop eDP-1
-    $sleep waylock -fork-on-lock -init-color 0x232a2e -input-color 0x2d353b -fail-color 0xe67e80
 }
 
 ### Startup
@@ -24,7 +23,7 @@ exec_always {
     pgrep sway-audio-idle || sway-audio-idle-inhibit
     pgrep dunst || dunst
     pgrep wlsunset || wlsunset -l -33.9 -L 151.2
-    pgrep swayidle || swayidle -w  timeout 300 'pgrep $sleep || dunstify -r 400 -t 10000 -u critical "Going to sleep in 10 seconds!"' timeout 310  '$sleep  & swaymsg "output * power off"' resume 'swaymsg "output * power on" & dunstify -C 400' before-sleep $sleep
+    pgrep swayidle || swayidle -w timeout 300 'pgrep swaylock -f || dunstify -r 400 -t 10000 -u critical "Going to sleep in 10 seconds!"' timeout 310  'swaylock -f  & swaymsg "output * power off"' resume 'swaymsg "output * power on" & dunstify -C 400' before-sleep 'swaylock -f'
     pgrep songchange || ~/.local/bin/songchange
     pgrep waybar || waybar
     # wierd fix, but it works?
@@ -64,7 +63,7 @@ output {
 }
 
 ### Clamshell mode
-bindswitch --reload --locked lid:on output $laptop disable exec $sleep 
+bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
 ### Gestures
@@ -92,7 +91,7 @@ bindsym {
         $mod+d exec $drun
 
         # Lock the screen
-        $mod+x exec $sleep
+        $mod+x exec swaylock -f
 
         # Reload the configuration file
         $mod+Shift+c reload
