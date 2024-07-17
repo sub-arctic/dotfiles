@@ -7,7 +7,7 @@
 	# characters not in the chosen font will fail to render.
 	#
 	# Otherwise, fonts are interpreted in Pango format.
-	font = "/usr/share/fonts/TTF/MononokiNerdFont-Regular.ttf"
+	font = "/usr/share/fonts/NerdFonts/ttf/MononokiNerdFont-Regular.ttf"
 
 	# Point size of text.
 	font-size = 12
