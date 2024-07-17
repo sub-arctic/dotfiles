@@ -13,9 +13,14 @@ set {
 
 ### Startup
 exec_always {
+    {{ if eq .chezmoi.hostname "voidtop" }}
+    flatpak run dev.lizardbyte.sunshine
+    {{ end }}
+    {{ if eq .chezmoi.hostname "thinkvoid" }}
+    pipewire
+    {{ end }}
     foot --server
     pgrep autotiling || autotiling
-    pipewire
     pgrep udiskie || udiskie
     pgrep xfce-polkit || /usr/libexec/xfce-polkit
     pgrep mpd || mpd
