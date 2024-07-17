@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Define log file
+LOG_FILE="/tmp/startup_script.log"
+
+# Function for logging
+log() {
+    echo "$(date) - $1" >> "$LOG_FILE"
+}
+
+# Function for error handling
+handle_error() {
+    log "Error: $1"
+    exit 1
+}
+
+# Main script
+{
+    log "Starting startup script"
+    {{ if eq .chezmoi.hostname "voidtop" }}
+    flatpak run dev.lizardbyte.sunshine
+    {{ end }}
+    {{ if eq .chezmoi.hostname "thinkvoid" }}
+    pipewire 
+    {{ end }}
+
+    foot --server || handle_error "Failed to start foot server"
+    pgrep autotiling || autotiling
+    pgrep udiskie || udiskie
+    pgrep xfce-polkit || /usr/libexec/xfce-polkit
+    pgrep mpd || mpd
+    pgrep mpDris2 || mpDris2
+    pgrep sway-audio-idle || sway-audio-idle-inhibit
+    pgrep dunst || dunst
+    pgrep wlsunset || wlsunset -l -33.9 -L 151.2
+    pgrep swayidle || swayidle timeout 300 'brightnessctl s 10%-' timeout 310 'physlock -d' timeout 320 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+    pgrep songchange || ~/.local/bin/songchange
+    pgrep waybar || waybar
+
+    pgrep sov || rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov & disown
+
+    # Weird fix
+    swaymsg seat '*' xcursor_theme everforest-cursors 24
+
+    log "Startup script completed successfully"
+} || handle_error "An error occurred during startup script execution"
+
