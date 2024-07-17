@@ -13,7 +13,27 @@ set {
 
 ### Startup
 exec_always {
-    ~/.config/sway/startup.sh
+    {{ if eq .chezmoi.hostname "voidtop" }}
+    flatpak run dev.lizardbyte.sunshine
+    {{ end }}
+    {{ if eq .chezmoi.hostname "thinkvoid" }}
+    pipewire
+    {{ end }}
+    foot --server
+    pgrep sov || rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -k 65307 & disown
+    pgrep autotiling || autotiling
+    pgrep udiskie || udiskie
+    pgrep xfce-polkit || /usr/libexec/xfce-polkit
+    pgrep mpd || mpd
+    pgrep mpDris2 || mpDris2
+    pgrep sway-audio-idle || sway-audio-idle-inhibit
+    pgrep dunst || dunst
+    pgrep wlsunset || wlsunset -l -33.9 -L 151.2
+    pgrep swayidle || swayidle timeout 300 'brightnessctl s 10%-' timeout 310 'physlock -d' timeout 320 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+    pgrep songchange || ~/.local/bin/songchange
+    pgrep waybar || waybar
+    # wierd fix, but it works?
+    swaymsg seat '*' xcursor_theme everforest-cursors 24 
 }
 exec gsettings set org.gnome.desktop.interface {
 	gtk-theme "everforest-gtk"
