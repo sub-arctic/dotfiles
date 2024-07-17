@@ -23,7 +23,7 @@ exec_always {
     pgrep sway-audio-idle || sway-audio-idle-inhibit
     pgrep dunst || dunst
     pgrep wlsunset || wlsunset -l -33.9 -L 151.2
-    pgrep swayidle || swayidle -w timeout 300 'pgrep swaylock -f || dunstify -r 400 -t 10000 -u critical "Going to sleep in 10 seconds!"' timeout 310  'swaylock -f  & swaymsg "output * power off"' resume 'swaymsg "output * power on" & dunstify -C 400' before-sleep 'swaylock -f'
+#    pgrep swayidle || swayidle -w timeout 300 'pgrep physlock -d -m -s|| dunstify -r 400 -t 10000 -u critical "Going to sleep in 10 seconds!"' timeout 310  'physlock -d -m -s & swaymsg "output * power off"' resume 'swaymsg "output * power on" & dunstify -C 400' before-sleep 'physlock -d -m -s'
     pgrep songchange || ~/.local/bin/songchange
     pgrep waybar || waybar
     # wierd fix, but it works?
@@ -63,8 +63,8 @@ output {
 }
 
 ### Clamshell mode
-bindswitch --reload --locked lid:on output $laptop disable
-bindswitch --reload --locked lid:off output $laptop enable
+# bindswitch --reload --locked lid:on output $laptop disable
+# bindswitch --reload --locked lid:off output $laptop enable
 
 ### Gestures
 # Workspace Swiping
@@ -91,7 +91,7 @@ bindsym {
         $mod+d exec $drun
 
         # Lock the screen
-        $mod+x exec swaylock -f
+        $mod+x exec physlock -d -m -s
 
         # Reload the configuration file
         $mod+Shift+c reload
