@@ -73,8 +73,10 @@ bindswitch --reload --locked lid:off output $laptop power on
 
 ### Gestures
 # Workspace Swiping
-bindgesture swipe:3:right workspace prev
-bindgesture swipe:3:left workspace next
+bindgesture swipe:4:right workspace prev
+bindgesture swipe:4:left workspace next
+bindgesture swipe:4:down exec echo 2 > /tmp/sovpipe
+bindgesture swipe:4:up exec $drun
 
 ### General bindings
 floating_modifier $mod normal
