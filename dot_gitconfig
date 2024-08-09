@@ -1,0 +1,27 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = mail@subarctic.tech
+	name = sub-arctic
+	signingkey = 8AE432FE1F6264710317E8F5C9D98843D795FEC3
+[core]
+	pager = nvim -R
+[http]
+	postBuffer = 524288000
+[color]
+	pager = no
+[rerere]
+	enabled = true
+[maintenance]
+	repo = /home/arthur/documents/vault
+	repo = /home/arthur/.local/share/chezmoi
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[commit]
+	gpgSign = true
+[push]
+	autoSetupRemote = true
