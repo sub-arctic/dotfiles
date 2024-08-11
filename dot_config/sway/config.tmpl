@@ -31,7 +31,7 @@ exec_always {
     pgrep wlsunset || wlsunset -l -33.9 -L 151.2
     pgrep swayidle || swayidle timeout 300 'brightnessctl s 10%-' timeout 310 'physlock -d' timeout 320 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
     pgrep songchange || ~/.local/bin/songchange
-    pgrep waybar || waybar
+    # pgrep waybar || waybar
     # wierd fix, but it works?
     swaymsg seat '*' xcursor_theme everforest-cursors 24 
 }
@@ -334,13 +334,13 @@ include ~/.config/sway/colors/everforest-dark
 # client.urgent #E67E80 #E67E80 #232A2E #E67E80 #E67E80
 
 ### Bar
-# bar {
-#     swaybar_command waybar
-#     position top 
-#     mode dock
-#     modifier Mod4
-#     output *
-#     icon_theme "everforest-icons"
-# }
+bar {
+    swaybar_command waybar
+    position top 
+    mode hide
+    modifier Mod4
+    output *
+    icon_theme "everforest-icons"
+}
 
 # vi: set filetype=swayconfig :
