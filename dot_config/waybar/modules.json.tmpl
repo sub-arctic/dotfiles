@@ -84,6 +84,20 @@
             "deactivated": "󰾪"
         }
     },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+	"max-volume": 100,
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "󰋋",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-right-click": "foot -e alsamixer",
+	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
     "wireplumber": {
         "format": "{icon} {volume}%",
 	"max-volume": 100,

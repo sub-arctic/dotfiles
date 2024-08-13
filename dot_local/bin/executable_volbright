@@ -7,7 +7,7 @@ maxbrightness=6818
 # Function to get the percentage for volume or brightness
 get_percentage() {
     if [ "$1" == "volume" ]; then
-	percentage=$(wpctl get-volume @DEFAULT_SINK@ | awk '{print $2 * 100}')
+	percentage=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | sed 's/%//')
 	title="Volume"
     elif [ "$1" == "brightness" ]; then
 	percentage=$(echo $(brightnessctl g) $maxbrightness | awk '{printf "%.0f\n", $1/$2*100}')
