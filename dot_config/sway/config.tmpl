@@ -29,7 +29,7 @@ exec_always {
     pgrep sway-audio-idle || sway-audio-idle-inhibit
     pgrep dunst || dunst
     pgrep wlsunset || wlsunset -l -33.9 -L 151.2
-    pgrep swayidle || swayidle timeout 300 'brightnessctl s 10%-' timeout 310 'physlock -d' timeout 320 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+    pgrep swayidle || swayidle timeout 300 'dunstify -t 1009 "Going to sleep in 10 seconds!"' timeout 310 'physlock -d' timeout 320 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
     pgrep songchange || ~/.local/bin/songchange
     # pgrep waybar || waybar
     # wierd fix, but it works?
@@ -99,6 +99,9 @@ bindsym {
 
         # Lock the screen
         $mod+x exec physlock -d -m -s
+
+	# Remove keys from ssh-agent
+	$mod+Shift+x exec ssh-add -D
 
         # Reload the configuration file
         $mod+Shift+c reload
@@ -336,7 +339,7 @@ include ~/.config/sway/colors/everforest-dark
 ### Bar
 bar {
     swaybar_command waybar
-    position top 
+    position bottom 
     mode hide
     modifier Mod4
     output *
