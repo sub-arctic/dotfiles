@@ -16,11 +16,10 @@ exec_always {
     {{ if eq .chezmoi.hostname "voidtop" }}
     flatpak run dev.lizardbyte.sunshine
     {{ end }}
-    {{ if eq .chezmoi.hostname "thinkvoid" }}
     pipewire
-    {{ end }}
     foot --server
-    pgrep sov || rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -k 65307 & disown
+    pgrep sov || rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -k 65307
+    pgrep wob || rm -f /tmp/wobpipe && mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob
     pgrep autotiling || autotiling
     pgrep udiskie || udiskie
     pgrep xfce-polkit || /usr/libexec/xfce-polkit
