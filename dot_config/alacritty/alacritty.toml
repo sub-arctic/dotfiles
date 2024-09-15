@@ -1,7 +1,0 @@
-live_config_reload = true
-import = ["~/.config/alacritty/colors/everforest-dark.toml"]
-[font]
-size = 12.0
-[font.normal]
-family = "Mononoki Nerd Font"
-
