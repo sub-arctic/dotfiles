@@ -8,7 +8,7 @@ All scripts and configurations provided are tested and work (to the best of my k
 ![A picture of a light window manager](https://github.com/sub-arctic/dotfiles/blob/main/pictures/screenshots/1715472458_grim_alloutputs.png)
 
 ### Programs used
-- `alacritty` → *terminal emulator of choice*
+- `foot` → *terminal emulator of choice*
 - `cava` → *tui audio visualiser*
 - `dunst` → *notification daemon*
 - `hyprland` → *eye-candy window manager*
