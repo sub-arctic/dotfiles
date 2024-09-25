@@ -1,5 +1,6 @@
 {
     "settings": {
-        "lastVersion": "1.3.4"
+        "lastVersion": "1.3.4",
+        "exclude": []
     }
 }
