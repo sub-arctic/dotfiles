@@ -15,8 +15,7 @@ jobs:
 
       - name: Set up chezmoi
         run: |
-          sudo apt-get update
-          sudo apt-get install -y chezmoi
+          sh -c "$(curl -fsLS get.chezmoi.io)"
 
       - name: Archive dotfiles
         run: |
