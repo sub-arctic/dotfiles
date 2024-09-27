@@ -2,6 +2,8 @@ name: Export Dotfiles to GitHub Releases
 
 on:
   push:
+    branches:
+      - main
     tags:
       - 'v*'  # Trigger on version tags
 
@@ -21,6 +23,15 @@ jobs:
         run: |
           chezmoi archive --output=release.tar.gz
           chezmoi archive --output=release.zip
+
+      - name: Upload artifacts
+        if: github.event_name != 'tag'  # Only upload artifacts on regular commits
+        uses: actions/upload-artifact@v2
+        with:
+          name: dotfiles-artifacts
+          path: |
+            release.tar.gz
+            release.zip
 
       - name: Upload release assets
         uses: softprops/action-gh-release@v1
