@@ -1,0 +1,34 @@
+name: Export Dotfiles to GitHub Releases
+
+on:
+  push:
+    tags:
+      - 'v*'  # Trigger on version tags
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up chezmoi
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chezmoi
+
+      - name: Archive dotfiles
+        run: |
+          chezmoi archive --output=release.tar.gz
+          chezmoi archive --output=release.zip
+
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            release.tar.gz
+            release.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
