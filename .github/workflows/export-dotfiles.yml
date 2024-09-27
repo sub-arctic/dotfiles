@@ -21,8 +21,8 @@ jobs:
 
       - name: Archive dotfiles
         run: |
-          chezmoi archive --output=release.tar.gz
-          chezmoi archive --output=release.zip
+          ./bin/chezmoi archive --output=release.tar.gz
+          ./bin/chezmoi archive --output=release.zip
 
       - name: Upload artifacts
         if: github.event_name != 'tag'  # Only upload artifacts on regular commits
