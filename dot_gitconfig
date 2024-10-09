@@ -5,7 +5,7 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	email = mail@subarctic.tech
+	email = subarctic@duck.com
 	name = sub-arctic
 	signingkey = 8AE432FE1F6264710317E8F5C9D98843D795FEC3
 [core]
