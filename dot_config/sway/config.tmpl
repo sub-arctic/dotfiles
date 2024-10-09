@@ -28,7 +28,7 @@ exec_always {
     pgrep sway-audio-idle || sway-audio-idle-inhibit
     pgrep dunst || dunst
     pgrep wlsunset || wlsunset -l -33.9 -L 151.2
-    pgrep swayidle || swayidle timeout 300 'dunstify -t 1009 "Going to sleep in 10 seconds!"' timeout 310 'physlock -d' timeout 320 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+    pgrep swayidle || swayidle timeout 300 'dunstify -t 10000 "Going to sleep in 10 seconds!"' timeout 310 'physlock -d'
     pgrep songchange || ~/.local/bin/songchange
     swaymsg seat '*' xcursor_theme everforest-cursors 24 
 }
