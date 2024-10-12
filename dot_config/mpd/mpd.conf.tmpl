@@ -8,11 +8,7 @@ state_file		"~/.mpd/state"
 sticker_file		"~/.mpd/sticker.sql"
 auto_update		"yes"
 audio_output {
-{{ if eq .chezmoi.hostname "voidtop" }}
-	type		"alsa"
-{{else}}
 	type		"pipewire"
-{{ end }}
 	name		"cans"
 }
 
