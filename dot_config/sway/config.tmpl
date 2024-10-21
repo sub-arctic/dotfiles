@@ -28,7 +28,7 @@ exec_always {
     pgrep sway-audio-idle || sway-audio-idle-inhibit
     pgrep dunst || dunst
     pgrep wlsunset || wlsunset -l -33.9 -L 151.2
-    pgrep swayidle || swayidle timeout 300 'dunstify -t 10000 "Going to sleep in 10 seconds!"' timeout 310 'physlock -d'
+    pgrep swayidle || swayidle timeout 300 'dunstify -t 10000 "Going to sleep in 10 seconds!"' timeout 310 'swaylock'
     pgrep songchange || ~/.local/bin/songchange
     swaymsg seat '*' xcursor_theme everforest-cursors 24 
 }
@@ -69,7 +69,7 @@ output {
 }
 
 ### Clamshell mode
-bindswitch lid:on exec physlock -d
+bindswitch lid:on exec swaylock
 bindswitch --reload --locked lid:on output $laptop power off
 bindswitch --reload --locked lid:off output $laptop power on
 
