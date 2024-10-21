@@ -1,13 +1,17 @@
+{{ if eq .chezmoi.hostname "voidtop" }}
+exec=pgrep xfce-polkit || /usr/libexec/xfce-polkit
 exec=pipewire
+{{ else }}
+exec=pgrep polkit-gnome-authentication-agent-1 || /usr/libexec/polkit-gnome-authentication-agent-1
+{{ end }}
 exec=foot --server
 exec=pgrep waybar || waybar
 exec=pgrep swaybg || swaybg -i ~/pictures/wallpapers/everforest-dark.png
 exec=pgrep wob || rm -f /tmp/wobpipe && mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob
 exec=pgrep udiskie || udiskie
-exec=pgrep xfce-polkit || /usr/libexec/xfce-polkit
 exec=pgrep mpd || mpd
 exec=pgrep mpDris2 || mpDris2
 exec=pgrep sway-audio-idle || sway-audio-idle-inhibit
 exec=pgrep dunst || dunst
 exec=pgrep wlsunset || wlsunset -l -33.9 -L 151.2
-exec=pgrep swayidle || swayidle timeout 300 'dunstify -t 10000 "Going to sleep in 10 seconds!"' timeout 310 'physlock -d'
+exec=pgrep swayidle || swayidle timeout 300 'dunstify -t 10000 "Going to sleep in 10 seconds!"' timeout 310 'swaylock'
