@@ -8,17 +8,8 @@ maxbrightness=255
 get_percentage() {
     if [ "$1" == "volume" ]; then
 	percentage=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | sed 's/%//')
-	title="Volume"
     elif [ "$1" == "brightness" ]; then
 	percentage=$(echo $(brightnessctl g) $maxbrightness | awk '{printf "%.0f\n", $1/$2*100}')
-	title="Brightness"
-    elif [ "$1" == "mute" ]; then
-	if [ "$mute_status" == "yes" ]; then
-	    dunstify --timeout 1000 --replace=${appids["$1"]} "Volume: Muted"	
-	else
-	    dunstify --timeout 1000 --replace=${appids["$1"]} "Volume: Unmuted"
-	fi
-	exit 0
     else
         echo "Invalid argument. Usage: $0 [volume|brightness]"
         exit 1
@@ -27,16 +18,17 @@ get_percentage() {
 
 # Check if an argument is provided
 if [ -z "$1" ]; then
-    echo "Usage: $0 [volume|brightness|mute]"
+    echo "Usage: $0 [volume|brightness]"
     exit 1
 fi
+#
 # Check if sink is muted
-mute_status=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
-if [ "$mute_status" == "yes" && "$title" == "Volume" ]; then
-    mute="(Muted)"
+if [ "$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')" == "yes" ]; then
+    mute=".muted"
 fi
 # Get the percentage based on the argument
 get_percentage "$1"
 # Display the notification using dunstify
-dunstify -t 1000 --replace=${appids["$1"]} "$title: $percentage% $mute" -h int:value:"$percentage"
+#dunstify -t 1000 --replace=${appids["$1"]} "$title: $percentage% $mute" -h int:value:"$percentage"
+echo "$percentage $1$mute" > /tmp/wobpipe
 
