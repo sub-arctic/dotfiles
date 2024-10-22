@@ -15,20 +15,22 @@ set {
 exec_always {
     {{ if eq .chezmoi.hostname "voidtop" }}
     flatpak run dev.lizardbyte.sunshine
-    {{ end }}
+    pgrep xfce-polkit || /usr/libexec/xfce-polkit
     pipewire
-    foot --server
+    {{ else }}
+    pgrep polkit-gnome-authentication-agent-1 || /usr/libexec/polkit-gnome-authentication-agent-1
+    {{ end }}
     pgrep sov || rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -k 65307
+    foot --server
     pgrep wob || rm -f /tmp/wobpipe && mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob
     pgrep autotiling || autotiling
     pgrep udiskie || udiskie
-    pgrep xfce-polkit || /usr/libexec/xfce-polkit
     pgrep mpd || mpd
     pgrep mpDris2 || mpDris2
     pgrep sway-audio-idle || sway-audio-idle-inhibit
     pgrep dunst || dunst
     pgrep wlsunset || wlsunset -l -33.9 -L 151.2
-    pgrep swayidle || swayidle timeout 300 'dunstify -t 10000 "Going to sleep in 10 seconds!"' timeout 310 'physlock -d'
+    pgrep swayidle || swayidle timeout 300 'dunstify -t 10000 "Going to sleep in 10 seconds!"' timeout 310 'swaylock'
     pgrep songchange || ~/.local/bin/songchange
     swaymsg seat '*' xcursor_theme everforest-cursors 24 
 }
@@ -69,7 +71,7 @@ output {
 }
 
 ### Clamshell mode
-bindswitch lid:on exec physlock -d
+bindswitch lid:on exec swaylock
 bindswitch --reload --locked lid:on output $laptop power off
 bindswitch --reload --locked lid:off output $laptop power on
 
@@ -100,7 +102,7 @@ bindsym {
         $mod+d exec $drun
 
         # Lock the screen
-        $mod+x exec physlock -d -m -s
+        $mod+x exec swaylock
 
 	# Remove keys from ssh-agent
 	$mod+Shift+x exec ssh-add -D
