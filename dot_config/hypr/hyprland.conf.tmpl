@@ -4,7 +4,7 @@ monitor=DP-1,2560x1440@165Hz,0x0,1
 monitor=HDMI-A-1,1920x1080,2560x0,1
 
 source = ~/.config/hypr/startup.conf
-source = ~/.config/hypr/colors/everforest-dark.conf
+source = ~/.config/hypr/colors/gruvbox-dark.conf
 $terminal = footclient
 $menu = tofi-drun
 
@@ -26,7 +26,11 @@ windowrulev2 = noblur, class:^(xwaylandvideobridge)$
 
 general {
     gaps_in = 4
+    {{ if eq .chezmoi.hostname "thinktumble" }}
+    gaps_out = 0
+    {{ else }}
     gaps_out = 8
+    {{ end }}
     border_size = 3
     col.active_border = $primary 
     col.inactive_border = $secondary 
@@ -34,6 +38,10 @@ general {
     layout = dwindle
 
     allow_tearing = false
+
+    snap {
+	enabled = true
+    }
 }
 
 input {
@@ -42,7 +50,7 @@ input {
 	output = DP-1
     }
     touchdevice {
-	enabled = false
+	enabled = true
     }
     touchpad {
 	# disable_while_typing = false
@@ -71,11 +79,9 @@ decoration {
 	vibrancy = 0.1696
     }
 
-    drop_shadow = no
-    shadow_range = 2
-    shadow_render_power = 2
-    col.shadow = rgb(232a2e)
-    shadow_offset = 4, 4
+    shadow {
+	enabled = false
+    }
 }
 
 layerrule = blur, launcher
