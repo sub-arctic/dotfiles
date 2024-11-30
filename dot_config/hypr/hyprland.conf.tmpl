@@ -1,7 +1,7 @@
 monitor=,preferred,auto,auto
 monitor=eDP-1,1920x1080,0x0,1
 monitor=DP-1,2560x1440@165Hz,0x0,1
-monitor=HDMI-A-1,1920x1080,2560x0,1
+monitor=HDMI-A-1,1920x1080@75Hz,2560x-380, 1, transform, 3
 
 source = ~/.config/hypr/startup.conf
 source = ~/.config/hypr/colors/gruvbox-dark.conf
@@ -26,11 +26,7 @@ windowrulev2 = noblur, class:^(xwaylandvideobridge)$
 
 general {
     gaps_in = 4
-    {{ if eq .chezmoi.hostname "thinktumble" }}
-    gaps_out = 0
-    {{ else }}
-    gaps_out = 8
-    {{ end }}
+    gaps_out = 4
     border_size = 3
     col.active_border = $primary 
     col.inactive_border = $secondary 

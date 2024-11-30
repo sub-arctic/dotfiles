@@ -91,7 +91,7 @@ window#waybar.hidden {
 }
 
 #cpu, #memory, #temperature {
-    background-color: @bg2;
+    background-color: @bg1;
 }
 
 #memory {
@@ -122,7 +122,7 @@ window#waybar.hidden {
 }
 
 #wireplumber, #backlight, #pulseaudio {
-    background-color: @bg2;
+    background-color: @bg3;
 }
 
 #wireplumber, #pulseaudio {
@@ -167,12 +167,12 @@ window#waybar.hidden {
     background-color: @red;
 }
 #custom-seperator.l2 {
-    color: @bg2;
+    color: @bg1;
     background-color: @bg3;
 }
 #custom-seperator.l3 {
     color: @bg0;
-    background-color: @bg2;
+    background-color: @bg1;
 }
 #custom-seperator.l4 {
     color: @bg0;
@@ -195,16 +195,16 @@ window#waybar.hidden {
     background-color: @bg0;
 }
 #custom-seperator.r1 {
-    color: @bg2;
+    color: @bg3;
     background-color: @bg1;
 }
 #custom-seperator.r2 {
-    {{ if eq .chezmoi.hostname "voidtop" }}
+    {{ if eq .chezmoi.hostname "tumbletop" }}
     color: @green;
     {{ else }}
     color: @bg3;
     {{ end }}
-    background-color: @bg2;
+    background-color: @bg3;
 }
 #custom-seperator.r3 {
     color: @green;
