@@ -255,4 +255,4 @@
 #
 	# Configs can be split between multiple files, and then included
 	# within each other.
-	include = colors/everforest-dark
+	include = colors/gruvbox-dark
