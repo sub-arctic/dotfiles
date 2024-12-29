@@ -25,8 +25,8 @@
 	"format": "   {used}GiB "
     },
     "temperature": {
-	{{ if eq .chezmoi.hostname "voidtop" }}
-	"hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+	{{ if eq .chezmoi.hostname "tumbletop" }}
+	"hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
 	{{ else }}
 	"thermal-zone": "thermal_zone0",
 	{{ end }}

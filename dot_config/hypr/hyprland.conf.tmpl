@@ -18,6 +18,7 @@ env = XDG_SESSION_TYPE,wayland
 env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
 env = QT_QPA_PLATFORM,wayland;xcb
 
+windowrulev2 = fullscreen, class:^(steam_app_252950)$
 windowrulev2 = opacity 0.0 override, class:^(xwaylandvideobridge)$
 windowrulev2 = noanim, class:^(xwaylandvideobridge)$
 windowrulev2 = noinitialfocus, class:^(xwaylandvideobridge)$

@@ -1,9 +1,7 @@
-{{ if eq .chezmoi.hostname "voidtop" }}
-exec=pgrep xfce-polkit || /usr/libexec/xfce-polkit
-exec=pipewire
-{{ else }}
-exec=pgrep polkit-gnome-authentication-agent-1 || /usr/libexec/polkit-gnome-authentication-agent-1
+{{ if eq .chezmoi.hostname "tumbletop" }}
+exec=flatpak run dev.lizardbyte.sunshine
 {{ end }}
+exec=pgrep polkit-gnome-authentication-agent-1 || /usr/libexec/polkit-gnome-authentication-agent-1
 exec=foot --server
 exec=pgrep waybar || waybar
 exec=pgrep swaybg || swaybg -i ~/pictures/wallpapers/gruvbox-dark.png
@@ -14,4 +12,4 @@ exec=pgrep mpDris2 || mpDris2
 exec=pgrep sway-audio-idle || sway-audio-idle-inhibit
 exec=pgrep dunst || dunst
 exec=pgrep wlsunset || wlsunset -l -33.9 -L 151.2
-exec=pgrep swayidle || swayidle timeout 300 'dunstify -t 10000 "Going to sleep in 10 seconds!"' timeout 310 'swaylock'
+exec=pgrep swayidle || swayidle timeout 300 'dunstify -t 10000 "Going to sleep in 10 seconds!"' timeout 310 'swaylock' timeout 330 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
