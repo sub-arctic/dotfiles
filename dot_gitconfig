@@ -21,8 +21,6 @@
 	repo = /home/arthur/.local/share/chezmoi
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-[commit]
-	gpgSign = true
 [push]
 	autoSetupRemote = true
 [init]
