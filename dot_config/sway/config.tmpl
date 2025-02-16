@@ -13,7 +13,7 @@ set {
 
 ### Startup
 exec_always {
-    {{ if eq .chezmoi.hostname "voidtop" }}
+    {{ if eq .chezmoi.hostname "tumbletop" }}
     flatpak run dev.lizardbyte.sunshine
     pgrep xfce-polkit || /usr/libexec/xfce-polkit
     pipewire
@@ -25,17 +25,14 @@ exec_always {
     pgrep wob || rm -f /tmp/wobpipe && mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob
     pgrep autotiling || autotiling
     pgrep udiskie || udiskie
-    pgrep mpd || mpd
-    pgrep mpDris2 || mpDris2
     pgrep sway-audio-idle || sway-audio-idle-inhibit
     pgrep dunst || dunst
     pgrep wlsunset || wlsunset -l -33.9 -L 151.2
     pgrep swayidle || swayidle timeout 300 'dunstify -t 10000 "Going to sleep in 10 seconds!"' timeout 310 'swaylock'
-    pgrep songchange || ~/.local/bin/songchange
     swaymsg seat '*' xcursor_theme everforest-cursors 24 
 }
 exec gsettings set org.gnome.desktop.interface {
-	gtk-theme "everforest-gtk"
+	gtk-theme "Gruvbox-Material-Dark"
 	cursor-theme "everforest-cursors"
 	cursor-size 24
     }
@@ -65,9 +62,9 @@ input * {
 
 ### Output configuration
 output {
-    * bg ~/pictures/wallpapers/everforest-dark.png fill
+    * bg ~/pictures/wallpapers/gruvbox-dark.png fill
     DP-1 resolution 2560x1440@165Hz position 0,0
-    HDMI-A-1 resolution 1920x1080 position 2560,0 transform 90 bg ~/pictures/wallpapers/everforest-dark.png fill
+    HDMI-A-1 resolution 1920x1080 position 2560,0 transform 90 bg ~/pictures/wallpapers/gruvbox-dark.png fill
 }
 
 ### Clamshell mode
