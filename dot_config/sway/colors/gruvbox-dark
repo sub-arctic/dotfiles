@@ -1,5 +1,5 @@
 client.focused #a9b665 #a9b665 #282828 #7daea3 #a9b665
 client.focused_inactive #45403d #45403d #d4be98 #34381b
-client.unfocused #282828 #282828 #d4be98 #1b1b1b #282828
+client.unfocused #32302f #32302f #d4be98 #1b1b1b #32302f
 client.urgent #ea6962 #E67E80 #282828 #E67E80 #E67E80
 

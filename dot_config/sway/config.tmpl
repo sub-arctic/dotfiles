@@ -5,7 +5,7 @@ set {
     $down j
     $up k
     $right l
-    $term foot
+    $term footclient || foot
     $drun tofi-drun | xargs swaymsg exec --
     $ss_path "~/pictures/screenshots"
     $laptop eDP-1
@@ -23,7 +23,6 @@ exec_always {
     pgrep sov || rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -k 65307
     foot --server
     pgrep wob || rm -f /tmp/wobpipe && mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob
-    pgrep autotiling || autotiling
     pgrep udiskie || udiskie
     pgrep sway-audio-idle || sway-audio-idle-inhibit
     pgrep dunst || dunst
@@ -331,7 +330,7 @@ mode {
 }
 
 ### Window colors
-include ~/.config/sway/colors/everforest-dark
+include ~/.config/sway/colors/gruvbox-dark
 # client.focused #A7C080 #A7C080 #232A2E #7fBBB3 #A7C080
 # client.focused_inactive #425047 #425047 #D3C6AA #3A515D
 # client.unfocused #232a2e #232a2e #d3c6aa #2d353b #232a2e
