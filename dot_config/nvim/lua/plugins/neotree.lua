@@ -1,4 +1,4 @@
-local neotree = require("neo-tree")
+--[[ local neotree = require("neo-tree")
 vim.fn.sign_define("DiagnosticSignError", {text = " ", texthl = "DiagnosticSignError"})
 vim.fn.sign_define("DiagnosticSignWarn", {text = " ", texthl = "DiagnosticSignWarn"})
 vim.fn.sign_define("DiagnosticSignInfo", {text = " ", texthl = "DiagnosticSignInfo"})
@@ -218,4 +218,4 @@ neotree.setup {
             }
         }
     }
-}
+} ]]

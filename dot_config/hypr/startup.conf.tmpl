@@ -1,9 +1,11 @@
 {{ if eq .chezmoi.hostname "tumbletop" }}
 exec=flatpak run dev.lizardbyte.sunshine
 {{ end }}
+exec=gpg-agent --daemon
 exec=pgrep polkit-gnome-authentication-agent-1 || /usr/libexec/polkit-gnome-authentication-agent-1
 exec=foot --server
 exec=pgrep waybar || waybar
+exec=gsettings set org.gnome.desktop.interface gtk-theme "Gruvbox-Material-Dark"
 exec=pgrep swaybg || swaybg -i ~/pictures/wallpapers/gruvbox-dark.png
 exec=pgrep wob || rm -f /tmp/wobpipe && mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob
 exec=pgrep udiskie || udiskie
