@@ -38,6 +38,12 @@ lazy.setup({
     { "neovim/nvim-lspconfig", lazy=false },
     { "akinsho/bufferline.nvim", branch = "main", dependencies = "nvim-tree/nvim-web-devicons", lazy=false},
     {
+      "folke/tokyonight.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+    },
+    {
       "xvzc/chezmoi.nvim",
       dependencies = { "nvim-lua/plenary.nvim" },
     },
