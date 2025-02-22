@@ -10,9 +10,10 @@ vim.cmd([[
 telescope.setup({
     defaults = {
         border = true,
+	borderchars = { "━", "┃", "━", "┃", "┏", "┓", " ┛", "┗" },
         prompt_title = true,
         results_title = true,
-        color_devicons = false,
+        color_devicons = true,
         layout_strategy = 'vertical',
         layout_config = {
             bottom_pane = {
@@ -63,30 +64,12 @@ telescope.setup({
     },
     extensions = {
         fzf = {
-            fuzzy = true,                    -- false will only do exact matching
-            override_generic_sorter = true,  -- override the generic sorter
-            override_file_sorter = true,     -- override the file sorter
-            case_mode = 'smart_case',        -- other options: 'ignore_case' or 'respect_case'
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = 'smart_case',
         }
     }
 })
 
 telescope.load_extension('projects', 'yank_history')
-telescope.load_extension('chezmoi')
-vim.keymap.set('n', '<leader>cz', telescope.extensions.chezmoi.find_files, {})
-local function set_highlight(group, options)
-    vim.api.nvim_set_hl(0, group, options)
-end
-set_highlight("TelescopePromptNormal", { bg = "#3d484b" })
-set_highlight("TelescopePromptTitle", { bg = "#3d484b" })
-set_highlight("TelescopePromptPrefix", { bg = "#3d484b" })
-set_highlight("TelescopePromptCounter", { bg = "#3d484b" })
-set_highlight("TelescopePromptBorder", { bg = "#3d484b" })
-set_highlight("TelescopePreviewNormal", { bg = "#3d484b" })
-set_highlight("TelescopePreviewTitle", { bg = "#3d484b" })
-set_highlight("TelescopePreviewBorder", { bg = "#3d484b" })
-set_highlight("TelescopePromptNormal", { bg = "#3d484b" })
-set_highlight("TelescopeResultsTitle", { bg = "#3d484b" })
-set_highlight("TelescopeResultsNormal", { bg = "#3d484b" })
-set_highlight("TelescopeResultsBorder", { bg = "#3d484b" })
-set_highlight("TelescopeSelection", { bg = "#a7c080", fg = "#2d353b" })
