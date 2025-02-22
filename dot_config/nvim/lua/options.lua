@@ -1,7 +1,7 @@
 vim.opt.termguicolors = true
 -- Make line numbers default
 vim.opt.conceallevel = 2
-vim.opt.number = true
+vim.opt.relativenumber = true
 -- vim.opt.relativenumber = true
 -- Vim-Instant-Markdown settings
 vim.g.instant_markdown_slow = 0
@@ -24,7 +24,6 @@ augroup CppSpellComments
     autocmd FileType cpp syntax match CommentSpell +//\_.*+ contains=@Spell
 augroup END
 ]]
-
 
 vim.opt.mouse = 'a'
 
