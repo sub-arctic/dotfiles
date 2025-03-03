@@ -3,11 +3,11 @@
 
 
 [input]
-method = pulse
+method = pipewire
 source = auto
 
 [output]
 alacritty_sync = 1
 
 [color]
-foreground = '#a7c080'
+foreground = '#a9b665'
