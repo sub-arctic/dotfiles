@@ -66,7 +66,18 @@ cmp.setup.cmdline(':', {
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('lspconfig')['pyright'].setup { capabilities = capabilities }
+require('lspconfig')['pyright'].setup {
+  capabilities = capabilities,
+  settings = {
+    python = {
+      analysis = {
+        diagnosticSeverityOverrides = {
+          reportUndefinedVariable = "none",  -- Disable this error
+        },
+      },
+    },
+  },
+}
 require('lspconfig')['bashls'].setup { capabilities = capabilities }
 cmp.setup {
     formatting = {

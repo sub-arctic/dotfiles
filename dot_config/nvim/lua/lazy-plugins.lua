@@ -29,6 +29,7 @@ lazy.setup({
 	"williamboman/mason-lspconfig.nvim",
 	"echasnovski/mini.nvim",
 	"tpope/vim-fugitive",
+	{"rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}},
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 	{ "norcalli/nvim-colorizer.lua",         lazy = false },
 	{ "williamboman/mason.nvim",             lazy = false },

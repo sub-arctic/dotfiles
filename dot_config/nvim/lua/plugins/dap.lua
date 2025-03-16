@@ -12,3 +12,8 @@ local dap = require('dap')
 }
 
 require("dap-python").setup("uv")
+
+local dapui = require('dapui')
+
+dapui.setup()
+
