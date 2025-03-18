@@ -66,6 +66,18 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
+    "mpris": {
+	"interval": 5,
+	"format": "{status_icon} {dynamic}",
+	"status-icons": {
+            "playing": "󰏤",
+            "paused": "󰐊"
+	},
+	"dynamic-order": [
+	    "artist",
+	    "title"
+	]
+    },
     "custom/theme-switcher": {
 	"format": "󰔎",
 	"on-click": "~/.local/bin/theme_switcher toggle"
@@ -193,3 +205,5 @@
         "tooltip": false
     }
 }
+
+// vim: set ft=jsonc :
