@@ -5,19 +5,6 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagn
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, { desc = '[A]pply lsp quick fixes' })
 
-vim.keymap.set('n', '<leader>lp', '<cmd>Lspsaga peek_definition<CR>', { noremap = true, silent = true, desc = 'Lspsaga: peek definition'})
-vim.keymap.set('n', '<leader>lpt', '<cmd>Lspsaga peek_type_definition<CR>', { noremap = true, silent = true, desc = 'Lspsaga: peek type definition'})
-vim.keymap.set('n', '<leader>lg', '<cmd>Lspsaga goto_definition<CR>', { noremap = true, silent = true, desc = 'Lspsaga: goto type'})
-vim.keymap.set('n', '<leader>lgt', '<cmd>Lspsaga goto_type_definition<CR>', { noremap = true, silent = true, desc = 'Lspsaga: goto type definition'})
-
-vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga rename<CR> ", { noremap = true, silent = true, desc = 'Lspsaga: rename identifier'})
-vim.keymap.set("n", "<leader>lrp", "<cmd>Lspsaga rename<CR> ", { noremap = true, silent = true, desc = 'Lspsaga: rename identifier across project'})
-
-vim.keymap.set('n', '<leader>lf', '<cmd>Lspsaga finder<CR>', { noremap = true, silent = true, desc = 'Lspsaga: finder'})
-vim.keymap.set('n', '<leader>ld', '<cmd>Lspsaga hover_doc<CR>', { noremap = true, silent = true, desc = 'Lspsaga: open documentation'})
-
-vim.keymap.set('n', '[e', '<cmd>Lspsaga diagnostic_jump_next', { noremap = true, silent = true, desc = "Lspsaga: jump to next diagnostic"})
-
 vim.keymap.set('n', '<leader>tf', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true, desc = 'Telescope: find_files' })
 vim.keymap.set('n', '<leader>to', '<cmd>Telescope oldfiles<CR>', { noremap = true, silent = true, desc = 'Telescope: old files' })
 vim.keymap.set('n', '<leader>ts', '<cmd>Telescope spell_suggest<CR>', { noremap = true, silent = true, desc = 'Telescope: spell suggest'})

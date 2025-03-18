@@ -72,7 +72,7 @@ require('lspconfig')['pyright'].setup {
     python = {
       analysis = {
         diagnosticSeverityOverrides = {
-          reportUndefinedVariable = "none",  -- Disable this error
+          reportUndefinedVariable = "none",
         },
       },
     },
