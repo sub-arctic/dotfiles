@@ -1,6 +1,4 @@
-{{ if eq .chezmoi.hostname "tumbletop" }}
-exec=flatpak run dev.lizardbyte.sunshine
-{{ end }}
+exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec=gpg-agent --daemon
 exec=pgrep polkit-gnome-authentication-agent-1 || /usr/libexec/polkit-gnome-authentication-agent-1
 exec=foot --server
@@ -9,8 +7,6 @@ exec=gsettings set org.gnome.desktop.interface gtk-theme "Gruvbox-Material-Dark"
 exec=pgrep swaybg || swaybg -i ~/pictures/wallpapers/gruvbox-dark.png
 exec=pgrep wob || rm -f /tmp/wobpipe && mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob
 exec=pgrep udiskie || udiskie
-exec=pgrep mpd || mpd
-exec=pgrep mpDris2 || mpDris2
 exec=pgrep sway-audio-idle || sway-audio-idle-inhibit
 exec=pgrep dunst || dunst
 exec=pgrep wlsunset || wlsunset -l -33.9 -L 151.2
