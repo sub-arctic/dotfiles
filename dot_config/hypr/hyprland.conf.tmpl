@@ -42,6 +42,18 @@ general {
     }
 }
 
+group {
+    col.border_active = $aqua
+    col.border_inactive = $aqua_dark
+
+    groupbar {
+	font_family = "Mononoki Nerd Font"
+	font_size = 10
+	col.active = $aqua
+	col.inactive = $aqua_dark
+    }
+}
+
 input {
     kb_options = caps:escape
     tablet {
@@ -126,6 +138,7 @@ bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, E, togglesplit, # dwindle
 bind = $mainMod, F, fullscreen,
 bind = $mainMod, G, exec, grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
+bind = $mainMod, T, togglegroup
 
 # Move focus with mainMod + Vim keys
 bind = $mainMod, H, movefocus, l
