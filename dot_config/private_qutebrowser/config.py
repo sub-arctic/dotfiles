@@ -1,10 +1,16 @@
+from qutebrowser.config.configfiles import ConfigAPI
+from qutebrowser.config.config import ConfigContainer
+
+config: ConfigAPI = config # noqa: F821 pylint: disable=E0602,C0103
+c: ConfigContainer = c # noqa: F821 pylint: disable=E0602,C0103
+
 config.load_autoconfig(False)
 
 c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save'}
 
 c.bindings.key_mappings = {'<Ctrl-[>': '<Escape>', '<Ctrl-6>': '<Ctrl-^>', '<Ctrl-M>': '<Return>', '<Ctrl-J>': '<Return>', '<Ctrl-I>': '<Tab>', '<Shift-Return>': '<Return>', '<Enter>': '<Return>', '<Shift-Enter>': '<Return>', '<Ctrl-Enter>': '<Ctrl-Return>'}
 
-c.colors.webpage.darkmode.enabled = False
+c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.policy.images = 'smart'
 c.colors.webpage.preferred_color_scheme = 'dark'
 
@@ -17,7 +23,7 @@ c.completion.quick = True
 
 c.confirm_quit = ['downloads']
 
-c.content.autoplay = False
+c.content.autoplay = True
 c.content.blocking.adblock.lists = [ \
         "https://easylist.to/easylist/easylist.txt", \
         "https://easylist.to/easylist/easyprivacy.txt", \
@@ -39,7 +45,7 @@ c.content.cache.maximum_pages = 10
 c.content.cache.size = 2147483647
 c.content.hyperlink_auditing = False
 c.content.pdfjs = True
-c.content.prefers_reduced_motion = False
+c.content.prefers_reduced_motion = True
 
 c.downloads.location.directory = "/home/arthur/downloads"
 
@@ -53,7 +59,10 @@ c.tabs.width = '15%'
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
 c.url.start_pages = ['https://start.duckduckgo.com']
 
-config.bind("<Ctrl+/>", 'hint links spawn --detach mpv {hint-url}')
+config.bind(",m", 'spawn mpv {url}')
+config.bind(",d", 'config-cycle colors.webpage.darkmode.enabled')
+config.bind(",M", 'hint links spawn mpv {hint-url}')
+config.bind(";M", 'hint --rapid links spawn mpv {hint-url}')
 
 base00 = "#292828"
 base01 = "#32302f"
