@@ -7,6 +7,7 @@ source = ~/.config/hypr/startup.conf
 source = ~/.config/hypr/colors/gruvbox-dark.conf
 $terminal =  footclient || foot
 $menu = tofi-drun
+$browser = flatpak run io.gitlab.librewolf-community
 
 env = XCURSOR_THEME,everforest-cursors
 env = GDK_BACKEND,wayland,x11,*
@@ -114,11 +115,12 @@ binds {
 $mainMod = SUPER
 
 bind = $mainMod, Return, exec, $terminal
-bind = $mainMod SHIFT, Q, killactive, 
-bind = $mainMod SHIFT, E, exec, swaynag -t urgent -m 'You pressed the exit shortcut. Do you really want to exit Hyprland? This will end your Wayland session.' -B 'Yes, exit Hyprland' 'hyprctl dispatch exit' 
-bind = $mainMod SHIFT, Space, togglefloating, 
+bind = $mainMod, B, exec, $browser
+bind = $mainMod SHIFT, Q, killactive,
+bind = $mainMod SHIFT, E, exec, swaynag -t urgent -m 'You pressed the exit shortcut. Do you really want to exit Hyprland? This will end your Wayland session.' -B 'Yes, exit Hyprland' 'hyprctl dispatch exit'
+bind = $mainMod SHIFT, Space, togglefloating,
 bind = $mainMod SHIFT, C, exec, hyprctl reload
-bind = $mainMod, X, exec, swaylock 
+bind = $mainMod, X, exec, swaylock
 bind = $mainMod, D, exec, $menu
 bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, E, togglesplit, # dwindle
@@ -186,3 +188,16 @@ bindl = , XF86AudioNext, exec, playerctl next
 
 # Lid switch
 bindl = , switch:Lid Switch, exec, swaylock
+
+bind = $mainMod, R, submap, resize
+
+submap = resize
+
+binde = , L, resizeactive, 10 0
+binde = , H, resizeactive, -10 0
+binde = , K, resizeactive, 0 -10
+binde = , J, resizeactive, 0 10
+
+bind = , escape, submap, reset
+
+submap = reset
