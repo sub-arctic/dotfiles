@@ -3,4 +3,5 @@ set recolor                     "true"
 set recolor-keephue             "false"
 set font                        "Mononoki Nerd Font"
 set guioptions                  none
+set database			sqlite
 
