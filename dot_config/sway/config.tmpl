@@ -13,13 +13,7 @@ set {
 
 ### Startup
 exec_always {
-    {{ if eq .chezmoi.hostname "tumbletop" }}
-    flatpak run dev.lizardbyte.sunshine
-    pgrep xfce-polkit || /usr/libexec/xfce-polkit
-    pipewire
-    {{ else }}
     pgrep polkit-gnome-authentication-agent-1 || /usr/libexec/polkit-gnome-authentication-agent-1
-    {{ end }}
     pgrep sov || rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -k 65307
     foot --server
     pgrep wob || rm -f /tmp/wobpipe && mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob
@@ -340,7 +334,7 @@ include ~/.config/sway/colors/gruvbox-dark
 bar {
     swaybar_command waybar
     position top 
-    mode dock
+    mode hide
     modifier Mod4
     output *
 }
