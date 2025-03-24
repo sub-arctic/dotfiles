@@ -1,46 +1,70 @@
-from qutebrowser.config.configfiles import ConfigAPI
 from qutebrowser.config.config import ConfigContainer
+from qutebrowser.config.configfiles import ConfigAPI
 
-config: ConfigAPI = config # noqa: F821 pylint: disable=E0602,C0103
-c: ConfigContainer = c # noqa: F821 pylint: disable=E0602,C0103
+config: ConfigAPI = config  # noqa: F821 pylint: disable=E0602,C0103
+c: ConfigContainer = c  # noqa: F821 pylint: disable=E0602,C0103
 
 config.load_autoconfig(False)
 
-c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save'}
+c.aliases = {
+    "w": "session-save",
+    "q": "close",
+    "qa": "quit",
+    "wq": "quit --save",
+    "wqa": "quit --save",
+}
 
-c.bindings.key_mappings = {'<Ctrl-[>': '<Escape>', '<Ctrl-6>': '<Ctrl-^>', '<Ctrl-M>': '<Return>', '<Ctrl-J>': '<Return>', '<Ctrl-I>': '<Tab>', '<Shift-Return>': '<Return>', '<Enter>': '<Return>', '<Shift-Enter>': '<Return>', '<Ctrl-Enter>': '<Ctrl-Return>'}
+c.bindings.key_mappings = {
+    "<Ctrl-[>": "<Escape>",
+    "<Ctrl-6>": "<Ctrl-^>",
+    "<Ctrl-M>": "<Return>",
+    "<Ctrl-J>": "<Return>",
+    "<Ctrl-I>": "<Tab>",
+    "<Shift-Return>": "<Return>",
+    "<Enter>": "<Return>",
+    "<Shift-Enter>": "<Return>",
+    "<Ctrl-Enter>": "<Ctrl-Return>",
+}
 
 c.colors.webpage.darkmode.enabled = True
-c.colors.webpage.darkmode.policy.images = 'smart'
-c.colors.webpage.preferred_color_scheme = 'dark'
+c.colors.webpage.darkmode.policy.images = "smart"
+c.colors.webpage.preferred_color_scheme = "dark"
 
-c.hints.chars = 'fjghskrueialwoqpnvb'
+c.hints.chars = "fjghskrueialwoqpnvb"
 
 c.completion.favorite_paths = ["/home/arthur/"]
-c.completion.height = '50%'
-c.completion.open_categories = ['searchengines', 'quickmarks', 'bookmarks', 'history', 'filesystem']
+c.completion.height = "50%"
+c.completion.open_categories = [
+    "searchengines",
+    "quickmarks",
+    "bookmarks",
+    "history",
+    "filesystem",
+]
 c.completion.quick = True
 
-c.confirm_quit = ['downloads']
+c.confirm_quit = ["downloads"]
 
 c.content.autoplay = True
-c.content.blocking.adblock.lists = [ \
-        "https://easylist.to/easylist/easylist.txt", \
-        "https://easylist.to/easylist/easyprivacy.txt", \
-        "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt", \
-        "https://easylist.to/easylist/fanboy-annoyance.txt", \
-        "https://secure.fanboy.co.nz/fanboy-annoyance.txt", \
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt", \
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt", \
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt", \
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt", \
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt", \
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt" \
-        ]
+c.content.blocking.adblock.lists = [
+    "https://easylist.to/easylist/easylist.txt",
+    "https://easylist.to/easylist/easyprivacy.txt",
+    "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
+    "https://easylist.to/easylist/fanboy-annoyance.txt",
+    "https://secure.fanboy.co.nz/fanboy-annoyance.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt",
+]
 
 c.content.blocking.enabled = True
-c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
-c.content.blocking.method = 'both'
+c.content.blocking.hosts.lists = [
+    "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+]
+c.content.blocking.method = "both"
 c.content.cache.maximum_pages = 10
 c.content.cache.size = 2147483647
 c.content.hyperlink_auditing = False
@@ -50,19 +74,20 @@ c.content.prefers_reduced_motion = True
 c.downloads.location.directory = "/home/arthur/downloads"
 
 c.fonts.default_family = ["Mononoki Nerd Font"]
-c.fonts.default_size = '12pt'
+c.fonts.contextmenu = "Mononoki Nerd Font"
+c.fonts.default_size = "12pt"
 c.spellcheck.languages = ["en-AU"]
 
-c.tabs.position = 'left'
-c.tabs.width = '15%'
+c.tabs.position = "left"
+c.tabs.width = "15%"
 
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
-c.url.start_pages = ['https://start.duckduckgo.com']
+c.url.searchengines = {"DEFAULT": "https://duckduckgo.com/?q={}"}
+c.url.start_pages = ["https://start.duckduckgo.com"]
 
-config.bind(",m", 'spawn mpv {url}')
-config.bind(",d", 'config-cycle colors.webpage.darkmode.enabled')
-config.bind(",M", 'hint links spawn mpv {hint-url}')
-config.bind(";M", 'hint --rapid links spawn mpv {hint-url}')
+config.bind(",m", "spawn mpv {url}")
+config.bind(",d", "config-cycle colors.webpage.darkmode.enabled")
+config.bind(",M", "hint links spawn mpv {hint-url}")
+config.bind(";M", "hint --rapid links spawn mpv {hint-url}")
 
 base00 = "#292828"
 base01 = "#32302f"
@@ -99,7 +124,7 @@ c.colors.completion.scrollbar.bg = base00
 c.colors.contextmenu.disabled.bg = base01
 c.colors.contextmenu.disabled.fg = base04
 c.colors.contextmenu.menu.bg = base00
-c.colors.contextmenu.menu.fg =  base05
+c.colors.contextmenu.menu.fg = base05
 c.colors.contextmenu.selected.bg = base02
 c.colors.contextmenu.selected.fg = base05
 c.colors.downloads.bar.bg = base00
