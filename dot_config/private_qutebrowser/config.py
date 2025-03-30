@@ -86,6 +86,7 @@ c.url.start_pages = ["https://start.duckduckgo.com"]
 
 config.bind(",m", "spawn mpv {url}")
 config.bind(",d", "config-cycle colors.webpage.darkmode.enabled")
+config.bind(",t", "config-cycle tabs.show always never")
 config.bind(",M", "hint links spawn mpv {hint-url}")
 config.bind(";M", "hint --rapid links spawn mpv {hint-url}")
 
