@@ -1,0 +1,55 @@
+#!/bin/bash
+
+SS_PATH="$HOME/pictures/screenshots"
+# Function to get the current timestamp for the filename
+get_timestamp() {
+    date +"%Y-%m-%d_%H-%M-%S"
+}
+
+notify() {
+    RESPONSE=$(dunstify -a "Screenshot" "Screenshot saved" "$SS_PATH/$FILENAME" \
+	-A "Open,Open in swayimg")
+    if [ "$RESPONSE" == "Open" ]; then
+	swayimg "$SS_PATH/$FILENAME"
+    fi
+}
+
+# Function to take a screenshot of a selected area
+screenshot_selection() {
+    FILENAME="ss_$(get_timestamp).png"
+    grim -g "$(slurp)" "$SS_PATH/$FILENAME"
+    notify
+}
+
+# Function to take a screenshot of a selected window
+screenshot_window() {
+    FILENAME="ss_$(get_timestamp).png"
+    grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" "$SS_PATH/$FILENAME"
+    notify
+}
+
+# Function to take a screenshot of the entire screen
+screenshot_fullscreen() {
+    FILENAME="ss_$(get_timestamp).png"
+    grim "$SS_PATH/$FILENAME"
+    notify
+}
+
+# Main menu
+CHOICE=$(echo -e "Selection\nWindow\nFullscreen" | tofi --prompt "Type:")
+case "$CHOICE" in
+    "Selection")
+        screenshot_selection
+        ;;
+    "Window")
+        screenshot_window
+        ;;
+    "Fullscreen")
+        screenshot_fullscreen
+        ;;
+    *)
+        echo "Invalid selection. Exiting."
+        exit 1
+        ;;
+esac
+

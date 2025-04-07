@@ -7,7 +7,6 @@ set {
     $right l
     $term footclient || foot
     $drun tofi-drun | xargs swaymsg exec --
-    $ss_path "~/pictures/screenshots"
     $laptop eDP-1
 }
 
@@ -69,7 +68,6 @@ bindswitch --reload --locked lid:off output $laptop power on
 # Workspace Swiping
 bindgesture swipe:4:right workspace prev
 bindgesture swipe:4:left workspace next
-bindgesture swipe:4:down exec echo 2 > /tmp/sovpipe
 bindgesture swipe:4:up exec $drun
 
 ### General bindings
@@ -116,7 +114,7 @@ bindsym {
         $mod+o exec ~/.local/bin/ocr
 
         # Screenshot
-        Print exec grim ~/pictures/screenshots/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
+        Print exec ~/.local/bin/screenshot
         
         # Launch neovim in notetaking mode
         $mod+n exec ~/dev/scripts/notes
@@ -166,7 +164,6 @@ bindsym {
     #
     # Modes
     #
-        $mod+Shift+p mode "screenshot"
         $mod+m mode "marks"
         $mod+r mode "resize"
 
@@ -241,20 +238,6 @@ bindsym --locked {
 
 ### Modes
 mode {
-    "screenshot" {
-        bindsym {
-            # Capture all outputs
-            1 exec grim $ss_dir/$(date +'%s_grim_alloutputs.png') && dunstify "Screenshot Captured!"
-            # Capture selected region
-            2 exec grim -g "$(slurp)" $ss_dir/(date +'%s_grim.png') dunstify "Screenshot Captured!"
-            # Capture focused window
-            3 exec grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" $ss_dir/$(date +'%s_grim_window.png') dunstify "Screenshot Captured!"
-        
-            # Return to default mode
-            Escape mode "default"
-            Return mode "default"
-        }
-    }
     "togglemarks" {
         bindsym {
             # Assign marks
