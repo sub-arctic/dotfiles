@@ -4,7 +4,7 @@ from qutebrowser.config.configfiles import ConfigAPI
 config: ConfigAPI = config  # noqa: F821 pylint: disable=E0602,C0103
 c: ConfigContainer = c  # noqa: F821 pylint: disable=E0602,C0103
 
-config.load_autoconfig(False)
+config.load_autoconfig()
 
 c.aliases = {
     "w": "session-save",
